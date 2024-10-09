@@ -69,12 +69,14 @@
             backdrop-filter: blur(5px);
         }
         .home .herobanner .card-title {
+            width: 50%;
             color: #fff;
             padding: 10px;
             border-radius: 0 0 10px 10px;
             background: #547a90;
         }
         .home .herobanner .card-text {
+            padding: 50px;
             color: #333333;
             font-size: 0.9rem;
         }
@@ -189,6 +191,12 @@
         
         /* media querys */
         @media (max-width: 768px) {
+            .home .herobanner .card-title {
+                width: 100%;
+            }
+            .home .herobanner .card-text {
+                padding: 0px;
+            }
             .home .swiper-button-next, .swiper-rtl .swiper-button-prev,
             .home .swiper-button-prev, .swiper-rtl .swiper-button-next {
                 display: none;
@@ -318,8 +326,8 @@
                 <div class="col-md-5">
                     <div class="card border-0">
                         <div class="card-body d-flex flex-wrap justify-content-center pt-0">
-                            <h5 class="card-title w-50 text-center">¿QUÉ ES EL OOT?</h5>
-                            <p class="card-text w-100 text-center px-5">
+                            <h5 class="card-title text-center">¿QUÉ ES EL OOT?</h5>
+                            <p class="card-text w-100 text-center">
                                 Colombia OT es el espacio que ha pensado el IGAC para que se construya el territorio. Esta plataforma es el punto de partida, consulta y llegada de quienes necesitan los instrumentos que orientan el desarrollo, la transformación, la ocupación y vocación, del espacio en donde habitamos. Colombia OT, es el punto de encuentro para empoderar y alinear a los entes territoriales en su tarea político-administrativa de gestionar la planeación física y aﬁanzar la identidad dentro de sus límites competentes. Sólo de esta forma logramos una construcción colectiva de país.
                             </p>
                         </div>
