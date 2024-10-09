@@ -1,0 +1,81 @@
+<div id="headingImportar" class="panel-heading-f" role="tab">
+    <div class="panel-title">
+        <span class="panel-mover panel-toggle icon-panel"
+            style=" background-image: url('/images/iconos/Importar.png');"></span>
+        <span class="panel-toggle collapsed panel-mover">
+            <span class="panel-label" id="panelImportarTitle">Importar</span>
+        </span>
+        <span role="button" class="esri-icon esri-icon-minus panel-close" data-bs-toggle="collapse"
+            href="#collapseImportar" aria-expanded="false" aria-controls="collapseImportar"></span>
+        <span class="panel-close" onclick="closeImportar();"><span class="esri-icon esri-icon-close"
+                aria-hidden="false"></span></span>
+    </div>
+  </div>
+
+  <div id="collapseImportar" class="collapse show">
+     <div class="panel-body" >
+        <p>
+            <label for="otherServicesType"><strong>Fuente de datos</strong></label>
+            <select id="otherServicesType" class="form-control" onchange="changeFuenteDatos()">
+                <option value="url" selected=selected>Desde una direcci&oacute;n (URL)</option>
+                <option value="file">Desde un archivo local</option>
+            </select>
+        </p>
+        <div id="otherServicesFromFileFormat" style="display: none;">
+            
+                <label for="otherServicesFromFileFormat2">
+                    <strong>
+                        Formato&nbsp;<span class="bi bi-question-circle-fill" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom" data-bs-content="<p style='font-size: x-small;'>Los formatos permitidos son: csv, xls, shp (.zip), itf, gpkg, geojson, kml, gml, gdb (.zip), dxf, rss, gpx, sqlite. </p><p style='font-size: x-small;'>En el caso de los formatos SHP y GDB, el archivo zip debe estar nombrado como <i>nombre.shp.zip</i> o <i>nombre.gdb.zip</i>. Dicho archivo debe contener los archivos que componen este formato, pero no debe contener la carpeta que contiene los archivos. Los archivos no puden superar los 2Mb ni contener mas de 4000 registros</p>" data-bs-html="true"></span>
+                    </strong>
+                </label>
+
+                <select id="otherServicesFromFileFormat2" class="form-control" onchange="changeExtensionFile()">
+                    <option value="csv">Valores separados por comas (.csv) </option>
+                    <option value="geojson">GeoJSON (.json, .geojson)</option>
+                    <option value="kml">Keyhole Markup Language (KML) (.kml)</option>
+                    <option value="gpx">Formato de intercambio de datos GPS (.gpx)</option>
+                    <option value="shapefile">ESRI Shapefile (.zip)</option>
+                </select>
+           
+        </div>
+        <div id="otherServicesFromUrl">
+            <p>
+                <label for="otherServicesUrlType"><strong>Tipo de servicio</strong></label>
+                <select id="otherServicesUrlType" class="form-control">
+                    <option value="WMS">Servicio de Mapas Web (WMS OGC)</option>
+                    <option value="Arcgis FeatureLayer">Servicio de Entidades (FeatureLayer ArcGIS Server)</option>
+                    <option value="Arcgis MapServer">Servicio de Mapas (ArcGIS MapServer) </option>
+                    <option value="Arcgis ImageServer">Servicio de Imágenes (ArcGIS ImageServer) </option>
+                    <option value="GEOJSON">GeoJSON</option>
+                </select>
+            </p>
+        </div>
+        <hr />
+        <label for="otherServicesName"><strong>Nombre</strong></label>
+        <div class="btn-group" style="width: 100%;">
+            <input id="otherServicesName" class="form-control" placeholder="Ingrese el nombre del servicio" style="width: 100%;" type="text" oninput="enableAgregarServicio()"/>
+            <span class="clearTextBtn bi bi-x-circle" onclick="$('#otherServicesName').val('');"></span>
+        </div>
+        <div id="otherServicesFromUrl2">
+            <label for="otherServicesUrl"><strong>URL</strong></label>
+            <div class="btn-group" style="width: 100%;">
+                <input id="otherServicesUrl" class="form-control" placeholder="Ingrese la direcci&oacute;n/URL (Debe iniciar con https://)" style="width: 100%;" type="text"  oninput="enableAgregarServicio()"/>
+                <span class="clearTextBtn bi bi-x-circle" onclick="$('#otherServicesUrl').val('');"></span>
+            </div>
+        </div>
+        <div id="otherServicesFromFile" style="display: none;">
+            <form id="otherServicesFileData" method="post" enctype="multipart/form-data">
+                <p>
+                    <label for="otherServicesFile"><strong>Archivo</strong></label>
+                    <input name="file" id="fileUpload" type="file" class="form-control" style="height: auto;" onchange="enableAgregarServicio()"/>
+                </p>
+            </form>
+        </div>
+        <br />
+        <button id="agregarButton" href="#" class="btn btn-default btn-primary" onclick="loadService();" disabled>Agregar</button>
+    </div>
+
+
+    </div>
+  </div>
+   

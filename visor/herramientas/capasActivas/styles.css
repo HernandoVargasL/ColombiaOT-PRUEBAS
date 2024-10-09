@@ -1,0 +1,124 @@
+.panel-close{
+  cursor: pointer;
+}
+
+.panel-mover{
+  cursor: move;
+}
+
+.list-group-item-custom {
+  background-color: #F2EFE9;
+  color: black;
+  margin-bottom: 10px;
+  border: 1px solid #F2EFE9;
+  border-radius: 5px;
+  
+
+}
+
+.divInfoLayer{
+  display: flex;
+    justify-content: space-between;
+}
+
+.btnVisible {
+  background-image: url("/images/iconos/Dot_Green.png");
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btnNoVisible {
+  background-image: url("/images/iconos/Dot_Gray.png");
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btnQuit {
+  background-image: url("/images/iconos/Close_Red.png");
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btnZoom {
+  background-image: url("/images/iconos/Center2.png");
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btnTable {
+  background-image: url("/images/iconos/Table.png");
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btnSymbology {
+  background-image: url("/images/iconos/labeling.png");
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btnLegend {
+  background-image: url("/images/iconos/Down_01.png");
+  width: 12px;
+  height: 12px;
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.legendLayer{
+  align-self: center;
+}
+
+.addTable{
+  display: flex;
+  flex-direction: column;
+}
+
+.divTable{
+  height: 55%;
+}
+
+.panel-herramientas{
+  width: fit-content;
+  position: absolute; 
+  right: 0px;
+}

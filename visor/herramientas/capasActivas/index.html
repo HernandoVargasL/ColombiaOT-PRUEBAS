@@ -1,0 +1,48 @@
+<div>
+    <div class="collapse collapse-horizontal" id="simbologiaDiv" style="position: absolute;right: 100%;">
+      <div class="card" id="contentSimbologia">
+        </div>
+    </div>
+  </div>
+
+<div id="headingLayers" class="panel-heading-f" role="tab">
+        <div class="panel-title">
+            <span class="panel-mover panel-toggle icon-panel" style=" background-image: url('/images/iconos/Mapas base y capas.png');"></span>
+            <span class="panel-toggle collapsed panel-mover">
+                <span class="panel-label" id="panelLayersTitle">Capas activas</span><span id="panelLayersZoom" style="display: none;"></span>
+            </span>
+            <span role="button" class="esri-icon esri-icon-minus panel-close" data-bs-toggle="collapse" href="#collapseLayers" aria-expanded="false" aria-controls="collapseLayers"></span>
+            <span class="panel-close" onclick="closeLayers();"><span class="esri-icon esri-icon-close" aria-hidden="true" ></span></span>
+        </div>
+    </div>
+    <div id="collapseLayers" class="collapse show">
+        <div class="panel-body">
+            <div>
+                <div>
+                    <label>Mapa Base</label>
+                </div>
+                <select id="selectBasemapPanel" class="form-control">
+                    <option value="igac">Mapa Topográfico Colombia</option>
+                    <option value="igachibrido">Mapa Híbrido Colombia</option>
+                    <option value="igacfisico">Mapa Físico Colombia</option>
+                    <option value="igacterreno">Mapa Terreno Colombia</option>
+                    <option value="igacsatelital">Mapa Satelital Colombia</option>
+                </select>
+                <div class="alert alert-warning" role="alert" style="font-size: small; line-height: 1.1em; padding: 4px 10px; margin-top: 10px; margin-bottom: 10px;">
+                   <label >
+                        <span class="bi bi-info-circle-fill" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom" data-bs-content="<p style='font-size: x-small;'>Las Instituciones públicas que bajo su rol misional requieran utilizar representaciones gráficas que incluyan los límites de las entidades territoriales nacionales, deberán utilizar como el mapa base oficial, el dispuesto por el Instituto Geográfico Agustín Codazzi o quien haga sus veces, a través de servicios web interoperables, los cuales serán actualizados de acuerdo con la dinámica de los procesos de deslindes de las entidades territoriales del país, atendiendo la expedición de normas y regulación que en la materia expida el gobierno nacional.</p>" data-bs-html="true"></span>
+                    </label>
+                    &nbsp;Representaci&oacute;n de los L&iacute;mites de la Rep&uacute;blica
+                </div>
+            </div>
+            <div>
+                <label>Capas activas</label>
+                <ul class="list-group" id="listLayers">
+                  </ul>
+                <div id="noLayers">No se han agregado capas al mapa aún</div>
+            </div>
+        </div>
+    </div>
+
+
+    

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="Ordenamiento territorial de Colombia | Colombia OT: Una plataforma del IGAC para la construcción colectiva de país." />
+    <meta name="title" property="og:title" content="Colombia OT">
+    <meta property="og:type" content="website">
+    <meta name="image" property="og:image" content="https://www.colombiaot.gov.co/images/Preview.png">
+    <meta name="keywords" content="Ordenamiento territorial, Plan de ordenamiento territorial, Pot colombia, Pot, Componente rural, Componente urbano, Dimensiones del diagnóstico, Igac, Observatorio de ordenamiento territorial, Datos del pot, Planificación territorial, Federación colombiana de municipios, La ruta del pot" />
+    <meta name="author" content="Instituto Geográfico Agustín Codazzi - IGAC" />
+    <meta http-equiv="content-language" content="es" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="canonical" href="https://www.colombiaot.gov.co" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <title>Colombia OT</title>
+
+    <link type="text/css" async rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" />
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-bootstrap.min-v0.10.css">
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-arcgis-3.x.min-v0.10.css">
+
+    <link rel="stylesheet" href="/css/sigot.css">
+    <link rel="stylesheet" href="/css/maestra.css">
+    <link rel="stylesheet" href="/css/navbar-footer.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78PPLF47WW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78PPLF47WW');
+    </script>
+</head>
+<body class="calcite calcite-nav-top">
+    <div class="barra_gov">
+        <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
+            <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
+        </a>
+    </div>
+
+    <nav>
+        <div class="navbarigac">
+            <div class="logos">
+                <a href="https://www.igac.gov.co" class="navbar-brand-igac" target="_blank">
+                    <img alt="Logo IGAC" src="/images/nav/logo.png">
+                </a>
+                <img src="/images/nav/colombiaOT.svg" alt="Colombia OT">
+            </div>
+            <ul id="link-list">
+                <li>
+                    <a href="/" rel="noopener">Inicio</a>
+                </li>
+                <li>
+                    <a href="/pot/" rel="noopener">Los POT del país</a>
+                </li>
+				<li>
+				  	<a href="/vigencias/" rel="noopener">Visor  Vigencias POTs</a>
+                </li>
+                <li id="optionCargue" style="display: none;">
+                    <a href="/cargue/" rel="noopener">Cargue</a>
+                </li>
+                <li>
+                    <a class="collapse-button-1">Otros recursos
+                        <img src="/images/nav/ico-arrow.png" alt="">
+                    </a>
+
+                    <ul id="collapse-menu-1" class="collapse-menu-1">
+                        <li>
+                            <a href="/cartillas/">Cartillas, gu&iacute;as y manuales</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Cartillas, gu&iacute;as y manuales">
+                        </li>
+                        <li>
+                            <a href="/normatividad/">Normatividad</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Normatividad">
+                        </li>
+                        <li>
+                            <a href="/datosot/">Datos para el OT</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Datos para el OT">
+                        </li>
+                        <li>
+                            <a href="/aplicaciones/">Aplicaciones y herramientas</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Aplicaciones y herramientas">
+                        </li>
+                        <li>
+                            <a href="/documentos/">Documentos t&eacute;cnicos</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Documentos t&eacute;cnicos">
+                        </li>
+                        <li>
+                            <a href="/ruta/">La Ruta del POT</a>
+                            <img src="/images/nav/ico-arrow.png" alt="La Ruta del POT">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapse-button-2">Acerca de
+                        <img src="/images/nav/ico-arrow.png" alt="Acerca de">
+                    </a>
+
+                    <ul id="collapse-menu-2" class="collapse-menu-2">
+                        <li>
+                            <a href="/acerca-de/">Qu&eacute; es el ordenamiento territorial (OT)</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Que es">
+                        </li>
+                        <li>
+                            <a href="/acerca-de/colombia-ot-del-igac.html">Colombia OT del IGAC</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Colombia OT">
+                        </li>
+                        <li>
+                            <a href="/acerca-de/actores-de-colombia-ot.html">Actores de Colombia OT</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Actores">
+                        </li>
+                        <li>
+                            <a href="/acerca-de/ot_del_pais_en_cifras.html">El OT del pa&iacute;s en cifras</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Cifras">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a id="loginBtn" onclick="gotoLogin();">
+                        <img id="userPhoto" src="/images/icono_ingreso.png" onerror="defaultUserPhoto();" alt="Iniciar sesion" />
+                        <span id="userName" style="display: none;">Iniciar sesion</span>
+                    </a>
+                </li>
+            </ul>
+            <button class='nav-bar-toggle-igac'>
+                <div class='icon-bar'></div>
+                <div class='icon-bar'></div>
+                <div class='icon-bar'></div>            </button>
+        </div>
+        <div class='navbarnavigac'>
+        </div>
+    </nav>
+
+    <div class="calcite-map acercadeseccion">
+        <div id="jumbotron-acerca-de" class="jumbotron acerca-de-body">
+            <div class="container-main">
+                <div class="row-main">
+                    <div class="side-bar">
+                        <div class="top">
+                            <div class="tittle">
+                                <h1><a href="/acerca-de/index.html">/ Qué es el ordenamiento<br>territorial (OT)</a><a class="active1" href="colombia-ot-del-igac.html"> / Colombia OT del IGAC </a>
+                                    <a href="actores-de-colombia-ot.html">/ Actores de <br> Colombia OT </a><a href="ot_del_pais_en_cifras.html">/ El OT del <br>país en cifras /</a>
+                                </h1>
+                            </div>
+                            <div class="ilustracion">
+                                <img src="/images/acercade/ilustracionside.svg" alt="ilustracion igac">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-content">
+                        <div class="sumary">
+                            <div class="capital-letter">
+                                <img src="/images/acercade/letraa-2.svg" alt="letra a">
+                            </div>
+                            <div class="introduction">
+                                <h2>Colombia OT.</h2>
+                                <p>Colombia OT del IGAC es la plataforma digital, casa del Ordenamiento Territorial del pa&iacute;s. Queremos que sea el veh&iacute;culo y el instrumento tecnol&oacute;gico por medio del cual los colombianos se involucren con su territorio, lo entiendan y lo sientan un poco m&aacute;s cerca. &Eacute;ste ser&aacute; una central de recursos y herramientas que sirve como repositorio y fuente de consulta del material pertinente para construir pa&iacute;s. Es a su vez fuente y llegada. Fuente de materia prima en materia de OT &uacute;til para la planeaci&oacute;n y a la misma vez, receptor de todo el material territorial que se produzca en materia de ordenamiento desde la regiones en su ejercicio de planeaci&oacute;n. En esta casa del OT, todos est&aacute;n bienvenidos.</p>
+                            </div>
+                            <div class="capital-letter">
+                                <img src="/images/acercade/letrab-2.svg" alt="letra a">
+                            </div>
+                            <div class="introduction int2">
+                                <h2>El IGAC y el ordenamiento <br>territorial.</h2>
+                                <p>El OT es transversal a nuestras actividades. Es un eje muy importante que articula, muchas partes del trabajo de todas las &aacute;reas t&eacute;cnicas del IGAC. Trabajamos por generar recursos e insumos b&aacute;sicos clave para disponer a todos los actores involucrados con el desarrollo territorial del pa&iacute;s en sus diferentes &aacute;ngulos labores.</p>
+                                <ul>
+                                    <li>
+                                        <a class="js-anchor-link" href="#proposito">Prop&oacute;sitos.</a>
+                                    </li>
+                                    <li>
+                                        <a class="js-anchor-link" href="#contribucion">Cinco tipos de contribuci&oacute;n.</a>
+                                    </li>
+                                    <li>
+                                        <a class="js-anchor-link" href="#sinergias">&Aacute;reas de contribuci&oacute;n, nuestras sinergias internas.</a>
+                                    </li>
+                                    <li>
+                                        <a class="js-anchor-link" href="#para-quien">Para qui&eacute;n es Colombia OT.</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="objetives">
+                                <div id="proposito" class="title">
+                                    <div class="number">
+                                        <img src="/images/acercade/icon-one-2.svg" alt="numero 1">
+                                    </div>
+                                    <h3>Prop&oacute;sitos.</h3>
+                                </div>
+                                <div class="content">
+                                    <div class="title columns-content">
+                                        <div class="sumary-content">
+                                            <p>Colombia OT nace para responder uno de los prop&oacute;sitos misionales m&aacute;s profundos de nuestra entidad: Ser el aliado t&eacute;cnico en materia geogr&aacute;fica; En este caso espec&iacute;fico, de los procesos de OT del pa&iacute;s. Nace de la identificaci&oacute;n de las necesidades de actualizaci&oacute;n de los datos; de la intensificaci&oacute;n del uso y explotaci&oacute;n de la informaci&oacute;n OT para realizar los procesos de planeaci&oacute;n locales y regionales; y, de la necesidad de mejorar la experiencia de los usuarios en la interacci&oacute;n con los recursos OT que debemos disponer.</p>
+                                        </div>
+                                    </div>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <div class="image">
+                                                <img src="/images/acercade/column-image1.svg" alt="">
+                                            </div>
+                                            <div class="label-title">
+                                                <b>
+                                                    Centralizar
+                                                </b>
+                                            </div>
+                                            <div class="resume">
+                                                <i>Ser el punto central de recursos para el ordenamiento territorial del pa&iacute;s. Muchas entidades, p&uacute;blicas y privadas, constantemente generan recursos y datos pertinentes para los procesos de planeaci&oacute;n. Queremos ser el punto de interacci&oacute;n de los colombianos con el material &uacute;til OT.</i>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="image">
+                                                <img src="/images/acercade/column-image2.svg" alt="">
+                                            </div>
+                                            <div class="label-title">
+                                                <b>
+                                                    Disponer
+                                                </b>
+                                            </div>
+                                            <div class="resume">
+                                                <i>Inherente al ejercicio de centralizaci&oacute;n de recursos OT, se vuelve imperativo dise&ntilde;ar un veh&iacute;culo amigable, f&aacute;cil y completo para disponer claramente todos los tipos de contenido que tenemos la obligaci&oacute;n de disponer.</i>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="image">
+                                                <img src="/images/acercade/column-image3.svg" alt="">
+                                            </div>
+                                            <div class="label-title">
+                                                <b>
+                                                    Amplificar
+                                                </b>
+                                            </div>
+                                            <div class="resume">
+                                                <i>Debemos ser capaces no s&oacute;lo de cumplir con una disposici&oacute;n, tenemos un compromiso con la apertura de la informaci&oacute;n que facilite los procesos locales y regionales de planeaci&oacute;n. Queremos amplificar y multiplicar el uso de la informaci&oacute;n OT y llevarla a esferas estrat&eacute;gicas de toma de decisiones.</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="contribucion" class="title">
+                                    <div class="number">
+                                        <img src="/images/acercade/icon-two-2.svg" alt="numero 1">
+                                    </div>
+                                    <h3>Cinco tipos de contribuci&oacute;n.</h3>
+                                </div>
+                                <div class="content">
+                                    <div class="title columns-content type-b">
+                                        <div class="sumary-content">
+                                            <p>Desde lo t&eacute;cnico queremos ser l&iacute;deres en nuestro apoyo al OT del pa&iacute;s. Con nuestra participaci&oacute;n y promoci&oacute;n de proyectos que cumplan con los tres prop&oacute;sitos anteriores, queremos garantizar la herramientas y recursos necesarios para procesos OT m&aacute;s abiertos, interconectados, completos y actualizados.</p>
+                                            <div class="ilustration">
+                                                <img src="/images/acercade/ilustracion-ot-igac.svg" alt="numero 1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="sinergias" class="title">
+                                    <div class="number">
+                                        <img src="/images/acercade/icon-three-2.svg" alt="numero 1">
+                                    </div>
+                                    <h3>&Aacute;reas de contribuci&oacute;n, nuestras sinergias internas.</h3>
+                                </div>
+                                <div class="content">
+                                    <div class="title columns-content type-c">
+                                        <div class="sumary-content">
+                                            <p>8 &aacute;reas desde las diversas direcciones del IGAC, que en el d&iacute;a a d&iacute;a genera insumos valiosos para procesos de desarrollo, consulta e investigaci&oacute;n del ordenamiento territorial. Lo invitamos a explorar por &aacute;reas t&eacute;cnicas, c&oacute;mo en el IGAC aportamos al OT de Colombia:</p>
+                                        </div>
+                                    </div>
+                                    <div class="inner-cards">
+                                        <div class="cards">
+                                            <div class="cards-content">
+                                                <div class="top-bar typea"></div>
+                                                <div class="title"><strong>Red Geod&eacute;sica</strong></div>
+                                                <div class="sumary">
+                                                    <p>Disponemos y gestionamos las estaciones de operaci&oacute;n continua y v&eacute;rtices geod&eacute;sicos con los cuales capturamos informaci&oacute;n de alta precisi&oacute;n para entender el cambio en la altitud y posici&oacute;n del terreno.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards">
+                                            <div class="cards-content">
+                                                <div class="top-bar typeb"></div>
+                                                <div class="title"><strong>L&iacute;mites</strong></div>
+                                                <div class="sumary">
+                                                    <p>A trav&eacute;s de Colombia en Mapas, los entes territoriales pueden acceder a capas de l&iacute;neas y &aacute;reas lim&iacute;trofes sobre un mapa. As&iacute; mismo, a trav&eacute;s del IGAC pueden realizar diagn&oacute;sticos de l&iacute;mites por municipios cuando est&eacute;n en sus procesos de ordenamiento territorial.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards">
+                                            <div class="cards-content">
+                                                <div class="top-bar typec"></div>
+                                                <div class="title"><strong>Cartograf&iacute;a</strong></div>
+                                                <div class="sumary">
+                                                    <p>Creamos los est&aacute;ndares t&eacute;cnicos, lineamientos b&aacute;sicos y modelos de datos para la cartograf&iacute;a OT en sus diferentes fases: Diagn&oacute;stico, Formulaci&oacute;n y Seguimiento.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards">
+                                            <div class="cards-content">
+                                                <div class="top-bar typed"></div>
+                                                <div class="title"><strong>Estudios geogr&aacute;ficos</strong></div>
+                                                <div class="sumary">
+                                                    <p>Apoyados en nuestros estudios del territorio departamentales, municipales y tem&aacute;ticos, hacemos aportes en las mesas t&eacute;cnicas desde un enfoque geogr&aacute;fico para generar y proyectar los modelos de ocupaci&oacute;n actuales y futuros.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards">
+                                            <div class="cards-content">
+                                                <div class="top-bar typeh"></div>
+                                                <div class="title"><strong>Cartograf&iacute;a b&aacute;sica</strong></div>
+                                                <div class="sumary">
+                                                    <p>Con la cartograf&iacute;a b&aacute;sica del IGAC disponible en Colombia en Mapas a diferentes escalas y niveles territoriales, se puede construir an&aacute;lisis de ordenamiento territorial sobre un mapa base digital. &Eacute;sta contiene informaci&oacute;n semi-detallada sobre curvas de nivel, hidrograf&iacute;a, v&iacute;as, construcciones, puntos de control y vegetaci&oacute;n</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards">
+                                            <div class="cards-content">
+                                                <div class="top-bar typee"></div>
+                                                <div class="title"><strong>Fotograf&#237;as e im&#225;genes</strong></div>
+                                                <div class="sumary">
+                                                    <p>Fotograf&iacute;as a&eacute;reas, im&aacute;genes satelitales, y ortofotos, apoyan el desarrollo de estudios tem&aacute;ticos sobre el territorio nacional para generaci&oacute;n de cartograf&iacute;a urbana y rural. Tambi&eacute;n, im&aacute;genes multiespectrales que permiten la interpretaci&oacute;n a escalas de referencia 1:25 000 para procesos de ordenamiento territorial a nivel rural.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards">
+                                            <div class="cards-content">
+                                                <div class="top-bar typef"></div>
+                                                <div class="title"><strong>Agrolog&iacute;a</strong></div>
+                                                <div class="sumary">
+                                                    <p>Los estudios generales de suelos y zonificaci&amp;oacute;n de tierras escala1:25 000 y 1:100000, se orientan a apoyar los procesos de planificaci&amp;oacute;n y ordenamiento territorial y proporcionan informaci&amp;oacute;n del recurso suelo para el aprovechamiento sostenible de las tierras.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards">
+                                            <div class="cards-content">
+                                                <div class="top-bar typeg"></div>
+                                                <div class="title"><strong>Catastro</strong></div>
+                                                <div class="sumary">
+                                                    <p>Generamos informaci&oacute;n catastral rural y urbana que es determinante para los procesos de ordenamiento c&oacute;mo: construcciones, nomenclatura domiciliaria, nomenclatura vial, sectores, terrenos y veredas.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="title">
+                                        <div class="sumary-content">
+                                            <div class="recursos-relacionados typeb">
+                                                <b>RECURSOS RELACIONADOS</b>
+                                            </div>
+                                            <div class="section-cards">
+                                                <div class="card-component">
+                                                    <div class="card type-2">
+                                                        <a href="https://www.colombiaenmapas.gov.co/?e=-79.49351184570452,-1.5600365580026907,-66.397808720708,11.479857308676323,4686&b=igac&u=0&t=23&servicio=205">
+                                                            <div class="head">
+                                                                <div class="card-content">
+                                                                    <h2>Datos para el OT<span>›</span></h2>
+                                                                    <img src="/images/acercade/icon-card-n.svg" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="sumary-card">
+                                                            <div class="sub-title">
+                                                                <h5>Cartograf&iacute;a base de Colombia. Escala 1:100.000</h5>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="resume">
+                                                                <p>Cartograf&iacute;a vectorial a escala 1:100.000 con cobertura total de la Rep&uacute;blica de Colombia. Contiene informaci&oacute;n sobre entidades territoriales, transporte terrestre y fluvial, hidrograf&iacute;a, relieve, orograf&iacute;a, construcciones.</p>
+                                                            </div>
+                                                            <div class="detail">
+                                                                <strong>Detalle</strong>
+                                                                <ul>
+                                                                    <li>Fecha: 2017</li>
+                                                                    <li>Categoría temática: <a href="">Cartografía básica </a></li>
+                                                                    <!-- <li>Nivel de dato: <a href="">Departamental</a></li>
+                                                                    <li>Creador: <a href="">Secretaría Distrital</a></li>
+                                                                    <li>Licencia: <a href="">CC By</a></li> -->
+                                                                </ul>
+                                                            </div>
+                                                            <!-- <a class="ver-masbtn" href="">Ver más</a> -->
+                                                        </div>
+                                                        <div class="tags-section">
+                                                            <div class="tag cartografia">
+                                                                Cartografía
+                                                            </div>
+                                                            <div class="tag territorio">
+                                                                Territorio
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-component">
+                                                    <div class="card type-2">
+                                                        <a href="https://www.colombiaenmapas.gov.co/?e=-79.49351184570452,-1.5600365580026907,-66.397808720708,11.479857308676323,4686&b=igac&u=0&t=23&servicio=206">
+                                                            <div class="head">
+                                                                <div class="card-content">
+                                                                    <h2>Datos para el OT<span>›</span></h2>
+                                                                    <img src="/images/acercade/icon-card-n.svg" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="sumary-card">
+                                                            <div class="sub-title">
+                                                                <h5>Cartograf&iacute;a base de Colombia. Escala 1:25.000</h5>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="resume">
+                                                                <p>Producto cartogr&aacute;fico b&aacute;sico que contiene elementos altim&eacute;tricos y planim&eacute;tricos de cartograf&iacute;a existente que se editan con la interpretaci&oacute;n de una imagen ortorectificada proveniente de plataformas satelitales o aerotransportadas.</p>
+                                                            </div>
+                                                            <div class="detail">
+                                                                <strong>Detalle</strong>
+                                                                <ul>
+                                                                    <li>Fecha: 2018</li>
+                                                                    <li>Categoría temática: <a href="">Cartografía básica</a></li>
+                                                                    <!-- <li>Nivel de dato: <a href="">Departamental</a></li>
+                                                                    <li>Creador: <a href="">Secretaría Distrital</a></li>
+                                                                    <li>Licencia: <a href="">CC By</a></li> -->
+                                                                </ul>
+                                                            </div>
+                                                            <!-- <a class="ver-masbtn" href="">Ver más</a> -->
+                                                        </div>
+                                                        <div class="tags-section">
+                                                            <div class="tag cartografia">
+                                                                Cartografía
+                                                            </div>
+                                                            <div class="tag territorio">
+                                                                Territorio
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="para-quien" class="title page-2">
+                                    <div class="number">
+                                        <img src="/images/acercade/icon-fourth-2.svg" alt="numero 1">
+                                    </div>
+                                    <h3>Para qui&#233;n es Colombia OT.</h3>
+                                </div>
+                                <div class="content">
+                                    <div class="collapse-block">
+                                        <div class="topics">
+                                            <div class="icon">
+                                                <img src="/images/acercade/check.svg" alt="numero 1">
+                                            </div>
+                                            <div class="topic">
+                                                <div class="title-container">
+                                                    <div class="title">
+                                                        Para las entidades territoriales:
+                                                    </div>
+                                                    <div class="collapse-icon">
+                                                        <a class="btn collapse-button-1" data-toggle="collapse" href="#collapse-1" role="button" aria-expanded="true" aria-controls="collapse-1">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div id="collapse-1" class="sumary collapse in">
+                                                    En su obligaci&oacute;n de realizar los procesos de planeaci&oacute;n del territorio, las entidades territoriales encuentran en Colombia OT, todos los recursos que les ser&aacute;n &uacute;tiles para acatar la norma y cumplir con todos los lineamientos t&eacute;cnicos y administrativas de manera adecuada. As&iacute; mismo, encontrar&aacute;n otros recursos pertinentes en procesos geogr&aacute;ficos paralelos como lo son los catastrales, l&iacute;mites territoriales, caracterizaciones territoriales, entre otros.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="topics">
+                                            <div class="icon">
+                                                <img src="/images/acercade/check.svg" alt="numero 1">
+                                            </div>
+                                            <div class="topic">
+                                                <div class="title-container">
+                                                    <div class="title">
+                                                        Para las entidades p&#250;blicas:
+                                                    </div>
+                                                    <div class="collapse-icon">
+                                                        <a class="btn collapse-button-1" data-toggle="collapse" href="#collapse-2" role="button" aria-expanded="false" aria-controls="collapse-2">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div id="collapse-2" class="sumary collapse in">
+                                                    Para algunas entidades p&uacute;blicas, somos fuente de recursos tem&aacute;ticos &uacute;tiles para procesos de planeaci&oacute;n territorial paralelos, como lo son el catastro multiprop&oacute;sito, L&iacute;mites territoriales, o cartograf&iacute;a tem&aacute;tica. Para otras, somos el par t&eacute;cnico que complementa los procesos de planeaci&oacute;n y desarrollo. Para otras, a la misma vez, somos el veh&iacute;culo digital que permite disponer informaci&oacute;n &uacute;til de materia OT. Y para todas en general somos la autoridad t&eacute;cnica normativa que rige estos temas. Si eres de una entidad p&uacute;blica, cu&eacute;ntanos de tu experiencia en nuestro formulario de opini&oacute;n.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="topics">
+                                            <div class="icon">
+                                                <img src="/images/acercade/check.svg" alt="numero 1">
+                                            </div>
+                                            <div class="topic">
+                                                <div class="title-container">
+                                                    <div class="title">
+                                                        Para el sector privado:
+                                                    </div>
+                                                    <div class="collapse-icon">
+                                                        <a class="btn collapse-button-1" data-toggle="collapse" href="#collapse-3" role="button" aria-expanded="false" aria-controls="collapse-3">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div id="collapse-3" class="sumary collapse in">
+                                                    Toda la informaci&oacute;n necesaria para garantizar la constante actualizaci&oacute;n y tener las herramientas para participar activamente en procesos de desarrollo y planeaci&oacute;n del territorio de inter&eacute;s estrat&eacute;gico. El sector privado siempre gozar&aacute; de la agilidad de implementaci&oacute;n y capacidad de ejecuci&oacute;n. Son un motor esencial de la econom&iacute;a y creemos que en Colombia OT encontrar&aacute;n informaci&oacute;n valiosa que resultar&aacute; en una posici&oacute;n estrat&eacute;gica en los negocios que se emprendan.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="topics">
+                                            <div class="icon">
+                                                <img src="/images/acercade/check.svg" alt="numero 1">
+                                            </div>
+                                            <div class="topic">
+                                                <div class="title-container">
+                                                    <div class="title">
+                                                        Para el ciudadano.
+                                                    </div>
+                                                    <div class="collapse-icon">
+                                                        <a class="btn collapse-button-1" data-toggle="collapse" href="#collapse-4" role="button" aria-expanded="false" aria-controls="collapse-4">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div id="collapse-4" class="sumary collapse in">
+                                                    Informaci&oacute;n &uacute;til que le permitir&aacute; a todos los colombianos acercarse m&aacute;s a la realidad del territorio del pa&iacute;s. Es una ventana para profundizar en las particularidades y las vocaciones territoriales.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="topics">
+                                            <div class="icon">
+                                                <img src="/images/acercade/check.svg" alt="numero 1">
+                                            </div>
+                                            <div class="topic">
+                                                <div class="title-container">
+                                                    <div class="title">
+                                                        Para la academia.
+                                                    </div>
+                                                    <div class="collapse-icon">
+                                                        <a class="btn collapse-button-1" data-toggle="collapse" href="#collapse-5" role="button" aria-expanded="false" aria-controls="collapse-5">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div id="collapse-5" class="sumary collapse in">
+                                                    Colombia OT es el insumo base de investigaci&oacute;n en materia OT. Datos e informaci&oacute;n bruta lista y habilitada para f&aacute;cilmente poderse procesar y ser transformada en conocimiento. Creemos en el potencial no s&oacute;lo de la informaci&oacute;n abierta y dispuesta, si no, en la capacidad que tiene nuestra plataforma de ser usada, explorada y explotada como un repositorio valioso y de calidad.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="banner">
+                                        <div class="background-back">
+                                            <div class="background-front">
+                                                <div class="content-banner">
+                                                    <div class="image">
+                                                        <img src="/images/acercade/ilustration-banner.svg" alt="">
+                                                    </div>
+                                                    <div class="content-text">
+                                                        <p>Conoce todos los recursos que <br>Colombia OT ofrece</p>
+                                                        <a href="/recursos/">Buscar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalLogin" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="border: none; padding-bottom: 0px;">
+                    <a href="#" class="close" onclick="closeLogin(); return false;" aria-label="Cerrar"><span aria-hidden="true">&times;</span></a>
+                    <h4 class="modal-title">Iniciar sesi&oacute;n</h4>
+                </div>
+                <div class="modal-body" style="padding-top: 0px;">
+                    <div id="loginContainer">
+                        <div id="authContainer">
+                        </div>
+                    </div>
+                    <div id="logoutContainer" style="text-align: center;padding: 10px;">
+                        <img id="userPhoto2" src="/images/icono_ingreso.png" style="width: 64px; height: 64px;border-radius: 50%;" alt="Imagen Usuario" />
+                        <h5><span id="userName2"></span></h5>
+                        <button id="logoutBtn" type="button" onclick="signOut();" class="btn btn-default btn-danger">
+                            Cerrar sesi&oacute;n
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="containerf">
+            <div class="footer-container">
+                <div class="rowf">
+                    <div class="col-md-6f">
+                        <h2 class="footer-titulo">Instituto Geográfico Agustín Codazzi - IGAC</h2>
+                    </div>
+                    <div class="logos-footer col-md-6f">&nbsp;</div>
+                </div>
+                <div class="rowf">
+                    <div class="col-md-6f">
+                        <h2 class="sub-titulo-sede-gov-co">Información sede principal</h2>
+
+                        <h3>Dirección:</h3>
+                        <p>Bogotá D.C. - Carrera 30 # 48-51</p>
+
+                        <h3>Horarios de atención al ciudadano:</h3>
+                        <p>Abierto al público de lunes a viernes de 9:00 a.m. a 4:00 p.m. jornada continua Sede Central y territorial Cundinamarca (Horario de atención temporal acatando las medidas y demás regulaciones de bioseguridad)</p>
+                        <h3>Teléfono Conmutador:</h3>
+                        <p>
+                            <a href="tel:6016531888">+57 601 653 18 88</a>
+                        </p>
+                        <h3>Correo de contacto:</h3>
+                        <p>
+                            <a href="mailto:contactenos@igac.gov.co">contactenos@igac.gov.co</a>
+                        </p>
+
+                        <h3>Correo de notificaciones judiciales:</h3>
+                        <p>
+                            <a href="mailto:judiciales@igac.gov.co">judiciales@igac.gov.co</a>
+                        </p>
+                        <p>NIT: 8999990049</p>
+
+                        <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
+                    </div>
+                    <div class="col-md-6f">
+                        <h3>Contáctenos en nuestras redes sociales</h3>
+
+                        <div class="redes-sociales">
+                            <p>
+                                <a href="https://www.facebook.com/IgacColombia" tabindex="-1" target="_blank">
+                                    <img alt="Visitar Facebook IGAC" class="icono-redes" src="/images/footer/facebook.svg">
+                                    Facebook IGAC
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="https://twitter.com/igacColombia" tabindex="-1" target="_blank">
+                                    <img alt="Visitar Twitter IGAC" class="icono-redes" src="/images/footer/twitter.svg">
+                                    Twitter IGAC
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="https://www.instagram.com/accounts/login/?next=/igacColombia/" tabindex="-1" target="_blank"><img alt="Visitar Instagram IGAC" class="icono-redes" src="/images/footer/instagram.svg">
+                                    Instagram IGAC
+                                </a>
+                            </p>
+                        </div>
+                        <div class="footer-enlaces"><a class="btn-low">Políticas</a>
+                            <a class="btn-low">Mapa del sitio</a>
+                            <a class="btn-low">Términos y condiciones</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gov-co-footer-pie">
+            <div class="gov-co-footer-auto containerf">
+                <img alt="Logo marca de Colombia" class="gov-co-logo-pie-blanco" src="/images/footer/marca_colombia.png">
+
+                <img alt="Logo de Gov Co" class="gov-co-logo-pie-mesa" src="/images/footer/header_govco.png">
+
+                <a class="text-white text-align-right" href="https://www.gov.co" target="_blank">
+                    Conoce GOV.CO aquí
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth__es.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.es.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.js-anchor-link').click(function(e){
+            e.preventDefault();
+            var target = $($(this).attr('href'));
+            if(target.length){
+                var scrollTo = target.offset().top -80;
+                $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+            }
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="/js/maestra.js"></script>
+    <script type="text/javascript" src="/js/navbar.js"></script>
+
+</body>
+</html>

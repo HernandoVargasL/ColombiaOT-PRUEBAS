@@ -1,0 +1,222 @@
+@font-face {
+    font-family: 'Tajawal-Regular';
+    src: url(/fonts/Tajawal-Regular.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tajawal-Medium';
+    src: url(/fonts/Tajawal-Regular.ttf);
+    font-weight: medium;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tajawal-Bold';
+    src: url(/fonts/Tajawal-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+/*nav bar*/
+.navbar {
+    background-color: #3C3C3B;
+    height: 60px;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.container-logos {
+    align-items: center;
+    display: flex;
+    height: 100%;    
+}
+.container-logos .logo-pagina.cem {
+    padding: 13px 15px;
+    height: 70%;
+    display: flex;
+}
+.container-logos .logo-pagina.cem img {
+    min-height: 100%;
+}
+.navbar-brand {
+    padding: 12.8px 15px 12.8px 20px;
+    display: flex;
+    height: 100%;
+    background: #2d2d2c;
+    margin-right: 0;
+}
+.navbar-brand img {
+    height: 100%;
+}
+.navbar-toggler {
+    height: 100%;
+    margin-right: 15px;
+    padding: 0;
+}
+.navbar-toggler span {
+    background: #fff;
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    margin-top: 4px;
+}
+.navbar-toggler span:first-child {
+    margin-top: 0;
+}
+.navbar-expand-lg .navbar-nav .nav-link.active {
+    color: #666;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: #666;
+    font-size: 13px;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.navbar-expand-lg .navbar-nav li.opinion-btn:hover {
+    margin-bottom: 0;
+    padding: 0;
+}
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+    display: flex;    
+    border-bottom: 2px solid #F4A833;
+    padding-top: 2px;
+}
+.navbar-expand-lg .navbar-nav .opinion-btn {
+    display: flex;
+    align-items: center;    
+}
+.navbar-expand-lg .navbar-nav .opinion-btn .nav-link {
+    background: #6445E1;
+    border-radius: 5px;
+    padding: 8px 20px 5px;
+    display: block;
+    height: auto;
+    margin-left: 10px;
+    font-size: 12px;
+    line-height: 1;
+}
+.navbar-expand-lg .navbar-nav .opinion-btn .nav-link:hover {
+    border-bottom: none;
+}
+.navbar-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.navbar-nav li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.navbar-nav li a {
+    text-decoration: none;
+}
+.navbar-expand-lg .navbar-nav #loginBtn {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px 6px 15px;
+    cursor: pointer;
+    z-index: 100;
+}
+.navbar-expand-lg .navbar-nav #loginBtn #userPhoto {
+    width: 35px;
+    height: 35px;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+    width: 100%;
+}
+.navbar-collapse.collapse {
+    display: flex !important;
+    width: 100%;
+    padding: 0;
+}
+.navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before {
+    display: flex;
+    content: inherit;
+}
+
+
+/*header mediaqueris*/
+@media (max-width: 1024px) {
+    .container-logos .logo-origen {
+        padding: 13px 15px;
+    }
+}
+@media (max-width: 992px) {    
+    .navbar {
+        flex-wrap: wrap;
+    }
+    .navbar-nav {
+        margin: 0;
+        padding: 7.5px 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        float: inherit;
+        justify-content: center;
+    }
+    .navbar-toggler {
+        background: transparent;
+        border: 0;
+    }
+    .navbar-nav li {
+        margin-left: -15px;
+        margin-right: -15px;
+        float: inherit;
+        width: 100%;
+        height: auto;
+    }    
+    .navbar-expand-lg .navbar-nav .nav-link {
+        width: 100%;
+        padding: 10px 15px;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link:hover {
+        border-bottom: none;
+    }
+    .navbar-expand-lg .navbar-nav .opinion-btn {
+        padding: 0 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .navbar-expand-lg .navbar-nav .opinion-btn .nav-link {
+        margin-left: 0;
+        text-align: center;
+    }
+    .collapse.in {
+        display: block;
+    }
+    .navbar-collapse {
+        height: auto;
+        background: #3C3C3B;
+        border-top: 1px solid rgb(209, 209, 209); 
+        padding: 0;
+    }
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+}
+@media (min-width: 993px) {
+    .navbar-toggler {
+        display: none;
+    }    
+}
+@media (max-width: 768px) {
+    .navbar-brand {
+        display: none;
+    }
+}

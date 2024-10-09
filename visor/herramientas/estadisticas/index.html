@@ -1,0 +1,84 @@
+<div id="headingEstadisticas" class="panel-heading-f" role="tab">
+  <div class="panel-title">
+      <span class="panel-mover panel-toggle icon-panel"
+          style=" background-image: url('/images/iconos/Configuraciones.png');"></span>
+      <span class="panel-toggle collapsed panel-mover">
+          <span class="panel-label" id="panelEstadisticasTitle">Estadísticas</span>
+      </span>
+      <span role="button" class="esri-icon esri-icon-minus panel-close" data-bs-toggle="collapse"
+          href="#collapseEstadisticas" aria-expanded="false" aria-controls="collapseEstadisticas"></span>
+      <span class="panel-close" onclick="closeEstadisticas();"><span class="esri-icon esri-icon-close"
+              aria-hidden="false"></span></span>
+  </div>
+</div>
+
+<div id="collapseEstadisticas" class="collapse show">
+  <div class="panel-body" style="width: 360px;">
+
+    <div id="divCapa" class="form-floating mb-3">
+      <select id="capaResumenSelect" class="form-select" onchange="capaResumenSelected()" required>
+          <option selected disabled>Seleccione la capa para resumir los datos</option>
+      </select>
+      <label for="capaSelect">Capa de la que desea resumir los datos</label>
+  </div>
+
+<label class="form-label">Seleccione el tipo de gráfico estadístico que desea: </label>
+<div style="padding-left: 20px;" onchange="enableCreateChart()">
+  
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="optionsGrafico" id="graficoCircular" value="pie">
+    <label class="form-check-label" for="graficoCircular">Circular</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="optionsGrafico" id="graficoPolar" value="polarArea">
+    <label class="form-check-label" for="graficoCircular">Polar</label>
+  </div><div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="optionsGrafico" id="graficoAnillo" value="doughnut">
+    <label class="form-check-label" for="graficoBarras">Anillo</label>
+  </div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="optionsGrafico" id="graficoBarras" value="bar">
+    <label class="form-check-label" for="graficoBarras">Barras</label>
+  </div>
+</div>
+
+
+<div class="form-floating mb-3">
+  <select id="atributoCuantificar" class="form-select" onchange="enableCreateChart()">
+    <option value="" disabled selected>Selecciona el atributo que cuantificará los datos</option>
+  </select>
+  <label for="atributoCuantificar">Atributo por el que se cuantificarán los datos:</label>
+</div>
+
+<div class="form-floating mb-3">
+  <select id="atributoResumen" class="form-select" onchange="enableCreateChart()">
+    <option value="" disabled selected>Selecciona el atributo que resumira los datos</option>
+  </select>
+  <label for="atributoResumen">Atributo por el que se resumiran los datos:</label>
+</div>
+
+<div style="text-align-last: center;">
+  <button id="btnChart" type="button" class="btn btn-primary mr-5" onclick="calcularEstadisticas()"
+  disabled>
+  <div id="onCalcular">
+      Calcular Estadísticas
+  </div>
+  <div id="loadingCalcular" style="display: none;">
+      <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+      <span role="status">Calculando...</span>
+  </div>
+</button>
+</div>
+<br>
+<div id="divChart"></div>
+<br>
+<div id="divTable">
+  <table class="table table-sm table-condensed" >
+    <tbody id="tablaEstadisticas">
+    </tbody>
+  </table>
+</div>
+  </div>
+</div>
+    
+

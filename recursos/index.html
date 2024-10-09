@@ -1,0 +1,487 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="Ordenamiento territorial de Colombia | Colombia OT: Una plataforma del IGAC para la construcción colectiva de país." />
+    <meta name="title" property="og:title" content="Colombia OT - Recursos">
+    <meta property="og:type" content="website">
+    <meta name="image" property="og:image" content="https://www.colombiaot.gov.co/images/Preview.png">
+    <meta name="keywords" content="Ordenamiento territorial, Plan de ordenamiento territorial, Pot colombia, Pot, Componente rural, Componente urbano, Dimensiones del diagnóstico, Igac, Observatorio de ordenamiento territorial, Datos del pot, Planificación territorial, Federación colombiana de municipios, La ruta del pot" />
+    <meta name="author" content="Instituto Geográfico Agustín Codazzi - IGAC" />
+    <meta http-equiv="content-language" content="es" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="canonical" href="https://www.colombiaot.gov.co/docuvisor" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <title>Colombia OT - Recursos</title>
+
+    <link type="text/css" async rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" />
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-bootstrap.min-v0.10.css">
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-arcgis-3.x.min-v0.10.css">
+
+    <link rel="stylesheet" href="/css/recursos.css">
+    <link rel="stylesheet" href="/css/maestra.css">
+    <link rel="stylesheet" href="/css/navbar-footer.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78PPLF47WW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78PPLF47WW');
+    </script>
+</head>
+<body class="calcite calcite-nav-top">
+    <div class="barra_gov">
+        <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
+            <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
+        </a>
+    </div>
+    
+    <nav class="navbar calcite-navbar navbar-fixed-top calcite-text-light calcite-bg-dark calcite-bgcolor-igac">
+        <div class="calcite-title calcite-overflow-hidden" style="z-index: 100;">
+            <div class="calcite-title-main">
+                <a href="https://www.igac.gov.co" target="_blank">
+                    <img alt="Logo IGAC" src="/images/iconos/Logo.svg" style="height: 35px; padding-left: 20px;" />
+                </a>
+            </div>
+            <div class="logo-colombia-ot">
+                <a href="#">
+                    <img class="descktop" src="/images/colombiaOT.svg" alt="Logo colombia ot">
+                </a>
+            </div>
+        </div>
+        <ul class="calcite-nav nav navbar-nav hidden-xs" style="padding-top: 5px;z-index: 100;">
+            <li>
+                <a href="/" class="button buttonPortal buttonPortalHover">Inicio</a>
+            </li>
+            <li>
+                <a class="dropdown-toggle button buttonPortal buttonPortalHover" href="/recursos/">Buscador</a>
+                <!-- <ul class="dropdown-menu">
+                    <li>
+                        <a href="https://sigot.igac.gov.co/es/content/normatividad-ot" class="button buttonPortal">Normatividad</a>
+                    </li>
+                    <li>
+                        <a href="https://sigot.igac.gov.co/es/articulos/nacional-ambiental-y-biof%C3%ADsico" class="button buttonPortal">Mapas tem&aacute;ticos</a>
+                    </li>
+                    <li>
+                        <a href="https://sigot.igac.gov.co/es/content/geoservicios-sig-ot" class="button buttonPortal">Geoservicios</a>
+                    </li>
+                    <li>
+                        <a href="https://sigot.igac.gov.co/es/articulos/catalogos_2018" class="button buttonPortal">Cat&aacute;logos departamentales</a>
+                    </li>
+                    <li>
+                        <a href="https://www.colombiaenmapas.gov.co/?e=-77.54343860352,-0.014003855055105268,-65.4914366503982,10.041613695154362,4686&b=igac&u=0&t=29&servicio=200" class="button buttonPortal">L&iacute;mites municipales</a>
+                    </li>
+                </ul> -->
+            </li>
+            <li>
+                <a class="dropdown-toggle button buttonPortal buttonPortalHover" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Herramientas <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/docuvisor/" class="button buttonPortal">Consulta de POT municipales</a>
+                    </li>
+                    <li>
+                        <a href="/ruta/" class="button buttonPortal">La Ruta del POT</a>
+                    </li>
+                    <li>
+                        <a href="https://www.colombiaenmapas.gov.co" class="button buttonPortal">OT en Colombia en Mapas</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-toggle button buttonPortal buttonPortalHover" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acerca de<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/acerca-de/" class="button buttonPortal">Qu&eacute; es el ordenamiento territorial (OT)</a>
+                    </li>
+                    <li>
+                        <a href="/acerca-de/colombia-ot-del-igac.html" class="button buttonPortal">Colombia OT del IGAC</a>
+                    </li>
+                    <li>
+                        <a href="/acerca-de/actores-de-colombia-ot.html" class="button buttonPortal">Actores de Colombia OT</a>
+                    </li>
+                    <li>
+                        <a href="/acerca-de/ot_del_pais_en_cifras.html" class="button buttonPortal">El OT del pa&iacute;s en cifras</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://bit.ly/3DHLLdI" target="_blank" class="button buttonPortal2 buttonPortalHover2">Cuéntenos su opinión</a>
+            </li>
+            <li>
+                <a id="loginBtn" onclick="gotoLogin();" style="padding: 6px; background: transparent; padding-top: 8px;z-index: 100;">
+                    <img id="userPhoto" src="/images/icono_ingreso.png" onerror="defaultUserPhoto();" alt="Iniciar sesion" />
+                    <span id="userName" style="display: none;">Iniciar sesion</span>
+                </a>
+            </li>
+        </ul>
+        <div class="calcite-nav nav navbar-nav">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only" style="background: red;">Toggle navigation</span>
+                <span class="icon-bar" style="background-color: white;"></span>
+                <span class="icon-bar" style="background-color: white;"></span>
+                <span class="icon-bar" style="background-color: white;"></span>
+            </button>
+
+        </div>
+    </nav>
+    <div id="navbar" class="calcite-bgcolor-igac navbar-collapse collapse hidden-md hidden-lg navbar-responsive" aria-expanded="false">
+        <ul class="calcite-nav nav navbar-nav">
+            <li>
+                <a href="/" class="button buttonPortalActive buttonPortal buttonPortalHover">Inicio</a>
+            </li>
+            <li>
+                <a class="dropdown-toggle button buttonPortal buttonPortalHover" href="/recursos/">Buscador</a>
+                <!-- <ul class="dropdown-menu">
+                    <li>
+                        <a href="https://sigot.igac.gov.co/es/content/normatividad-ot" class="button buttonPortal">Normatividad</a>
+                    </li>
+                    <li>
+                        <a href="https://sigot.igac.gov.co/es/articulos/nacional-ambiental-y-biof%C3%ADsico" class="button buttonPortal">Mapas tem&aacute;ticos</a>
+                    </li>
+                    <li>
+                        <a href="https://sigot.igac.gov.co/es/content/geoservicios-sig-ot" class="button buttonPortal">Geoservicios</a>
+                    </li>
+                    <li>
+                        <a href="https://sigot.igac.gov.co/es/articulos/catalogos_2018" class="button buttonPortal">Cat&aacute;logos departamentales</a>
+                    </li>
+                    <li>
+                        <a href="https://www.colombiaenmapas.gov.co/?e=-77.54343860352,-0.014003855055105268,-65.4914366503982,10.041613695154362,4686&b=igac&u=0&t=29&servicio=200" class="button buttonPortal">L&iacute;mites municipales</a>
+                    </li>
+                </ul> -->
+            </li>
+            <li>
+                <a class="dropdown-toggle button buttonPortal buttonPortalHover" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Herramientas <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/docuvisor/" class="button buttonPortal">Consulta de POT municipales</a>
+                    </li>
+                    <li>
+                        <a href="/ruta/" class="button buttonPortal">La Ruta del POT</a>
+                    </li>
+                    <li>
+                        <a href="https://www.colombiaenmapas.gov.co" class="button buttonPortal">OT en Colombia en Mapas</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-toggle button buttonPortal buttonPortalHover" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acerca de<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/acerca-de/" class="button buttonPortal">Qu&eacute; es el ordenamiento territorial (OT)</a>
+                    </li>
+                    <li>
+                        <a href="/acerca-de/colombia-ot-del-igac.html" class="button buttonPortal">Colombia OT del IGAC</a>
+                    </li>
+                    <li>
+                        <a href="/acerca-de/actores-de-colombia-ot.html" class="button buttonPortal">Actores de Colombia OT</a>
+                    </li>
+                    <li>
+                        <a href="/acerca-de/ot_del_pais_en_cifras.html" class="button buttonPortal">El OT del pa&iacute;s en cifras</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://bit.ly/3DHLLdI" target="_blank" class="button buttonPortal2 buttonPortalHover2">Cuéntenos su opinión</a>
+            </li>
+            <li>
+                <a id="loginBtn" onclick="gotoLogin();" style="padding: 6px; background: transparent; padding-top: 8px;z-index: 100;">
+                    <img id="userPhoto" src="images/icono_ingreso.png" onerror="defaultUserPhoto();" alt="Iniciar sesion" />
+                    <span id="userName" style="display: none;">Iniciar sesion</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="calcite-map content-every">
+
+        <div id="mainDiv" class="main-small">
+            <!-- Search Panel -->
+            <div id="panelSearch" class="panel collapse">
+                <div id="collapseSearch" class="panel-collapse">
+                    <div class="panel-body" style="background: #FAFAFA;padding: 0px;">
+                        <div id="containerFiltros">
+                            <div id="panelSearchFiltros" class="panel panel-default" data-toggle="popover">
+                                <div>
+                                    <div id="searchHeader" class="panel-heading">
+                                        <h3 class="panel-title" style="display: inline-block;">Filtra resultados</h3>
+                                        <!-- <a id="panelSearchToggle" style="float: right; color:white;" href="#" onclick="toggleFiltros();"><img src="/images/iconos/Close_01.png" alt="Minimizar" style="width: 10px; height: 2px;" /></a> -->
+                                    </div>
+                                    <div id="searchBody" class="panel-body">
+                                        <p class="unidad-container">
+                                            <label style="font-size: 14px;"><strong>Filtra por entidad territorial</strong></label>
+                                            <select class="form-control" id="searchFiltro" style="width: 100%;font-size: 14px;">
+                                            </select>
+                                        </p>
+                                        <p>
+                                            <label><strong>Entidad:</strong></label>
+                                            <select class="form-control" id="searchFiltroEntidad" style="width: 100%;font-size: 14px;">
+                                            </select>
+                                        </p>
+                                        <p>
+                                            <label><strong>Tipo de recursos:</strong></label>
+                                            <select class="form-control" id="searchFiltroTipo" style="width: 100%;font-size: 14px;">
+                                            </select>
+                                        </p>
+                                        <p>
+                                            <label><strong>Tem&aacute;ticas:</strong></label>
+                                            <select class="form-control" id="searchFiltroTematica" style="width: 100%;font-size: 14px;">
+                                            </select>
+                                        </p>
+                                        <p>
+                                            <label><strong>Nivel:</strong></label>
+                                            <select class="form-control" id="searchFiltroNivel" style="width: 100%;font-size: 14px;">
+                                                <option value="Nacional">Nacional</option>
+                                                <option value="Departamental">Departamental</option>
+                                                <option value="Municipal">Municipal</option>
+                                            </select>
+                                        </p>
+                                        <p>
+                                            <label><strong>A&ntilde;o:</strong></label>
+                                            <select class="form-control" id="searchFiltroYear" style="width: 100%;font-size: 14px;">
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="other">Anteriores</option>
+                                            </select>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mapViewDiv" class="calcite-map-absolute main-small-map">
+            <div id="alertList" style="display: none;">
+                <div>
+                    <div id="alertHeader" class="alert-header" style="background-color:white;"></div>
+                    <div style="background: white;" class="alert-media">
+                        <div id="alertContentLeft" class="media-left">
+                            <img alt="imagen" class="media-object" style="width: 20px; height: 20px;" src="" />
+                        </div>
+                        <div id="alertContent" class="media-body alert-media-body" style="width: 250px;">
+
+                        </div>
+                        <div class="media-right" style="color: gray;" onclick="$('#alertList').hide();">
+                            <span class="esri-icon esri-icon-close" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="containerDestacados" style="display: none;">
+                <div class="label-destacados">
+                    <div class="pull-right" onclick="hideDestacados();">X</div>
+                    <div class="divider"></div>
+                    <h2>Destacados</h2>
+                    <div class="divider"></div>
+                </div>
+                <div id="carouselRecursos" class="carousel slide" data-ride="carousel">
+                    <div class="indicators">
+                        <div class="divider"></div>
+                        <ol id="carouselRecursosIndicators" class="carousel-indicators">
+                        </ol>
+                        <div class="divider"></div>
+                    </div>
+
+                    <div id="carouselRecursosItems" class="carousel-inner" role="listbox">
+
+                    </div>
+
+                    <a class="left carousel-control" href="#carouselRecursos" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carouselRecursos" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <hr />
+            </div>
+            <h2>Recursos</h2>
+            <div class="filter">
+                <div id="docViewCount">
+                </div>
+                <div id="docViewDivFooter" style="overflow: hidden; max-height: 60px;">
+                    <table id="tableRecursos" class="table table-condensed table-hover" style="display: none; text-align: center;width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="docViewDiv">
+
+            </div>
+
+        </div>
+        <div class="mobile-image" id="mobile-image">
+            <div class="wraper">
+                <div class="we-sorry">
+                    <h2>Lo sentimos</h2>
+                    <p>Esta página no es apta para dispositivos móviles</p>
+                </div>
+                <img src="/images/dispositivo.svg" alt="Imagen movil">
+            </div>
+        </div>
+
+    </div>
+    
+    <footer class="footer">
+        <div class="containerf">
+            <div class="footer-container">
+                <div class="rowf">
+                    <div class="col-md-6f">
+                        <h2 class="footer-titulo">Instituto Geográfico Agustín Codazzi - IGAC</h2>
+                    </div>
+                    <div class="logos-footer col-md-6f">&nbsp;</div>
+                </div>
+                <div class="rowf">
+                    <div class="col-md-6f">
+                        <h2 class="sub-titulo-sede-gov-co">Información sede principal</h2>
+                    
+                        <h3>Dirección:</h3> 
+                        <p>Bogotá D.C. - Carrera 30 # 48-51</p>
+                    
+                        <h3>Horarios de atención al ciudadano:</h3>
+                        <p>Abierto al público de lunes a viernes de 9:00 a.m. a 4:00 p.m. jornada continua Sede Central y territorial Cundinamarca (Horario de atención temporal acatando las medidas y demás regulaciones de bioseguridad)</p>
+                        <h3>Teléfono Conmutador:</h3>
+                        <p>
+                            <a href="tel:6016531888">+57 601 653 18 88</a>
+                        </p>
+                        <h3>Correo de contacto:</h3>
+                        <p>
+                            <a href="mailto:contactenos@igac.gov.co">contactenos@igac.gov.co</a>
+                        </p>
+                    
+                        <h3>Correo de notificaciones judiciales:</h3>
+                        <p>
+                            <a href="mailto:judiciales@igac.gov.co">judiciales@igac.gov.co</a>
+                        </p>
+                        <p>NIT: 8999990049</p>
+                    
+                        <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
+                    </div>                
+                    <div class="col-md-6f">
+                        <h3>Contáctenos en nuestras redes sociales</h3>
+                    
+                        <div class="redes-sociales">
+                            <p>
+                                <a href="https://www.facebook.com/IgacColombia" tabindex="-1" target="_blank">
+                                    <img alt="Visitar Facebook IGAC" class="icono-redes" src="/images/footer/facebook.svg">
+                                    Facebook IGAC 
+                                </a>
+                            </p>
+                    
+                            <p>
+                                <a href="https://twitter.com/igacColombia" tabindex="-1" target="_blank">
+                                    <img alt="Visitar Twitter IGAC" class="icono-redes" src="/images/footer/twitter.svg">
+                                    Twitter IGAC 
+                                </a>
+                            </p>
+                    
+                            <p>
+                                <a href="https://www.instagram.com/accounts/login/?next=/igacColombia/" tabindex="-1" target="_blank"><img alt="Visitar Instagram IGAC" class="icono-redes" src="/images/footer/instagram.svg">
+                                    Instagram IGAC 
+                                </a>
+                            </p>
+                        </div>                    
+                        <div class="footer-enlaces"><a class="btn-low">Políticas</a> 
+                            <a class="btn-low">Mapa del sitio</a> 
+                            <a class="btn-low">Términos y condiciones</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gov-co-footer-pie">
+            <div class="gov-co-footer-auto containerf">
+                <img alt="Logo marca de Colombia" class="gov-co-logo-pie-blanco" src="/images/footer/marca_colombia.png">
+
+                <img alt="Logo de Gov Co" class="gov-co-logo-pie-mesa" src="/images/footer/header_govco.png">
+
+                <a class="text-white text-align-right" href="https://www.gov.co" target="_blank">
+                    Conoce GOV.CO aquí
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modalLogin" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="border: none; padding-bottom: 0px;">
+                    <a href="#" class="close" onclick="closeLogin(); return false;" aria-label="Cerrar"><span aria-hidden="true">&times;</span></a>
+                    <h4 class="modal-title">Iniciar sesi&oacute;n</h4>
+                </div>
+                <div class="modal-body" style="padding-top: 0px;">
+                    <div id="loginContainer">
+                        <div id="authContainer">
+                        </div>
+                    </div>
+                    <div id="logoutContainer" style="text-align: center;padding: 10px;">
+                        <img id="userPhoto2" src="/images/icono_ingreso.png" style="width: 64px; height: 64px;border-radius: 50%;" alt="Imagen Usuario" />
+                        <h5><span id="userName2"></span></h5>
+                        <button id="logoutBtn" type="button" onclick="signOut();" class="btn btn-default btn-danger">
+                            Cerrar sesi&oacute;n
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth__es.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.es.min.js"></script>
+
+    <script type="text/javascript" src="/js/navbar.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        $('.carousel').carousel({
+            interval: false,
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<div id="headingBusqueda" class="panel-heading-f" role="tab">
+    <div class="panel-title">
+        <span class="panel-mover panel-toggle icon-panel"
+            style=" background-image: url('/images/iconos/Herramientas\ de\ medicion.png');"></span>
+        <span class="panel-toggle collapsed panel-mover">
+            <span class="panel-label" id="panelBusquedaTitle">Búsqueda Avanzada</span>
+        </span>
+        <span role="button" class="esri-icon esri-icon-minus panel-close" data-bs-toggle="collapse"
+            href="#collapseBusqueda" aria-expanded="false" aria-controls="collapseBusqueda"></span>
+        <span class="panel-close" onclick="closeBusqueda();"><span class="esri-icon esri-icon-close"
+                aria-hidden="false"></span></span>
+    </div>
+</div>
+
+<div id="collapseBusqueda" class="collapse show">
+    <div class="panel-body" id="divBusqueda">
+<ul class="nav nav-tabs" id="tabsBusqueda" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="atributos-tab" data-bs-toggle="tab" data-bs-target="#atributos" type="button" role="tab" aria-controls="atibutos" aria-selected="true">Por Atributos</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="geometria-tab" data-bs-toggle="tab" data-bs-target="#geometria" type="button" role="tab" aria-controls="geometria" aria-selected="true">Por Geometría</button>
+    </li>
+  </ul>
+  
+ 
+  <div class="tab-content">
+    <div class="tab-pane active" id="atributos" role="tabpanel" aria-labelledby="atributos-tab" tabindex="0">
+         <br>
+        <div class="form-floating mb-3">
+             <select id="capaBusquedaAtributos" class="form-select" onchange="enableBusqueda()" required>
+                    <option selected disabled>Seleccione la capa para realizar la búsqueda</option>
+                </select>
+                <label for="capaBusquedaAtributos">Capa de búsqueda</label>
+        </div>
+                <div class="form-floating mb-3">
+                    <select id="opcionesResultados" class="form-select" required>
+                    <option selected value="new">Crear nuevos resultados</option>
+                    <option value="add">Adicionar a los resultados actuales</option>
+                    <option value="remove">Remover de los resultados actuales</option>
+                </select>
+                 <label for="opcionesResultados">Opciones de resultados</label>
+                </div>
+               
+                <div class="form-floating mb-3">
+                    <select id="campoBusqueda" class="form-select" required onchange="enableBusqueda()">
+                        <option value="" disabled selected>Seleccione el campo con el que se hará la busqueda</option>
+                    </select>
+                    <label for="campoBusqueda">Campo de búsqueda</label>
+                </div>
+
+                <div class="input-group mb-3">
+                     <select id="operadorBusqueda" class="form-select" required>
+                        <option value="=" selected>Es Igual a</option>
+                        <option value="<>" >No es Igual a</option>
+                        <option value=">" >Mayor que</option>
+                        <option value=">=" >Mayor o igual que</option>
+                        <option value="<" >Menor que</option>
+                        <option value="<=" >Menor o igual que</option>
+                        <option value="empieza" >Empieza por</option>
+                        <option value="termina" >Termina por</option>
+                        <option value="contiene" >Contiene</option>
+                        <option value="noContiene" >No Contiene</option>
+                    </select>
+                    <input id="valueBuscar" type="text" class="form-control" placeholder="Valor" aria-label="Valor" onchange="enableBusqueda()">
+                  </div>
+                  
+    </div>
+    <div class="tab-pane" id="geometria" role="tabpanel" aria-labelledby="geometria-tab" tabindex="1">
+        <br>
+        <div class="form-floating mb-3">
+                    <select id="opcionesResultadosGeometria" class="form-select" required>
+                    <option selected value="new">Crear nuevos resultados</option>
+                    <option value="add">Adicionar a los resultados actuales</option>
+                    <option value="remove">Remover de los resultados actuales</option>
+                </select>
+                 <label for="opcionesResultados">Opciones de resultados</label>
+                </div>
+    <div class="form-floating mb-3">
+        <select id="capaBusquedaGeometria" class="form-select" required onchange="enableBusquedaGeometria()">
+               <option selected disabled>Seleccione la capa donde se realizará la búsqueda</option>
+           </select>
+           <label for="capaBusquedaGeometria">Capa de búsqueda</label>
+             <div class="form-check form-switch" style="padding-top: 10px;padding-left: 50px;">
+    <input class="form-check-input" type="checkbox" role="switch" id="checkAllLayers" onchange="document.getElementById('capaBusquedaGeometria').disabled = !document.getElementById('capaBusquedaGeometria').disabled;">
+    <label class="form-check-label" for="checkAllLayers">Buscar en todas las capas cargadas</label>
+  </div>
+  <div class="form-floating mb-3">
+                    <select id="opcionesBusquedaGeometria" class="form-select" required onchange="changeTipoGeometria(this.value)">
+                        <option selected disabled>Seleccione el tipo de geometría a buscar</option>
+                    <option value="dibujar">Dibujar geometría</option>
+                    <option value="extension">Extension actual</option>
+                    <option value="entidad">Entidad Territorial</option>
+                    <option value="cargar">Cargar archivo</option>
+                </select>
+                 <label for="opcionesBusquedaGeometria">Tipo de Geometría</label>
+                </div>
+   </div>
+ <div id="dibujarGeometria" style="display: none;">
+        <div>Seleccione la forma con la que quiere seleccionar los objetos:</div>
+                <div class="btn-toolbar divCenter" role="toolbar" aria-label="formas para seleccionar objetos">
+                    <div class="btn-group me-2" role="group">
+                      <button type="button" class="btnPoint btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-title="Punto" value="point" onclick="crearGeometriaBusqueda(this.value)"></button>
+                      <button type="button" class="btnPolyLine btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-title="Polilínea" value="polyline" onclick="crearGeometriaBusqueda(this.value)"></button>
+                      <button type="button" class="btnCircle btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-title="Círculo" value="circle" onclick="crearGeometriaBusqueda(this.value)"></button>
+                      <button type="button" class="btnRectangle btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-title="Rectángulo" value="rectangle" onclick="crearGeometriaBusqueda(this.value)"></button>
+                      <button type="button" class="btnPolygon btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-title="Polígono" value="polygon" onclick="crearGeometriaBusqueda(this.value)"></button>                      
+                    </div>
+    </div>
+ </div>  
+ <div id="entidadTerritorial" style="display: none;">
+    <select class="form-control" id="searchEntidad" style="width: 100%;font-size: 14px;" onchange="enableBusquedaGeometria()">
+    </select>
+ </div> 
+ <div id="cargarGeometria"  style="display:none" >
+    <input type="file" id="fileSelectorGeometria" style="display:none" accept=".json"
+    onchange="fileSelectedGeometria(this.files)">
+<div class="input-group mb-3" id="loadLocalFile">
+    <button class="btn btn-secondary" type="button"
+        onclick="document.getElementById('fileSelectorGeometria').click();">Seleccionar Archivo</button>
+    <input type="text" readonly disabled class="form-control" id="nameFileGeometria"
+        value="Formato: GeoJSON (.json)" style="cursor: text;">
+</div>
+ </div>  
+  </div>
+
+<div id="buttonsActions" class="container">
+        <div class="row mt-2">
+            <div class="col text-center">
+                 <button id="btnLimpiarBusqueda" class="btn btn-info" type="button" onclick="limpiarBusqueda()" disabled>
+                    Limpiar
+                </button>
+                <button id="btnBuscar" type="button" class="btn btn-primary mr-5"
+                    onclick="createBusqueda()" disabled>
+                    <div id="onBuscar">
+                        Buscar
+                    </div>
+                    <div id="onBuscando" style="display: none;">
+                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                        <span role="status">Buscando...</span>
+                    </div>
+                </button>
+               
+            </div>
+
+        </div>
+</div>
+
+<div id="divResultados" style="display: none;">
+    <div style="font-size: larger;"><br>Resultados
+    <span class="badge text-bg-primary rounded-pill" id="totalResultados"></span></div><br>
+<div id="resultsDiv" class="container-fluid listResults">
+    <ol class="list-group" id="listaResultados">
+      </ol>
+  </div>
+</div>
+<br>
+<div class="alert alert-danger" role="alert" id="noResultados" style="display: none;">
+    No se encontraron resultados con los parametros seleccionados
+  </div>
+  </div>
+    </div>
+</div>
+
+
+
+
+    

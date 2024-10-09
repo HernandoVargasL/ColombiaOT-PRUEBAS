@@ -1,0 +1,331 @@
+<div id="headingSimbologia" class="panel-heading-f" role="tab">
+  <div class="panel-title">
+    <span class="panel-mover panel-toggle icon-panel"
+      style="background-image: url('/images/iconos/Configuraciones.png');"></span>
+    <span class="panel-toggle collapsed panel-mover">
+      <span class="panel-label" id="panelSimbologiaTitle">Simbología y Etiquetado</span>
+    </span>
+    <span role="button" class="esri-icon esri-icon-right panel-close"
+      onclick="$('#simbologiaDiv').collapse('hide');"></span>
+  </div>
+</div>
+
+<div class="panel-body" id="divSimbologia">
+  
+  <div style="display: flex;">
+    <div class="tabsMain">
+    <ul class="nav flex-column nav-underline" id="mainTabs">
+      <li class="nav-item">
+        <button class="nav-link active iconSimbologia" id="simbologia-tab" data-bs-toggle="tab"
+          data-bs-target="#simbologia" type="button" role="tab" aria-controls="simbologia"
+          aria-selected="true"></button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link iconEtiquetado" id="etiquetado-tab" data-bs-toggle="tab" data-bs-target="#etiquetado"
+          type="button" role="tab" aria-controls="etiquetado" aria-selected="true"></button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="simbologia" role="tabpanel" aria-labelledby="simbologia-tab" tabindex="0">
+      <ul class="nav nav-tabs" id="tabsSimbologia" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="simple-tab" data-bs-toggle="tab" data-bs-target="#simple" type="button"
+            role="tab" aria-controls="simple" aria-selected="true">Simple</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="clases-tab" data-bs-toggle="tab" data-bs-target="#clases" type="button"
+            role="tab" aria-controls="clases" aria-selected="true">Por clases</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="categoria-tab" data-bs-toggle="tab" data-bs-target="#categoria" type="button"
+            role="tab" aria-controls="categoria" aria-selected="true">Por categoría</button>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="simple" role="tabpanel" aria-labelledby="simple-tab" tabindex="0">
+          <!-- Simbologia Simple -->
+          <div id="simbologiaSimplePoligono" style="display: none;">
+            <br>
+            <div class="form-floating mb-3 input-group">
+              <select id="rellenoSimplePoligono" class="form-select" required>
+                <option  value="solid">Solido</option>
+                <option  value="none">Sin Relleno</option>
+                <option  value="cross">Cuadriculado</option>
+                <option  value="diagonal-cross">Cuadriculado Diagonal</option>
+                <option  value="forward-diagonal">Diagonal hacia adelante</option>
+                <option  value="backward-diagonal">Diagonal hacia atras</option>
+                <option  value="horizontal">Horizontal</option>
+                <option  value="vertical">Vertical</option>
+              </select>
+              <label for="rellenoSimplePoligono">Relleno</label>
+              <span class="input-group-append color-selector">
+                <span class="input-group-text colorpicker-input-addon" id="color-relleno"></span>
+
+              </span>
+            </div>
+            <div class="form-floating input-group">
+              <select id="contornoSimplePoligono" class="form-select" required>
+                <option  value="solid">Solido</option>
+                <option value="none">Sin Contorno</option>
+                <option value="dash">Guión</option>
+                <option value="dot">Punteado</option>
+                <option value="dash-dot">Guión-Punto</option>
+                <option value="short-dash-dot-dot">Guión-Punto-Punto</option>
+              </select>
+              <label for="contornoSimplePoligono">Contorno</label>
+              <span class="input-group-append color-selector">
+                <span class="input-group-text" id="color-contorno"></span>
+              </span>
+
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="grosorLinea" class="form-label" id="grosorContornoPoligonoLabel">Grosor Línea Contorno: </label>
+              <input type="range" class="form-range" min="0.5" max="20" step="0.5" id="grosorContornoPoligono" onchange="updateValueGrosor(this)">
+              <div class="range-labels">
+                <span id="minValue">0.5</span>
+                <span id="maxValue">20px</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="simbologiaSimplePunto" style="display: none;">
+            <br>
+            <div class="form-floating mb-3 input-group">
+              <select id="estiloSimplePunto" class="form-select" required>
+                <option  value="circle">Círculo</option>
+                <option  value="square">Cuadrado</option>
+                <option  value="cross">Cruz</option>
+                <option  value="x">X</option>
+                <option  value="diamond">Rombo</option>
+                <option  value="triangle">Triángulo</option>
+              </select>
+              <label for="estiloSimplePunto">Estilo</label>
+              <span class="input-group-append color-selector">
+                <span class="input-group-text colorpicker-input-addon" id="color-punto"></span>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="tamanoPunto" class="form-label" id="tamanoPuntoLabel">Tamaño: </label>
+              <input type="range" class="form-range" min="0.5" max="20" step="0.5" id="tamanoPunto" onchange="updateValueGrosor(this)">
+              <div class="range-labels">
+                <span id="minValue">0.5</span>
+                <span id="maxValue">20px</span>
+              </div>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="enablePuntoscalor" onchange="tooglePuntosCalor()">
+              <label class="form-check-label" for="enablePuntoscalor">Usar simbología de Puntos de Calor</label>
+            </div>
+            <div id="puntosCalor" style="display: none;">
+              <div class="form-floating mb-3">
+                <select id="campoPeso" class="form-select" required>
+                  <option selected disabled>Seleccione el campo de ponderación</option>
+                </select>
+                <label for="campoPeso">Campo de ponderación (Opcional)</label>
+              </div>
+              <div class="form-floating mb-3">
+                <select id="radioPuntosCalor" class="form-select" required>
+                  <option value="5" selected>5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                </select>
+                <label for="radioPuntosCalor">Radio</label>
+              </div>
+              <div>
+                <label for="divRampaPuntosCalor">Gama de colores</label>
+               <div id="divRampaPuntosCalor" style="display: flex;">
+                <span id="colorInicioRampaPuntosCalor"></span>
+                <div id="rampaPuntosCalor" class="colorRamp"></div>
+                <span id="colorFinRampaPuntosCalor"></span>
+               </div>
+               <div class="range-labels">
+                <span id="minValue">Escaso</span>
+                <span id="maxValue">Denso</span>
+              </div>
+              </div>
+              <br>
+            </div>
+          </div>
+
+          <div id="simbologiaSimpleLinea" style="display: none;">
+            <br>
+            <div class="form-floating mb-3 input-group">
+              <select id="estiloSimpleLinea" class="form-select" required>
+                <option  value="solid">Solido</option>
+                <option value="dash">Guión</option>
+                <option value="dot">Punteado</option>
+                <option value="dash-dot">Guión-Punto</option>
+                <option value="short-dash-dot-dot">Guión-Punto-Punto</option>
+              </select>
+              <label for="estiloSimpleLinea">Estilo</label>
+              <span class="input-group-append color-selector">
+                <span class="input-group-text colorpicker-input-addon" id="color-linea"></span>
+
+              </span>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="tamanoLinea" class="form-label" id="grosorLineaLabel">Grosor Línea: </label>
+              <input type="range" class="form-range" min="0.5" max="20" step="0.5" id="grosorLinea" onchange="updateValueGrosor(this)">
+              <div class="range-labels">
+                <span id="minValue">0.5</span>
+                <span id="maxValue">20px</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tab-pane" id="clases" role="tabpanel" aria-labelledby="clases-tab" tabindex="1">
+          <!-- Simbologia por Clases -->
+           <div id="simbologiaClases">
+            <br>
+            <div class="form-floating mb-3">
+              <select id="campoClases" class="form-select" required>
+                <option selected disabled>Seleccione el campo para la clasificación</option>
+              </select>
+              <label for="campoClases">Campo de clasificación</label>
+            </div>
+            <div class="form-floating">
+              <select id="metodoClases" class="form-select" required>
+                <option  value="cuantiles">Cuantiles</option>
+                <option value="intervalosGeometricos">Intervalos geométricos</option>
+                <option value="intervalosIguales">Intervalos iguales</option>
+                <option value="limitesNaturales">Límites naturales</option>
+              </select>
+              <label for="metodoClases">Método de clasificación</label>
+                  </div>
+            <br>
+            <div class="form-group">
+              <label for="numeroClases" class="form-label" id="numeroClasesLabel">Número de Clases: </label>
+              <input type="range" class="form-range" min="3" max="10" step="1" id="numeroClases" onchange="updateValueGrosor(this)">
+              <div class="range-labels">
+                <span id="minValue">3</span>
+                <span id="maxValue">10</span>
+              </div>
+            </div>
+            <div>
+              <label for="divRampaColor">Gama de colores</label>
+             <div id="divRampaColor" style="display: flex;">
+              <span id="colorInicioRampa"></span>
+              <div id="rampaColor" class="colorRamp"></div>
+              <span id="colorFinRampa"></span>
+             </div>
+            </div>
+            <br>
+            <div class="alert alert-danger" role="alert" id="errorClasificacion" style="display: none;">
+              Error haciendo la clasificación, intente con otro metodo
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="categoria" role="tabpanel" aria-labelledby="categoria-tab" tabindex="2">
+          <!-- Simbologia por Categorias -->
+           <div id="simbologiaCategoria">
+            <br>
+            <div class="form-floating mb-3">
+              <select id="campoCategoria" class="form-select" required>
+                <option selected disabled>Seleccione el campo para la categorización</option>
+              </select>
+              <label for="campoCategoria">Campo de categoría</label>
+            </div>
+            <div id="divCategorias" style="display: none;" class="divCategorias">
+              <label>Categorias: </label>
+            </div>
+            <div class="col text-center">
+<button id="btnClasificar" class="btn btn-primary" type="button" onclick="createCategorias()">
+                Clasificar
+            </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="tab-pane" id="etiquetado" role="tabpanel" aria-labelledby="etiquetado-tab" tabindex="1">
+      <div class="form-floating mb-3">
+        <select id="campoEtiquetas" class="form-select" required>
+          <option selected disabled>Seleccione el campo para el etiquetado</option>
+        </select>
+        <label for="campoEtiquetas">Campo de etiquetado</label>
+      </div>
+      <div class="form-floating mb-3 input-group">
+        <select id="fuenteEtiquetas" class="form-select" required>
+          <option selected disabled>Seleccione la fuente que tendrán las etiquetas</option>
+          <option value="Arial">Arial</option>
+           <option value="Josefin Sans">Josefin Sans</option>
+           <option value="Noto Sans">Noto Sans</option>
+           <option value="Merriweather">Merriweather</option>
+        </select>
+        <label for="fuenteEtiquetas">Fuente</label>
+        <span class="input-group-append color-selector">
+          <span class="input-group-text colorpicker-input-addon" id="color-fuente"></span>
+        </span>
+      </div>
+      <div class="form-floating mb-3">
+        <select id="estiloEtiquetas" class="form-select" required>
+          <option selected value="normal">Normal</option>
+          <option value="bold">Negrita</option>
+          <option value="italic">Cursiva</option>
+          <option value="bold-italic">Negrita y cursiva</option>
+        </select>
+        <label for="estiloEtiquetas">Estilo</label>
+      </div>
+      <div class="form-floating mb-3 input-group">
+        <select id="haloEtiquetas" class="form-select" required>
+          <option selected value="0">Sin Halo</option>
+          <option value="0.5">0.5</option>
+           <option value="1">1.0</option>
+           <option value="1.5">1.5</option>
+           <option value="2">2.0</option>
+        </select>
+        <label for="haloEtiquetas">Halo</label>
+        <span class="input-group-append color-selector">
+          <span class="input-group-text colorpicker-input-addon" id="color-halo"></span>
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="tamanoFuente" class="form-label" id="tamanoFuenteLabel">Tamaño de fuente: </label>
+        <input type="range" class="form-range" min="8" max="16" step="1" id="tamanoFuente" onchange="updateValueGrosor(this)">
+        <div class="range-labels">
+          <span id="minValue">8</span>
+          <span id="maxValue">16</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+
+  <div id="buttonsActions" class="container">
+    <div class="row mt-2">
+        <div class="col text-center">
+             <button id="btnLimpiarBusqueda" class="btn btn-info" type="button" onclick="restablecerEstilo()">
+                Restablecer
+            </button>
+            <button id="btnBuscar" type="button" class="btn btn-primary mr-5"
+                onclick="aplicarEstilo()">
+                <div id="onBuscar">
+                    Aplicar
+                </div>
+                <div id="onBuscando" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                    <span role="status">Aplicando...</span>
+                </div>
+            </button>
+           
+        </div>
+
+    </div>
+    
+</div>
+
+</div>

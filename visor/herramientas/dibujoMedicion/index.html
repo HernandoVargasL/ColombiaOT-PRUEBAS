@@ -1,0 +1,129 @@
+<div id="headingDibujar" class="panel-heading-f" role="tab">
+    <div class="panel-title">
+        <span class="panel-mover panel-toggle icon-panel"
+            style=" background-image: url('/images/iconos/Herramientas\ de\ medicion.png');"></span>
+        <span class="panel-toggle collapsed panel-mover">
+            <span class="panel-label" id="panelDibujarTitle">Herramientas de Gráficos y Medición</span>
+        </span>
+        <span role="button" class="esri-icon esri-icon-minus panel-close" data-bs-toggle="collapse"
+            href="#collapseDibujar" aria-expanded="false" aria-controls="collapseDibujar"></span>
+        <span class="panel-close" onclick="closeDibujar();"><span class="esri-icon esri-icon-close"
+                aria-hidden="false"></span></span>
+    </div>
+</div>
+
+<div id="collapseDibujar" class="collapse show">
+    <div class="panel-body" id="divDibujar" style="padding-top: 5px;">
+                 <div id="drawMain">
+                    <ul class="nav nav-tabs" style="border: none;">
+                        <li id="dibujoPuntoHeader" class="active">
+                            <a href="#" class="pillsearch nav-link" style="color: black;" onclick="toggleDibujoPunto();">Puntos</a>
+                        </li>
+                        <li id="dibujoLineaHeader" class="">
+                            <a href="#" class="pillsearch nav-link" style="color: black;" onclick="toggleDibujoLinea();">Lineas</a>
+                        </li>
+                        <li id="dibujoPoligonoHeader" class="">
+                            <a href="#" class="pillsearch nav-link" style="color: black;" onclick="toggleDibujoPoligono();">Poligonos</a>
+                        </li>
+                    </ul>
+                    <div id="drawBar">
+                        <div class="" role="group" style="width: 100%; margin: 5px;" >
+                            <button id="drawPointBtn" type="button" onclick="modoDibujo('point', 'click', 'Punto');" class="btn btn-default" style="display: none;"></button>
+                            <button id="drawPolylineBtn" type="button" onclick="modoDibujo('polyline', 'click', 'Polilínea');" class="btn btn-default" style="display: none;"></button>
+                            <button id="drawFreehandPolylineBtn" type="button" onclick="modoDibujo('polyline', 'freehand', 'Polilínea a mano alzada');" class="btn btn-default" style="display: none;"></button>
+                            <button id="drawTextBtn" type="button" onclick="modoDibujo('point', 'click', 'Texto');" class="btn btn-default" style="display: none;"></button>
+                            <button id="drawCircleBtn" type="button" onclick="modoDibujo('circle', 'click', 'Círculo');" class="btn btn-default" style="display: none;"></button>
+                            <button id="drawPolygonBtn" type="button" onclick="modoDibujo('polygon', 'click', 'Polígono');" class="btn btn-default" style="display: none;"></button>
+                            <button id="drawFreehandPolygonBtn" type="button" onclick="modoDibujo('polygon', 'freehand', 'Polígono a mano alzada');" class="btn btn-default" style="display: none;"></button>
+                        </div>
+                    </div>
+                </div>
+
+                     <div id="drawEdit" style="display: none;">
+                        <div id="drawCurrentTool" style="display: none !important;"></div>
+                        <div id="txtSymbolEditorHolder" style="display: none !important;"></div>
+                        <div id="drawOptsLine">
+
+                            <div style="width: 75%; display: inline-block;"><strong>Color de la linea</strong></div>
+                            <div style="display: inline-block;">
+                                <a href="#" class="btn btn-default" id="drawOptLineColor">
+                                    <span class="bi bi-droplet-fill" aria-hidden="true"></span>
+                                </a>
+                                <input type="text" id="drawOptLineColorInput" style="display: none;" />
+                            </div>
+                            <hr style="margin-top: 10px; margin-bottom: 10px;" />
+                        </div>
+                        <div id="drawOptsFill">
+                            <div style="width: 75%; display: inline-block;"><strong>Color de relleno</strong></div>
+                            <div style="display: inline-block;">
+                                <a href="#" class="btn btn-default" id="drawOptFillColor">
+                                    <span class="bi bi-droplet-fill" aria-hidden="true"></span>
+                                </a>
+                                <input type="text" id="drawOptFillColorInput" style="display: none;" />
+                            </div>
+                            <hr style="margin-top: 10px; margin-bottom: 10px;" />
+                        </div>
+                        <div id="drawOptsText" style="display: none;" class="input-group flex-nowrap">
+                            <div class="form-floating">
+                                <input id="drawText" type="text" class="form-control" oninput="updateEditGraphic()"/>
+                                 <label for="drawText">Texto</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="sizeText" placeholder="Tamaño texto" value="25" oninput="updateEditGraphic()">
+                                <label for="sizeText">Tamaño Texto</label>
+                              </div>
+                        </div>
+                        <br />
+                        <div id="measureDivContainer">
+                            <div id="measureDivAreaUnits" style="display: none;">
+                                <label><strong>Unidad de área:</strong></label>
+                                <select class="form-control" id="measureAreaUnit" onchange="updateEditMeasure()">
+                                    <option value="hectares">Hectareas</option>
+                                    <option value="square-kilometers">Kilómetros cuadrados</option>
+                                    <option value="square-meters">Metros cuadrados</option>
+                                    <option value="square-feet">Pies cuadrados</option>
+                                    <option value="square-miles">Millas cuadradas</option>
+                                    <option value="square-yards">Yardas cuadradas</option>
+                                </select>
+                                <div id="measureDivArea">
+                                </div>
+                            </div>
+                            <div id="measureDivLengthUnits" style="display: none;">
+                                <label><strong>Unidad de longitud:</strong></label>
+                                <select class="form-control" id="measureLengthUnit" onchange="updateEditMeasure()">
+                                    <option value="kilometers">Kilómetros</option>
+                                    <option value="meters">Metros</option>
+                                    <option value="feet">Pies</option>
+                                    <option value="miles">Millas</option>
+                                    <option value="yards">Yardas</option>
+                                </select>
+                                <div id="measureDivLength">
+                                </div>
+                            </div>
+                            <div id="measureDivCoordinatesSystems" style="display: none;">
+                                <label><strong>Sistema de Coordenadas:</strong></label>
+                                <select class="form-control" id="systemCoordinates" onchange="updateEditMeasure()">
+                                    <option selected value="wgs84">GCS_WGS_1984</option>
+                                    <option value="origenNacional">Magna Sirgas Origen Nacional</option>
+                                </select>
+                                <div id="measureDivCoordinates">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr style="margin-top: 10px; margin-bottom: 10px;" />
+                    <div>
+                        <strong>Geometrias</strong>
+                        <br />
+                        <div id="drawList" class="list-group"></div>
+                        <br />
+                        <button type="button" onclick="exportDibujos();" class="btn btn-default btn-primary">
+                            Exportar
+                        </button>
+                        <button type="button" onclick="cleanDibujo();" class="btn btn-default btn-primary">
+                            Borrar todo
+                        </button>
+                    </div>
+            </div>
+    </div>

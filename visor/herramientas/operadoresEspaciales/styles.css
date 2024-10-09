@@ -1,0 +1,16 @@
+.infoCampo{
+    font-size: 11px;
+    line-height: normal;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.alert{
+    font-size: small;
+    text-align: center;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+}

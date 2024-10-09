@@ -1,0 +1,644 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    
+      
+    <link  rel="stylesheet" href="https://www.colombiaenmapas.gov.co/css/styles.css">
+ <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="Colombia en Mapas, un atlas vivo. Conoce, descarga y comparte  los mapas oficiales de la República de Colombia." />
+    <meta name="keywords" content="mapa, mapas, Colombia, atlas, imágenes, cartografía, municipio, departamento, catastro, oficial, IGAC" />
+    <meta name="author" content="Instituto Geográfico Agustín Codazzi - IGAC" />
+    <meta name="title" property="og:title" content="Colombia en Mapas">
+    <meta property="og:type" content="website">
+    <meta name="image" property="og:image" content="https://www.colombiaenmapas.gov.co/images/Preview.png">
+    <meta http-equiv="content-language" content="es" />
+    <link rel="canonical" href="https://www.colombiaenmapas.gov.co" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <title>Observatorio de Ordenamiento Territorial</title>
+
+    <link type="text/css" async rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-typeahead/2.11.0/jquery.typeahead.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" /> 
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-arcgis-3.x.min-v0.10.css">
+
+ 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/maestra.css">
+
+</head>
+<body class="calcite calcite-maps calcite-nav-top claro esri" style="background: lightgray;">
+    <div class="barra_gov">
+        <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
+            <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
+        </a>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbarigac">
+        <div class="logos">
+            <a rel="noopener" class="navbar-brand-igac" href="https://www.igac.gov.co" target="_blank">
+                <img src="/images/nav/logo.png" alt="Logo IGAC">
+            </a>
+            <img src="/images/Logo_OBS.png" alt="Colombia en Mapas">
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar" style="background-color: white;"></span>
+            <span class="icon-bar" style="background-color: white;"></span>
+            <span class="icon-bar" style="background-color: white;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <li>
+                    <a href="/" rel="noopener" class="nav-item nav-link">Inicio</a>
+                </li>
+                <li>
+                    <a href="#" rel="noopener" class="nav-item nav-link active" href="#">Geovisor</a>
+                </li>
+                <a id="loginBtn" onclick="gotoLogin();">
+                    <img id="userPhoto" src="/images/user.png" onerror="defaultUserPhoto();" alt="Iniciar sesion">
+                    <span id="userName" style="display: none;">Iniciar sesion</span>
+                </a>              
+            </div>
+        </div>
+    </nav>
+
+    <div class="calcite-map">
+       
+        <div id="mainDiv" class="main-small">
+            <!-- Search Panel -->
+            <div id="panelSearch" class="panel collapse">
+                <div id="collapseSearch" class="panel-collapse">
+                    <div class="panel-body" style="background: #FAFAFA;padding: 0px;">
+                        <div id="containerFiltros">
+                            <div id="panelSearchFiltros" class="panel panel-default" data-toggle="popover">
+                                <div>
+                                    <div id="searchHeader" class="panel-heading">
+                                        <h3 class="panel-title" style="display: inline-block;">Filtrar</h3>
+                                        <a id="panelSearchToggle" style="float: right; color:white;" href="#" onclick="toggleFiltros();"><img src="/images/iconos/Close_01.png" alt="Minimizar" style="width: 10px; height: 2px;" /></a>
+                                    </div>
+                                    <div id="searchBody" class="panel-body">
+                                        <div id="searchBarTab">
+                                            <ul class="nav nav-tabs" style="border: none; margin-bottom: 10px;">
+                                                <li id="searchHeaderEntidad" class="active">
+                                                    <a href="#" class="pillsearch" onclick="toggleMain('entidad');">Entidad Territorial</a>
+                                                </li>
+                                                <li id="searchHeaderArea" class="">
+                                                    <a href="#" class="pillsearch" onclick="toggleMain('area');">Área</a>
+                                                </li>
+                                                <li id="searchHeaderGeoJSON" class="">
+                                                    <a href="#" class="pillsearch" onclick="toggleMain('geojson');">GeoJSON</a>
+                                                </li>
+                                            </ul>
+                                            <div id="searchHeaderEntidadDiv">
+                                                <select class="form-control" id="searchFiltro" style="width: 100%;font-size: 14px;">
+                                                </select>
+                                            </div>
+                                            <div id="searchHeaderAreaDiv" style="display: none;">
+                                                <div id="drawMain">
+                                                    <div id="drawBar">
+                                                        <div class="btn-group" role="group" style="width: 100%;">
+                                                            <button id="drawTriangleBtn2" type="button" onclick="modoDibujo2('triangle');" class="btn btn-default"></button>
+                                                            <button id="drawCircleBtn2" type="button" onclick="modoDibujo2('circle');" class="btn btn-default"></button>
+                                                            <button id="drawEllipseBtn2" type="button" onclick="modoDibujo2('extent');" class="btn btn-default"></button>
+                                                            <button id="drawPolygonBtn2" type="button" onclick="modoDibujo2('polygon');" class="btn btn-default"></button>
+                                                            <button id="drawFreehandPolygonBtn2" type="button" onclick="modoDibujo2('freehandpolygon');" class="btn btn-default"></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="searchHeaderGeoJSONDiv" style="display: none;">
+                                                <input name="file" id="file" type="file" class="form-control" style="height: auto;">
+                                            </div>
+                                            <label id="limpiarBtn" style="font-size: 14px;float: right; "><a href="#" onclick="limpiarMain(); return false;" style="color: darkred;">Limpiar</a></label>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+
+                                        <div style="display: none !important;">
+                                            <label>Escoge un sistema de referencia</label>
+                                            <select class="form-control" id="querySearchConsultaFormat">
+                                                <option value="EPSG:9377" selected=selected>Origen Nacional (EPSG:9377)</option>
+                                                <option value="EPSG:4326">WGS 84 (EPSG:4326)</option>
+                                                <option value="EPSG:3857">WGS84 Web Mercator (EPSG:3857)</option>
+                                                <option value="EPSG:4686">MAGNA-SIRGAS (EPSG:4686)</option>
+                                                <option value="EPSG:3114">MAGNA-SIRGAS / Colombia Far West zone (EPSG:3114)</option>
+                                                <option value="EPSG:3115">MAGNA-SIRGAS / Colombia West zone (EPSG:3115)</option>
+                                                <option value="EPSG:3116">MAGNA-SIRGAS / Colombia Bogota zone (EPSG:3116)</option>
+                                                <option value="EPSG:3117">MAGNA-SIRGAS / Colombia East Central zone (EPSG:3117)</option>
+                                                <option value="EPSG:3118">MAGNA-SIRGAS / Colombia East zone (EPSG:3118)</option>
+                                                <option value="EPSG:32617">WGS 84 / UTM zone 17N (EPSG:32617)</option>
+                                                <option value="EPSG:32618">WGS 84 / UTM zone 18N (EPSG:32618)</option>
+                                                <option value="EPSG:32619">WGS 84 / UTM zone 19N (EPSG:32619)</option>
+                                                <option value="EPSG:32717">WGS 84 / UTM zone 17S (EPSG:32717)</option>
+                                                <option value="EPSG:32718">WGS 84 / UTM zone 18S (EPSG:32718)</option>
+                                                <option value="EPSG:32719">WGS 84 / UTM zone 19S (EPSG:32719)</option>
+                                            </select>
+                                            <div id="resultadoConsultaCoordenadas">
+                                                <div id="resultadoConsultaCoordenadasX"></div>
+                                                <div id="resultadoConsultaCoordenadasY"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="panelSearchResultados" style="background: white;display:none;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="mapViewDiv" class="calcite-map-absolute main-small-map">
+            <a id="headingSearch" class="panel-close2 panel-close-small text-center hidden-sm hidden-xs" style="display: none;" onclick="toggleMenu();">
+                <img style="width: 25px; height: 25px;" src="/images/iconos/Forward_02.png" alt="Cerrar Menú">
+            </a>
+            <div id="alertList" style="display: none;">
+                <div>
+                    <div id="alertHeader" class="alert-header" style="background-color:white;"></div>
+                    <div style="background: white; display: flex;" class="alert-media">
+                        <div id="alertContentLeft" class="media-left">
+                            <img alt="imagen" class="media-object" style="width: 20px; height: 20px;" src="" />
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div id="alertContent" class="media-body alert-media-body" style="width: 250px;">
+
+                        </div>
+                        <div class="media-right" style="color: gray;" onclick="$('#alertList').hide();">
+                            <span class="esri-icon esri-icon-close" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="swipeDiv"></div>
+            <div id="swipe2Div"></div>
+            <a id="toolBtn" class="panel-tools text-center" onclick="toggleTools();" data-toggle="tooltip" data-placement="left" title="Herramientas"></a>
+            <div id="toolsDiv" style="display: none;">
+                <!-- <a href="#" onclick="gotoImprimir()">Imprimir</a><br /> -->
+                <!-- <a href="#" onclick="gotoCoordenadas()">Buscar Coordenadas</a><br /> -->
+                <a href="#" onclick="gotoDibujar()">Gráficos y Medición</a><br />
+                <a href="#" onclick="gotoOperadores()">Operadores Espaciales</a><br>
+                <a href="#" onclick="gotoEstadisticas()">Estadísticas</a>
+                <a href="#" onclick="gotoBusqueda()">Búsqueda Avanzada</a>
+                <a href="#" onclick="gotoImportar()">Importar Datos</a>
+            </div>
+            <a id="legendBtn" class="panel-tools text-center" onclick="gotoLegend();" data-toggle="tooltip" data-placement="left" title="Leyenda"></a>
+
+            <a id="layersToolBtn" class="panel-tools text-center" onclick="gotoLayers();" data-toggle="tooltip" data-placement="left" title="Mapas base & capas"></a>
+            <a id="infoToolBtn" class="panel-tools text-center" onclick="toggleInfoTools();" data-toggle="tooltip" data-placement="left" title="Información adicional"></a>
+            <div id="infoToolDiv" style="display: none;">
+                <a href="https://observatorios-organization.gitbook.io/observatorio-de-la-tierra-y-el-territorio" target="_blank">Tutorial y FAQ</a><br />
+                <a href="#" onclick="gotoInfo();">Acerca de</a><br />
+            </div>
+
+            <div id="coordinatesDiv"></div>
+            <div id="homeButton" onclick="homeBtn.go()"  title="Extensión predeterminada"></div>
+            <div id="locateButton" onclick="locateBtn.locate()" title="Buscar mi ubicación"></div>
+            <div id="zoomBox">
+                <div id="zoomIn" onclick="zoomBtn.zoomIn()" title="Acercar"></div>
+                <div id="zoomOut" onclick="zoomBtn.zoomOut()" title="Alejar"></div>
+            </div>
+            <div id="scaleBar"></div>
+            <div id="attributionIGAC"></div>
+        </div>
+    </div>
+
+    <div class="calcite-panels calcite-panels-right calcite-bg-light calcite-text-light panel-group" role="tablist" aria-multiselectable="true" id="divParentPopups" style="width: 0;height: 0;">
+
+        <!-- Leyenda Panel -->
+        <div id="panelLeyenda" class="panel-herramientas"></div>
+
+        <!-- Info Panel -->
+        <div id="panelInfo" class="panel collapse">
+            <div id="headingInfo" class="panel-heading-f" role="tab">
+                <div class="panel-title">
+                    <a class="panel-toggle icon-panel" href="#" style=" background-image: url('/images/iconos/Info.png');"></a>
+                    <a href="#" class="panel-toggle collapsed">
+                        <span class="panel-label">Información del proyecto</span>
+                    </a>
+                    <a class="panel-close" href="#" onclick="closeInfo();"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>
+                </div>
+            </div>
+            <div id="collapseInfo" class="panel-collapse">
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Coordenadas Panel -->
+        <div id="panelCoordenadas" class="panel collapse">
+            <div id="headingCoordenadas" class="panel-heading-f" role="tab">
+                <div class="panel-title">
+                    <a class="panel-toggle icon-panel" href="#" style=" background-image: url('/images/iconos/Conversion de coordenadas.png');"></a>
+                    <a href="#" class="panel-toggle collapsed">
+                        <span class="panel-label">Coordenadas</span>
+                    </a>
+                    <a class="panel-close" href="#" onclick="closeCoordenadas();"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>
+                </div>
+            </div>
+            <div id="collapseCoordenadas" class="panel-collapse">
+                <div class="panel-body" style="padding: 0px 0px 0px 0px;">
+
+                    <div class="tab-content" style="padding-right: 15px; padding-left: 15px; padding-top: 15px;">
+
+                        <label>Escoge un sistema de referencia</label>
+                        <select class="form-control" id="querySearchCoordinateFormat">
+                            <option value="EPSG:9377" selected=selected>Origen Nacional (EPSG:9377)</option>
+                            <option value="EPSG:4326">WGS 84 (EPSG:4326)</option>
+                            <option value="EPSG:3857">WGS84 Web Mercator (EPSG:3857)</option>
+                            <option value="EPSG:4686">MAGNA-SIRGAS (EPSG:4686)</option>
+                            <option value="EPSG:3114">MAGNA-SIRGAS / Colombia Far West zone (EPSG:3114)</option>
+                            <option value="EPSG:3115">MAGNA-SIRGAS / Colombia West zone (EPSG:3115)</option>
+                            <option value="EPSG:3116">MAGNA-SIRGAS / Colombia Bogota zone (EPSG:3116)</option>
+                            <option value="EPSG:3117">MAGNA-SIRGAS / Colombia East Central zone (EPSG:3117)</option>
+                            <option value="EPSG:3118">MAGNA-SIRGAS / Colombia East zone (EPSG:3118)</option>
+                            <option value="EPSG:32617">WGS 84 / UTM zone 17N (EPSG:32617)</option>
+                            <option value="EPSG:32618">WGS 84 / UTM zone 18N (EPSG:32618)</option>
+                            <option value="EPSG:32619">WGS 84 / UTM zone 19N (EPSG:32619)</option>
+                            <option value="EPSG:32717">WGS 84 / UTM zone 17S (EPSG:32717)</option>
+                            <option value="EPSG:32718">WGS 84 / UTM zone 18S (EPSG:32718)</option>
+                            <option value="EPSG:32719">WGS 84 / UTM zone 19S (EPSG:32719)</option>
+                        </select>
+                        <div style="clear: both;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="padding: 10px 10px 10px 0px;">
+                                        <label id="querySearchCoordinateLatitudLabel" for="querySearchCoordinateLatitud">Norte (m)</label>
+                                        <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                                            <input id="querySearchCoordinateLatitud" type="text" class="form-control" style="width: 100%;" placeholder="Ej: 2000000" />
+                                            <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#querySearchCoordinateLatitud').val('');"></span>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 10px 0px 10px 10px;">
+                                        <label id="querySearchCoordinateLongitudLabel" for="querySearchCoordinateLongitud">Este (m)</label>
+                                        <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                                            <input id="querySearchCoordinateLongitud" type="text" class="form-control" style="width: 100%;" placeholder="Ej: 5000000" />
+                                            <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#querySearchCoordinateLongitud').val('');"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a href="#" class="btn btn-default btn-primary" onclick="buscarCoordenada();">Buscar</a>
+
+
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Layers Panel -->
+        <div id="panelLayers" class="panel-herramientas"></div>
+
+        <!-- Operadores Panel -->
+        <div id="panelOperadores" class="panel-herramientas"></div>
+
+        <!-- Busqueda Avanzada Panel -->
+        <div id="panelBusqueda" class="panel-herramientas"></div>
+
+        <!-- Estadisticas Panel -->
+        <div id="panelEstadisticas" class="panel-herramientas"></div>
+
+        <!-- Importar Panel -->
+        <div id="panelImportar" class="panel-herramientas"></div>
+        
+        <!-- Imprimir Panel -->
+        <div id="panelImprimir" class="panel collapse">
+            <div id="headingImprimir" class="panel-heading-f" role="tab">
+                <div class="panel-title">
+                    <a class="panel-toggle icon-panel" href="#" style=" background-image: url('/images/iconos/Imprimir.png');"></a>
+                    <a href="#" class="panel-toggle collapsed">
+                        <span class="panel-label">Imprimir</span>
+                    </a>
+                    <a class="panel-close" href="#" onclick="closeImprimir();"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>
+                </div>
+            </div>
+            <div id="collapseImprimir" class="panel-collapse">
+                <div class="panel-body">
+                    <label for="printTitle"><strong>T&iacute;tulo</strong></label>
+                    <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                        <input id="printTitle" class="form-control" placeholder="Escribe el nombre del archivo" style="width: 100%;" type="text" />
+                        <span class="clearTextBtn glyphicon glyphicon-remove-circle" onclick="$('#printTitle').val(''); $('#serviceListFilter').trigger('change');"></span>
+                    </div>
+                    <div class="tamano">
+                        <p>
+                            <label for="selectPrintTemplate"><strong>Tama&ntilde;o</strong></label>
+                            <select id="selectPrintTemplate" class="form-control">
+                                <option value="MAP_ONLY" selected=selected>Sólo mapa</option>
+
+                                <option value="Carta horizontal derecha">Carta horizontal derecha</option>
+                                <option value="Carta horizontal izquierda">Carta horizontal izquierda</option>
+                                <option value="Carta vertical derecha">Carta vertical derecha</option>
+                                <option value="Carta vertical izquierda">Carta vertical izquierda</option>
+                                <option value="Horizontal A3 derecha">Horizontal A3 derecha</option>
+                                <option value="Horizontal A3 izquierda">Horizontal A3 izquierda</option>
+                                <option value="Horizontal A4 derecha">Horizontal A4 derecha</option>
+                                <option value="Horizontal A4 izquierda">Horizontal A4 izquierda</option>
+                                <option value="Oficio horizontal derecha">Oficio horizontal derecha</option>
+                                <option value="Oficio horizontal izquierda">Oficio horizontal izquierda</option>
+                                <option value="Oficio vertical derecha">Oficio vertical derecha</option>
+                                <option value="Oficio vertical izquierda">Oficio vertical izquierda</option>
+                                <option value="Vertical A3 derecha">Vertical A3 derecha</option>
+                                <option value="Vertical A3 izquierda">Vertical A3 izquierda</option>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="row imprimir_formato">
+                        <div class="col-md-6">
+                            <label for="selectPrintFormat"><strong>Formato</strong></label>
+                            <select id="selectPrintFormat" class="form-control">
+                                <option value="pdf" selected="">PDF</option>
+                                <option value="jpg">JPG</option>
+                                <option value="png32">PNG</option>
+                                <option value="svg">SVG</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="selectPrintDPI"><strong>Calidad DPI</strong></label>
+                            <select id="selectPrintDPI" class="form-control">
+                                <option value="75" selected="">75</option>
+                                <option value="150">150</option>
+                                <option value="300">300</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <a href="#" class="btn btn-default btn-primary" onclick="printMap();">Imprimir</a>
+                    <div id="printDiv" style="display: none;">
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Panel -->
+        <div id="panelPopup" class="panel collapse">
+            <div id="headingPopup" class="panel-heading-f" role="tab">
+                <div class="panel-title">
+                    <a class="panel-toggle icon-panel" href="#" style=" background-image: url('/images/iconos/Info.png');"></a>
+                    <a href="#" class="panel-toggle collapsed">
+                        <span class="panel-label">Información del elemento</span>
+                    </a>
+                    <a class="panel-close" href="#" onclick="closePopup();"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>
+                </div>
+            </div>
+            <div id="collapsePopup" class="panel-collapse">
+                <div id="contentPopup" class="panel-body">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Tiempo Panel -->
+        <div id="panelTiempo" class="panel collapse">
+            <div id="headingTiempo" class="panel-heading-f" role="tab">
+                <div class="panel-title">
+                    <a href="#" class="panel-toggle collapsed">
+                        <span class="panel-label">Tiempo</span>
+                    </a>
+                    <a class="panel-close" href="#" onclick="closeTiempo();"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>
+                </div>
+            </div>
+            <div id="collapseTiempo" class="panel-collapse">
+                <div class="panel-body">
+                    <div>
+                        <label>Capa Izquierda</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select id="selectTile2YPanel" class="form-control" style="width: 100%;font-size: 14px;">
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select id="selectTile2MPanel" class="form-control" style="width: 100%;font-size: 14px;">
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <div>
+                        <label>Capa Derecha</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select id="selectTile1YPanel" class="form-control" style="width: 100%;font-size: 14px;">
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select id="selectTile1MPanel" class="form-control" style="width: 100%;font-size: 14px;">
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <button type="button" onclick="borrarSeleccion();" class="btn btn-default btn-danger">
+                        Borrar selección
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Imagenes Panel -->
+        <div id="panelImagenes" class="panel collapse">
+            <div id="headingImagenes" class="panel-heading-f" role="tab">
+                <div class="panel-title">
+                    <a href="#" class="panel-toggle collapsed">
+                        <span class="panel-label">Imagenes Raster</span>
+                    </a>
+                    <a class="panel-close" href="#" onclick="closeImagenes();"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>
+                </div>
+            </div>
+            <div id="collapseImagenes" class="panel-collapse">
+                <div class="panel-body">
+                    <p id="layersRasterDivSelect">
+                        <label>Capas Raster</label>
+                        <select id="selectLayersRaster" class="form-control" style="width: 100%;">
+                        </select>
+                    </p>
+                    <div id="layerRasterContainer">
+                        <div>
+                            <strong>Bandas: </strong><br />
+                            <span id="layerRasterInputTxt"></span>
+                        </div>
+                        <hr />
+                        <div>
+                            <strong>Uso de Bandas: </strong><br />
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 75px;">Rojo (R)</td>
+                                    <td><select id="layerRasterOutputR" class="form-control" style="width: 100%;"></select></td>
+                                </tr>
+                                <tr>
+                                    <td>Verde (G)</td>
+                                    <td><select id="layerRasterOutputG" class="form-control" style="width: 100%;"></select></td>
+                                </tr>
+                                <tr>
+                                    <td>Azul (B)</td>
+                                    <td><select id="layerRasterOutputB" class="form-control" style="width: 100%;"></select></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <hr />
+                        <div>
+                            <strong>Corrección de color: </strong><br />
+                            <select id="layerRasterStretch" class="form-control" style="width: 100%;">
+                                <option value="0">Ninguna</option>
+                                <option value="3">StandardDeviation</option>
+                                <option value="5">MinMax</option>
+                                <option value="6">PercentClip</option>
+                                <option value="4">HistogramEqualization</option>
+                                <option value="9">Sigmoid</option>
+                            </select>
+                        </div>
+                        <hr />
+                        <button type="button" onclick="updateRasterFunctions();" class="btn btn-default btn-primary">
+                            Actualizar
+                        </button>&nbsp;
+                        <button type="button" onclick="updateRasterZoom();" class="btn btn-default">
+                            Centrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dibujar Panel -->
+        <div id="panelDibujar" class="panel-herramientas"></div>
+
+        <!-- Login Panel -->
+        <div id="panelLogin" class="panel-herramientas" style="display: none;">
+            <div id="headingLogin" class="panel-heading-f" role="tab">
+                <div class="panel-title">
+                    <a class="panel-toggle icon-panel" href="#" style=" background-image: url('/images/iconos/Comparte el mapa.png');"></a>
+                    <a href="#" class="panel-toggle collapsed">
+                        <span class="panel-label">Iniciar sesion</span>
+                    </a>
+                    <a class="panel-close" href="#" onclick="closeLogin();"><span class="esri-icon esri-icon-close" aria-hidden="true"></span></a>
+                </div>
+            </div>
+            <div id="collapseLogin" class="panel-collapse">
+                <div class="panel-body">
+                    <div id="loginContainer">
+                        <div id="authContainer">
+                        </div>
+                    </div>
+                    <div id="logoutContainer" style="text-align: center;padding: 10px;">
+                        <img id="userPhoto2" src="/images/icono_ingreso.png" style="width: 64px; height: 64px;border-radius: 50%;" alt="Imagen Usuario" />
+                        <h5><span id="userName2"></span></h5>
+                        <button id="logoutBtn" type="button" onclick="signOut();" class="btn btn-default btn-danger">
+                            Cerrar sesi&oacute;n
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        window.dojoConfig = {
+            async: true,
+            packages: [
+                {
+                    name: 'app',
+                    location: window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + '/js/lib'
+                }
+            ]
+        };
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth__es.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script> -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/anchorme/2.1.2/anchorme.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.es.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-typeahead/2.11.0/jquery.typeahead.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.11.0/proj4.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/terraformer/1.0.9/terraformer.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sortable/0.9.13/jquery-sortable-min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script type="text/javascript">
+        window.dojoConfig = {
+            async: false,
+            isDebug: true,
+            packages: [{
+                name: 'app',
+                location: '/js/lib/'
+            }]
+        };
+    </script>
+     <!-- Librerias requeridas -->
+<script type="text/javascript" src="../js/geostats-master/lib/geostats.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3ZSTk7kajkaj4D292NLuduDCO1c/NT8Id+jE58KYLKT7hXnbtryGmMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.30/"></script>
+<script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+ 
+
+    <script type="text/javascript" async src="/js/lib/mkg-share.min.js"></script>
+    <script type="text/javascript" src="/js/lib/terraformer-arcgis-parser.min.js"></script>
+
+    <!-- Se cargan los estilos -->
+<link rel="stylesheet" href="/visor/herramientas/busquedaAvanzada/styles.css">
+<link rel="stylesheet" href="./herramientas/capasActivas/styles.css">
+    <link rel="stylesheet" href="./herramientas/operadoresEspaciales/styles.css">
+    <link rel="stylesheet" href="./herramientas/simbologiaEtiquetado/styles.css">
+    <link rel="stylesheet" href="./herramientas/dibujoMedicion/styles.css">
+    <link rel="stylesheet" href="./herramientas/importarDatos/styles.css">
+
+    <!-- Se cargan los archivos JS -->
+    <script src="./index.js"></script>
+    <script src="./herramientas/operadoresEspaciales/index.js"></script>
+    <script src="./herramientas/capasActivas/index.js"></script>
+    <script src="./herramientas/leyenda/index.js"></script>
+    <script src="./herramientas/estadisticas/index.js"></script>
+    <script src="./herramientas/descarga/index.js"></script>
+    <script src="./herramientas/operadoresEspaciales/buffer.js"></script>
+    <script src="./herramientas/operadoresEspaciales/intersect.js"></script>
+    <script src="./herramientas/operadoresEspaciales/join.js"></script>
+    <script src="./herramientas/operadoresEspaciales/union.js"></script>
+    <script src="./herramientas/operadoresEspaciales/projectGeometries.js"></script>
+<script src="./herramientas/cargarCapas/index.js"></script>
+<script src="./herramientas/busquedaAvanzada/index.js"></script>
+<script src="./herramientas/simbologiaEtiquetado/index.js"></script>
+<script src="./herramientas/dibujoMedicion/index.js"></script>
+<script src="./herramientas/importarDatos/index.js"></script>
+</body>
+</html>

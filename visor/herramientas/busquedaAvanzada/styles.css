@@ -1,0 +1,115 @@
+.listResults{
+    overflow-y: auto;
+    max-height: 250px;
+    overflow: visible;
+}
+
+.btnPoint {
+    background-image: url("/images/panel_dibujo/punto.png");
+    width: 30px;
+    height: 25px;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .btnLine {
+    background-image: url("/images/panel_dibujo/linea.png");
+    width: 30px;
+    height: 25px;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+
+  .btnPolyLine {
+    background-image: url("/images/panel_dibujo/multilinea.png");
+    width: 30px;
+    height: 25px;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }  
+  
+  .btnCircle {
+    background-image: url("/images/panel_dibujo/circulo.png");
+    width: 30px;
+    height: 25px;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .btnRectangle {
+    background-image: url("/images/panel_dibujo/extent.png");
+    width: 30px;
+    height: 25px;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .btnPolygon {
+    background-image: url("/images/panel_dibujo/poligono.png");
+    width: 30px;
+    height: 25px;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+.divCenter{
+    justify-content: center;
+}
+  
+.btnDownloadLayer{
+    width: 15px;
+    height: 15px;
+    border: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btnDownloadLayer::after {
+  display: none; 
+}
+
+.btnCargarLayer{
+    width: 15px;
+    height: 15px;
+    border: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-right: 15px;
+}
+
+.divActionsLayer{
+  display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-right: 15px;
+
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description"
+        content="Ordenamiento territorial de Colombia | Colombia OT: Una plataforma del IGAC para la construcción colectiva de país." />
+    <meta name="title" property="og:title" content="Colombia OT">
+    <meta property="og:type" content="website">
+    <meta name="image" property="og:image" content="https://www.colombiaot.gov.co/images/Preview.png">
+    <meta name="keywords"
+        content="Ordenamiento territorial, Plan de ordenamiento territorial, Pot colombia, Pot, Componente rural, Componente urbano, Dimensiones del diagnóstico, Igac, Observatorio de ordenamiento territorial, Datos del pot, Planificación territorial, Federación colombiana de municipios, La ruta del pot" />
+    <meta name="author" content="Instituto Geográfico Agustín Codazzi - IGAC" />
+    <meta http-equiv="content-language" content="es" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="canonical" href="https://www.colombiaot.gov.co" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <title>Estadísticas para el OT</title>
+
+    <!-- <link type="text/css" async rel="stylesheet"
+        href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" />
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-bootstrap.min-v0.10.css">
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-arcgis-3.x.min-v0.10.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-typeahead/2.11.0/jquery.typeahead.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/css/dataTables.bootstrap.min.css" /> -->
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.27/esri/themes/light/main.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78PPLF47WW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78PPLF47WW');
+    </script>
+    <style>
+        html,
+        body {            
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .panel-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        #viewDiv {
+            top: 0;
+            left: 0;
+            padding: 0;
+            margin: 0;
+            height: 70%;
+            width: 100%;        
+        }
+
+        #tableDiv {
+            height: 30%;
+            width: 100%;
+        }
+
+        .panel-side {
+            position: absolute;
+            padding: 2px;
+            box-sizing: border-box;
+            width: 300px;
+            height: 70%;
+            top: 0;
+            right: 0;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            overflow: auto;
+            z-index: 60;
+        }
+
+        .panel-side h3 {
+            padding: 0 20px;
+            margin: 20px 0;
+        }
+
+        .panel-side ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .panel-side li {
+            list-style: none;
+            padding: 10px 20px;
+        }
+
+        .panel-result {
+            cursor: pointer;
+            margin: 2px 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .panel-result:hover,
+        .panel-result:focus {
+            color: orange;
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+
+        
+    </style>
+</head>
+
+<body class="calcite calcite-nav-top">
+    
+    <div class="panel-container">
+        <div id="viewDiv">
+            <div class="panel-side esri-widget">
+                <h3>Estadísticas</h3>
+                <label for="filterDptos">Filtrar por departamento</label>
+                <select name="filterDptos" id="filterDptos">
+                    <!-- <option value="All">Todos los departamentos</option> -->
+                </select>
+                <br>
+                <br>
+                <canvas id="dptosChart"></canvas>
+                <canvas id="mpiosChart"></canvas>
+            </div>
+
+        </div>
+        <div id="tableDiv"></div>
+        </div>
+    </div>
+
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-typeahead/2.11.0/jquery.typeahead.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/dataTables.bootstrap.min.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://js.arcgis.com/4.27/"></script>
+
+    <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+
+</html>

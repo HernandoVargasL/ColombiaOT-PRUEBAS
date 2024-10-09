@@ -1,0 +1,205 @@
+.pillsearch {
+    font-size: 14px;
+    border: none !important;
+    background: none !important;
+    margin: 5px 10px 0px 10px !important;
+    padding: 5px !important;
+}
+
+.btn-default{
+    border: 1px solid #ccc;
+}
+
+#drawLineBtn {
+    background-image: url(/images/panel_dibujo/linea.png);
+    height: 36px;
+    width: 36px;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawPointBtn {
+    background-image: url(/images/panel_dibujo/punto.png);
+    height: 36px;
+    width: 36px;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawPolylineBtn {
+    background-image: url(/images/panel_dibujo/multilinea.png);
+    height: 36px;
+    width: 36px;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawFreehandPolylineBtn {
+    background-image: url(/images/panel_dibujo/linea2.png);
+    height: 36px;
+    width: 36px;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawTriangleBtn2 {
+    background-image: url(/images/panel_dibujo/triangulo.png);
+    height: 36px;
+    width: 20%;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawCircleBtn2 {
+    background-image: url(/images/panel_dibujo/circulo.png);
+    height: 36px;
+    width: 20%;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawEllipseBtn2 {
+    background-image: url(/images/panel_dibujo/extent.png);
+    height: 36px;
+    width: 20%;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawPolygonBtn2 {
+    background-image: url(/images/panel_dibujo/poligono.png);
+    height: 36px;
+    width: 20%;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawTriangleBtn {
+    background-image: url(/images/panel_dibujo/triangulo.png);
+    height: 36px;
+    width: 36px;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawCircleBtn {
+    background-image: url(/images/panel_dibujo/circulo.png);
+    height: 36px;
+    width: 36px;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawEllipseBtn {
+    background-image: url(/images/panel_dibujo/elipse.png);
+    height: 36px;
+    width: 36px;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawPolygonBtn {
+    background-image: url(/images/panel_dibujo/poligono.png);
+    height: 36px;
+    width: 36px;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawFreehandPolygonBtn {
+    background-image: url(/images/panel_dibujo/poligono2.png);
+    height: 36px;
+    width: 36px;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#drawFreehandPolygonBtn2 {
+    background-image: url(/images/panel_dibujo/poligono2.png);
+    height: 36px;
+    width: 20%;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawTextBtn {
+    background-image: url(/images/panel_dibujo/texto.png);
+    height: 36px;
+    width: 36px;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#drawDeleteBtn {
+    background-image: url(/images/panel_dibujo/configuracion.png);
+    height: 36px;
+    width: 36px;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#measureDivContainer {
+    background-color: #F2EFE9;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#measureDivArea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #DBD8D2;
+    margin-top: 10px;
+}
+
+#measureDivLength {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #DBD8D2;
+    margin-top: 10px;
+}
+
+#measureDivCoordinates {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #DBD8D2;
+    margin-top: 10px;
+}
+
+.item-custom{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    border: 1px solid #ddd;
+}
+
+.item-list-custom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0px;
+    padding-right: 15px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+}

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="Ordenamiento territorial de Colombia | Colombia OT: Una plataforma del IGAC para la construcción colectiva de país." />
+    <meta name="title" property="og:title" content="Colombia OT">
+    <meta property="og:type" content="website">
+    <meta name="image" property="og:image" content="https://www.colombiaot.gov.co/images/Preview.png">
+    <meta name="keywords" content="Ordenamiento territorial, Plan de ordenamiento territorial, Pot colombia, Pot, Componente rural, Componente urbano, Dimensiones del diagnóstico, Igac, Observatorio de ordenamiento territorial, Datos del pot, Planificación territorial, Federación colombiana de municipios, La ruta del pot" />
+    <meta name="author" content="Instituto Geográfico Agustín Codazzi - IGAC" />
+    <meta http-equiv="content-language" content="es" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="canonical" href="https://www.colombiaot.gov.co" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <title>Colombia OT</title>
+
+    <link type="text/css" async rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" />
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-bootstrap.min-v0.10.css">
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-arcgis-3.x.min-v0.10.css">
+
+    <link rel="stylesheet" href="/css/sigot.css">
+    <link rel="stylesheet" href="/css/maestra.css">
+    <link rel="stylesheet" href="/css/navbar-footer.css">
+    <link rel="stylesheet" href="css/acercade.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78PPLF47WW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78PPLF47WW');
+    </script>
+</head>
+<body class="calcite calcite-nav-top">
+    <div class="barra_gov">
+        <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
+            <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
+        </a>
+    </div>
+
+    <nav>
+        <div class="navbarigac">
+            <div class="logos">
+                <a href="https://www.igac.gov.co" class="navbar-brand-igac" target="_blank">
+                    <img alt="Logo IGAC" src="/images/nav/logo.png">
+                </a>
+                <img src="/images/nav/colombiaOT.svg" alt="Colombia OT">
+            </div>
+            <ul id="link-list">
+                <li>
+                    <a href="/" rel="noopener">Inicio</a>
+                </li>
+                <li>
+                    <a href="/pot/" rel="noopener">Los POT del país</a>
+                </li>
+				<li>
+				  	<a href="/vigencias/" rel="noopener">Visor  Vigencias POTs</a>
+                </li>
+                <li id="optionCargue" style="display: none;">
+                    <a href="/cargue/" rel="noopener">Cargue</a>
+                </li>
+                <li>
+                    <a class="collapse-button-1">Otros recursos
+                        <img src="/images/nav/ico-arrow.png" alt="">
+                    </a>
+
+                    <ul id="collapse-menu-1" class="collapse-menu-1">
+                        <li>
+                            <a href="/cartillas/">Cartillas, gu&iacute;as y manuales</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Cartillas, gu&iacute;as y manuales">
+                        </li>
+                        <li>
+                            <a href="/normatividad/">Normatividad</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Normatividad">
+                        </li>
+                        <li>
+                            <a href="/datosot/">Datos para el OT</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Datos para el OT">
+                        </li>
+                        <li>
+                            <a href="/aplicaciones/">Aplicaciones y herramientas</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Aplicaciones y herramientas">
+                        </li>
+                        <li>
+                            <a href="/documentos/">Documentos t&eacute;cnicos</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Documentos t&eacute;cnicos">
+                        </li>
+                        <li>
+                            <a href="/ruta/">La Ruta del POT</a>
+                            <img src="/images/nav/ico-arrow.png" alt="La Ruta del POT">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapse-button-2">Acerca de
+                        <img src="/images/nav/ico-arrow.png" alt="Acerca de">
+                    </a>
+
+                    <ul id="collapse-menu-2" class="collapse-menu-2">
+                        <li>
+                            <a href="/acerca-de/">Qu&eacute; es el ordenamiento territorial (OT)</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Que es">
+                        </li>
+                        <li>
+                            <a href="/acerca-de/colombia-ot-del-igac.html">Colombia OT del IGAC</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Colombia OT">
+                        </li>
+                        <li>
+                            <a href="/acerca-de/actores-de-colombia-ot.html">Actores de Colombia OT</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Actores">
+                        </li>
+                        <li>
+                            <a href="/acerca-de/ot_del_pais_en_cifras.html">El OT del pa&iacute;s en cifras</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Cifras">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a id="loginBtn" onclick="gotoLogin();">
+                        <img id="userPhoto" src="/images/icono_ingreso.png" onerror="defaultUserPhoto();" alt="Iniciar sesion" />
+                        <span id="userName" style="display: none;">Iniciar sesion</span>
+                    </a>
+                </li>
+            </ul>
+            <button class='nav-bar-toggle-igac'>
+                <div class='icon-bar'></div>
+                <div class='icon-bar'></div>
+                <div class='icon-bar'></div>            </button>
+        </div>
+        <div class='navbarnavigac'>
+        </div>
+    </nav>
+
+    <div class="calcite-map acercadeseccion">
+        <div id="jumbotron-acerca-de" class="jumbotron acerca-de-body en-cifras">
+            <div class="container-main">
+                <div class="row-main">
+                    <div class="side-bar">
+                        <div class="top">
+                            <div class="tittle">
+                                <h1><a href="/acerca-de/index.html">/ Qué es el ordenamiento<br>territorial (OT)</a><a href="colombia-ot-del-igac.html"> / Colombia OT del IGAC </a>
+                                    <a href="actores-de-colombia-ot.html">/ Actores de <br> Colombia OT </a><a style="color: #5045b3;" href="ot_del_pais_en_cifras.html">/ El OT del <br>país en cifras /</a>
+                                </h1>
+                            </div>
+                            <div class="ilustracion">
+                                <img src="/images/acercade/ilustracionside.svg" alt="ilustracion igac">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenido-pagina">
+                        <div class="withe-box first">
+                            <div class="title">
+                                Estos son los n&uacute;meros del ordenamiento territorial
+                            </div>
+                            <div class="resume first">
+                                A continuaci&oacute;n, hemos recopilado las cifras m&aacute;s significativas que describen el panorama general de la la actividad del ordenamiento territorial en el pa&iacute;s. Es un resumen que permite ver el avance que se evidencia en los &uacute;ltimos a&ntilde;os, pero tambi&eacute;n hace una llamado a la necesidad de seguir construyendo y actualizando los procesos de planeaci&oacute;n territorial desde todas las regiones de Colombia y en sus diferentes niveles, locales, regionales y a nivel nacional.
+                            </div>
+                            <div class="title">
+                                Los POT del pa&iacute;s
+                            </div>
+                            <div class="resume">
+                                Plan de ordenamiento territorial &ndash; POT: Es el instrumento b&aacute;sico para desarrollar el proceso de ordenamiento del territorio municipal. Se define como el conjunto de objetivos, directrices, pol&iacute;ticas, estrategias, metas, programas, actuaciones y normas adoptadas para orientar y administrar el desarrollo f&iacute;sico del territorio y la utilizaci&oacute;n del suelo. <hr>
+                                Hoy en d&iacute;a hay un total de 1121 municipios en Colombia, de los cuales 18, son &aacute;reas NO municipalizadas. Es decir que la base real de municipios obligados a llevar a cabo procesos de planeaci&oacute;n territorial y sobre la cual se basar&aacute;n los siguientes an&aacute;lisis es de 1102 municipios:<hr>
+                                Realizamos los siguientes an&aacute;lisis para resumir el estado del ordenamiento territorial del pa&iacute;s a nivel
+                            </div>
+                            <div class="graphic">
+                                <img src="/images/acercade/grafica-lospotdel-pais.svg" alt="">
+                            </div>
+                            <div class="resume cla-a">
+                                municipal:
+                            </div>
+                            <ul class="list">
+                                <li class="item"><a class="js-anchor-link" href="#lostiposPot">Los tipos de POT</a><img src="/images/acercade/right-arrow.svg" alt=""></li>
+                                <li class="item"><a class="js-anchor-link" href="#elestadoPot">El estado de los POT</a><img src="/images/acercade/right-arrow.svg" alt=""></li>
+                                <li class="item"><a class="js-anchor-link" href="#procesosRevision">Procesos de revisi&oacute;n y ajuste</a><img src="/images/acercade/right-arrow.svg" alt=""></li>
+                                <li class="item"><a class="js-anchor-link" href="#documentos">Documentos POT</a><img src="/images/acercade/right-arrow.svg" alt=""></li>
+                                <li class="item"><a class="js-anchor-link" href="#carizaciones">Caracterizaciones territoriales</a><img src="/images/acercade/right-arrow.svg" alt=""></li>
+                            </ul>
+                        </div>
+                        <div id="lostiposPot" class="list-numbers">
+                            <div class="item">
+                                <div class="title-part">
+                                    <div class="number"><img src="/images/acercade/icon-one-4.svg" alt="one"></div>
+                                    <div class="title">Los tipos de POT</div>
+                                </div>
+                                <div class="resume">
+                                    Existen 3 niveles de tipo de POT. &Eacute;stos dependen del total de la poblaci&oacute;n y tienen complejidades y alcances diferentes para el desarrollo de las etapas de construcci&oacute;n de procesos de planeaci&oacute;n municipal. As&iacute;, los tipos de POT y su distribuci&oacute;n se evidencia en la siguiente gr&aacute;fica:
+                                </div>
+                            </div>
+                            <div class="list">
+                                <span class="red">Plan de Ordenamiento territorial (POT):</span>>100.000 habitantes <br>
+                                <span class="blue">Plan b&aacute;sico de ordenamiento territorial (PBOT):</span>>30.000 y &lt;100.000 habitantes <br>
+                                <span class="green">Esquema B&aacute;sico de Ordenamiento Territorial (EOT)</span>&lt;30.000 <br>
+                            </div>
+                            <div class="graphic">
+                                <img src="/images/acercade/grafica-lostiposdepot.svg" alt="">
+                            </div>
+                        </div>
+                        <div id="elestadoPot" class="list-numbers">
+                            <div class="item">
+                                <div class="title-part">
+                                    <div class="number"><img src="/images/acercade/icon-two-4.svg" alt="one"></div>
+                                    <div class="title">El estado de los POT</div>
+                                </div>
+                                <div class="resume">
+                                    A alto nivel, son 4 los diferentes estados en los que se mide el avance de los procesos de planeaci&oacute;n territorial municipal. Estos estados dependen de que el municipio haya adoptado una vigencia de mediano o largo plazo que para hoy, no est&eacute;n caducadas. A continuaci&oacute;n, la definici&oacute;n de los estados:
+                                </div>
+                            </div>
+                            <div class="list">
+                                <span class="red double-line">Actualizado<br></span>Revisi&oacute;n por vencimiento de vigencia de largo plazo adoptada desde el 1 de enero de 2012 a la fecha, es decir tienen un POT nuevo.
+                                <hr>
+                                <span class="green double-line">Vencido:</span><br>POT Municipios con POT con vigencia de mediano plazo vencida: Revisi&oacute;n por vencimiento de vigencia de largo plazo adoptada entre el 1 de enero de 2008 y el 31 de diciembre de 2011.
+                                <hr>
+                                <span class="blue double-line">Desactualizado</span><br>POT vigente con vigencia de largo plazo vencida el 31 de diciembre de 2019 o antes, es decir deben emprender proceso de revisi&oacute;n y ajuste
+                                <hr>
+                                <span class="gray double-line">Sin POT:</span><br>Municipios que nunca han realizado un proceso de POT y tienen la obligatoriedad de realizarlo lo antes posible.
+                            </div>
+                            <div class="graphic">
+                                <img src="/images/acercade/grafica-elestadodelpot.png" alt="">
+                            </div>
+                        </div>
+                        <div id="procesosRevision" class="list-numbers cla-a">
+                            <div class="item">
+                                <div class="title-part">
+                                    <div class="number"><img src="/images/acercade/icon-three-4.svg" alt="one"></div>
+                                    <div class="title">Procesos de revisi&oacute;n y ajuste</div>
+                                </div>
+                                <div class="resume">
+                                    En esta secci&oacute;n, se hace un an&aacute;lisis de distribuci&oacute;n de los procesos de revisi&oacute;n y ajuste de los POT municipales a lo largo de los a&ntilde;os. Se trata de los municipios que han realizado actualizaciones con vigencia de largo plazo, es decir un nuevo proceso de POT, o han realizado alguna modificaci&oacute;n a los planes vigentes. Se puede concluir que, en el 2015, para ambos tipos de intervenci&oacute;n, se vio un alza importante en la actividad de planeaci&oacute;n territorial en el pa&iacute;s con n&uacute;meros de municipios que duplican la actividad promedio en la distribuci&oacute;n anual.
+                                    <hr>
+                                    A continuaci&oacute;n, la definici&oacute;n de los tipos de revisi&oacute;n y ajuste:
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="tipos">
+                                    <div class="title">
+                                        Actualización de POT
+                                    </div>
+                                    <div class="resume">
+                                        Proceso de revisi&oacute;n y ajuste de largo plazo, tambi&eacute;n se entiende como un &ldquo;Nuevo POT&rdquo;.
+                                    </div>
+                                </div>
+                                <div class="tipos">
+                                    <div class="title">
+                                        Modificaci&oacute;n excepcional o revisi&oacute;n ordinaria:
+                                    </div>
+                                    <div class="resume">
+                                        Modificaci&oacute;n de una parte del POT vigente.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="graphic">
+                                <img src="/images/acercade/grafica-potactualizadoporano.svg" alt="">
+                            </div>
+                            <div class="graphic">
+                                <img src="/images/acercade/potactualizadoporano2.svg" alt="">
+                            </div>
+                            <div class="resume">
+                                Para los POT desactualizados, se representa la distribuci&oacute;n de los a&ntilde;os en que se realizaron los POT de primera generaci&oacute;n y hoy representan la gran masa de municipios del pa&iacute;s con POT vencidos que requieren de un nuevo proceso de vigencia de largo plazo.
+                            </div>
+                            <div class="graphic">
+                                <img src="/images/acercade/grafica-potactualizadoporano3.svg" alt="">
+                            </div>
+                        </div>
+                        <div id="documentos" class="list-numbers">
+                            <div class="item">
+                                <div class="title-part">
+                                    <div class="number"><img src="/images/acercade/icon-four-4.svg" alt="one"></div>
+                                    <div class="title">Documentos POT</div>
+                                </div>
+                                <div class="resume">
+                                    En este an&aacute;lisis hacemos el resumen de los municipios que cuentan con dos tipos de documentaci&oacute;n esencial en sus procesos de ordenamiento territorial: 1) Los actos administrativos y su distribuci&oacute;n entre acuerdos y proyectos de acuerdo; 2) La cartograf&iacute;a como parte esencial del desarrollo t&eacute;cnico para en los procesos de Ordenamiento.
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="tipos">
+                                    <div class="title">
+                                        Acto Administrativo
+                                    </div>
+                                    <div class="resume">
+                                        En los procesos de planes de ordenamiento es el documento que oficializa la aceptaci&oacute;n de lo planteado en la etapa de formulaci&oacute;n del POT y le da paso a la etapa de implementaci&oacute;n.
+                                    </div>
+                                </div>
+                                <div class="tipos">
+                                    <div class="title">
+                                        Cartograf&iacute;a
+                                    </div>
+                                    <div class="resume">
+                                        Es toda la entrega cartogr&aacute;fica que se debe presentar para las etapas de Diagn&oacute;stico y formulaci&oacute;n del POT.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="graphic">
+                                <img src="/images/acercade/grafica-municipios.svg" alt="">
+                            </div>
+                            <div class="graphic">
+                                <img src="/images/acercade/grafica-municipios2.svg" alt="">
+                            </div>
+                        </div>
+                        <div id="carizaciones" class="list-numbers">
+                            <div class="item">
+                                <div class="title-part">
+                                    <div class="number"><img src="/images/acercade/icon-five-4.svg" alt="one"></div>
+                                    <div class="title">Caracterizaciones territoriales del POT</div>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="grancaracterizacion">
+                                    <img src="/images/acercade/icon-134-4.svg" alt="">
+                                    <div class="label1">Municipios con caracterizaciones disponibles en Colombia OT</div>
+                                </div>
+                                <div class="sub-title">
+                                    Servicios disponibles en Colombia en Mapas
+                                </div>
+                                <div class="caracterizacion">
+                                    <img src="/images/acercade/icon-146-4.svg" alt="">
+                                    <div class="label1">Clasificaci&oacute;n del suelo</div>
+                                </div>
+                                <div class="caracterizacion">
+                                    <img src="/images/acercade/icon-118-4.svg" alt="">
+                                    <div class="label1">Zonificaci&oacute;n de usos urbanos</div>
+                                </div>
+                                <div class="caracterizacion">
+                                    <img src="/images/acercade/icon-132-4.svg" alt="">
+                                    <div class="label1">Zonificación de usos rurales</div>
+                                </div>
+                                <div class="pre-title">
+                                    RECURSOS RELACIONADOS
+                                </div>
+                                <div class="cards">
+                                    <div class="card-component">
+                                        <div class="card">
+                                            <a href="https://www.colombiaenmapas.gov.co/">
+                                                <div class="head">
+                                                    <h2>Herramientas para el OT <span>›</span></h2>
+                                                </div>
+                                            </a>
+                                            <div class="sumary-card">
+                                                <div class="sub-title">
+                                                    <h5>
+                                                        CEM
+                                                    </h5>
+                                                </div>
+                                                <div class="resume">
+                                                    Colombia en Mapas es la colecci&oacute;n m&aacute;s completa de mapas del pa&iacute;s. Es una herramienta en constante evoluci&oacute;n. Construido para que todos los colombianos puedan consumir los datos, productos y servicios geogr&aacute;ficos.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-component">
+                                        <div class="card">
+                                            <a href="https://www.colombiaot.gov.co/ruta/">
+                                                <div class="head">
+                                                    <h2>Herramientas para el OT <span>›</span></h2>
+                                                </div>
+                                            </a>
+                                            <div class="sumary-card">
+                                                <div class="sub-title">
+                                                    <h5>
+                                                        La Ruta del POT
+                                                    </h5>
+                                                </div>
+                                                <div class="resume">
+                                                    Una gu&iacute;a para tomar la direcci&oacute;n adecuada. A continuaci&oacute;n, se describen cada uno de los pasos de la ruta.Contiene, descripciones, definiciones, recursos y ayudas sobre los procesos t&eacute;cnicos y administrativos para el desarrollo del POT.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-component">
+                                        <div class="card">
+                                            <a href="https://www.colombiaot.gov.co/pot/">
+                                                <div class="head">
+                                                    <h2>Herramientas para el OT <span>›</span></h2>
+                                                </div>
+                                            </a>
+                                            <div class="sumary-card">
+                                                <div class="sub-title">
+                                                    <h5>
+                                                        Consulta de POT municipales
+                                                    </h5>
+                                                </div>
+                                                <div class="resume">
+                                                    Aqu&iacute; podr&aacute;s buscar, explorar y descargar toda la entrega documental y cartogr&aacute;fica que realizan los municipios del pa&iacute;s en sus procesos de elaboraci&oacute;n del POT.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="boton">
+                                    <a href="/cartillas/">Visita todos los recursos OT</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="withe-box second">
+                            <div class="title">
+                                Planes de Ordenamiento Departamental POD
+                            </div>
+                            <div class="resume first">
+                                Este es un resumen de los estados de los POD por etapa de desarrollo en la que se encuentran. Es importante recalcar que casi la mitad se encuentra en etapa de diagn&oacute;stico. Esto quiere decir que el 2022 es un a&ntilde;o se deben acelerar los procesos de formulaci&oacute;n que permitan en el corto plazo empezar la implementaci&oacute;n de los mismos a finales de este a&ntilde;o o principios del 2023.
+                            </div>
+                            <div class="graphic">
+                                <img src="/images/acercade/grafica-lascifrasdelot.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="call-to-action">
+                            <div class="image">
+                                <img src="/images/acercade/ilustration-banner.svg" alt="">
+                            </div>
+                            <div class="title">
+                                Conoce todos los recursos que <br> Colombia OT ofrece <br>
+                                <div class="boton">
+                                    <a href="/cartillas/">Buscar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalLogin" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="border: none; padding-bottom: 0px;">
+                    <a href="#" class="close" onclick="closeLogin(); return false;" aria-label="Cerrar"><span aria-hidden="true">&times;</span></a>
+                    <h4 class="modal-title">Iniciar sesi&oacute;n</h4>
+                </div>
+                <div class="modal-body" style="padding-top: 0px;">
+                    <div id="loginContainer">
+                        <div id="authContainer">
+                        </div>
+                    </div>
+                    <div id="logoutContainer" style="text-align: center;padding: 10px;">
+                        <img id="userPhoto2" src="/images/icono_ingreso.png" style="width: 64px; height: 64px;border-radius: 50%;" alt="Imagen Usuario" />
+                        <h5><span id="userName2"></span></h5>
+                        <button id="logoutBtn" type="button" onclick="signOut();" class="btn btn-default btn-danger">
+                            Cerrar sesi&oacute;n
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="containerf">
+            <div class="footer-container">
+                <div class="rowf">
+                    <div class="col-md-6f">
+                        <h2 class="footer-titulo">Instituto Geográfico Agustín Codazzi - IGAC</h2>
+                    </div>
+                    <div class="logos-footer col-md-6f">&nbsp;</div>
+                </div>
+                <div class="rowf">
+                    <div class="col-md-6f">
+                        <h2 class="sub-titulo-sede-gov-co">Información sede principal</h2>
+
+                        <h3>Dirección:</h3>
+                        <p>Bogotá D.C. - Carrera 30 # 48-51</p>
+
+                        <h3>Horarios de atención al ciudadano:</h3>
+                        <p>Abierto al público de lunes a viernes de 9:00 a.m. a 4:00 p.m. jornada continua Sede Central y territorial Cundinamarca (Horario de atención temporal acatando las medidas y demás regulaciones de bioseguridad)</p>
+                        <h3>Teléfono Conmutador:</h3>
+                        <p>
+                            <a href="tel:6016531888">+57 601 653 18 88</a>
+                        </p>
+                        <h3>Correo de contacto:</h3>
+                        <p>
+                            <a href="mailto:contactenos@igac.gov.co">contactenos@igac.gov.co</a>
+                        </p>
+
+                        <h3>Correo de notificaciones judiciales:</h3>
+                        <p>
+                            <a href="mailto:judiciales@igac.gov.co">judiciales@igac.gov.co</a>
+                        </p>
+                        <p>NIT: 8999990049</p>
+
+                        <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
+                    </div>
+                    <div class="col-md-6f">
+                        <h3>Contáctenos en nuestras redes sociales</h3>
+
+                        <div class="redes-sociales">
+                            <p>
+                                <a href="https://www.facebook.com/IgacColombia" tabindex="-1" target="_blank">
+                                    <img alt="Visitar Facebook IGAC" class="icono-redes" src="/images/footer/facebook.svg">
+                                    Facebook IGAC
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="https://twitter.com/igacColombia" tabindex="-1" target="_blank">
+                                    <img alt="Visitar Twitter IGAC" class="icono-redes" src="/images/footer/twitter.svg">
+                                    Twitter IGAC
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="https://www.instagram.com/accounts/login/?next=/igacColombia/" tabindex="-1" target="_blank"><img alt="Visitar Instagram IGAC" class="icono-redes" src="/images/footer/instagram.svg">
+                                    Instagram IGAC
+                                </a>
+                            </p>
+                        </div>
+                        <div class="footer-enlaces"><a class="btn-low">Políticas</a>
+                            <a class="btn-low">Mapa del sitio</a>
+                            <a class="btn-low">Términos y condiciones</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gov-co-footer-pie">
+            <div class="gov-co-footer-auto containerf">
+                <img alt="Logo marca de Colombia" class="gov-co-logo-pie-blanco" src="/images/footer/marca_colombia.png">
+
+                <img alt="Logo de Gov Co" class="gov-co-logo-pie-mesa" src="/images/footer/header_govco.png">
+
+                <a class="text-white text-align-right" href="https://www.gov.co" target="_blank">
+                    Conoce GOV.CO aquí
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth__es.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.es.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.js-anchor-link').click(function(e){
+            e.preventDefault();
+            var target = $($(this).attr('href'));
+            if(target.length){
+                var scrollTo = target.offset().top -80;
+                $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+            }
+            });
+        });
+    </script>
+
+    <!-- <script type="text/javascript" src="/js/index.js"></script> -->
+    <script type="text/javascript" src="/js/maestra.js"></script>
+    <script type="text/javascript" src="/js/navbar.js"></script>
+
+</body>
+</html>

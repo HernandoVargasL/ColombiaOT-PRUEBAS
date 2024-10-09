@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="Ordenamiento territorial de Colombia | Colombia OT: Una plataforma del IGAC para la construcción colectiva de país." />
+    <meta name="title" property="og:title" content="Colombia OT">
+    <meta property="og:type" content="website">
+    <meta name="image" property="og:image" content="https://www.colombiaot.gov.co/images/Preview.png">
+    <meta name="keywords" content="Ordenamiento territorial, Plan de ordenamiento territorial, Pot colombia, Pot, Componente rural, Componente urbano, Dimensiones del diagnóstico, Igac, Observatorio de ordenamiento territorial, Datos del pot, Planificación territorial, Federación colombiana de municipios, La ruta del pot" />
+    <meta name="author" content="Instituto Geográfico Agustín Codazzi - IGAC" />
+    <meta http-equiv="content-language" content="es" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="canonical" href="https://www.colombiaot.gov.co" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <title>Colombia OT</title>
+
+    <link type="text/css" async rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" />
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-bootstrap.min-v0.10.css">
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-arcgis-3.x.min-v0.10.css">
+
+    <link rel="stylesheet" href="/css/sigot.css">
+    <link rel="stylesheet" href="/css/maestra.css">
+    <link rel="stylesheet" href="/css/navbar-footer.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78PPLF47WW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-78PPLF47WW');
+    </script>
+</head>
+<body class="calcite calcite-nav-top">
+    <div class="barra_gov">
+        <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
+            <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
+        </a>
+    </div>
+
+    <nav>
+        <div class="navbarigac">
+            <div class="logos">
+                <a href="https://www.igac.gov.co" class="navbar-brand-igac" target="_blank">
+                    <img alt="Logo IGAC" src="/images/nav/logo.png">
+                </a>
+                <img src="/images/nav/colombiaOT.svg" alt="Colombia OT">
+            </div>
+            <ul id="link-list">
+                <li>
+                    <a href="/" rel="noopener">Inicio</a>
+                </li>
+                <li>
+                    <a href="/pot/" rel="noopener">Los POT del país</a>
+                </li>
+				<li>
+				  	<a href="/vigencias/" rel="noopener">Visor  Vigencias POTs</a>
+                </li>
+                <li id="optionCargue" style="display: none;">
+                    <a href="/cargue/" rel="noopener">Cargue</a>
+                </li>
+                <li>
+                    <a class="collapse-button-1">Otros recursos
+                        <img src="/images/nav/ico-arrow.png" alt="">
+                    </a>
+
+                    <ul id="collapse-menu-1" class="collapse-menu-1">
+                        <li>
+                            <a href="/cartillas/">Cartillas, gu&iacute;as y manuales</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Cartillas, gu&iacute;as y manuales">
+                        </li>
+                        <li>
+                            <a href="/normatividad/">Normatividad</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Normatividad">
+                        </li>
+                        <li>
+                            <a href="/datosot/">Datos para el OT</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Datos para el OT">
+                        </li>
+                        <li>
+                            <a href="/aplicaciones/">Aplicaciones y herramientas</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Aplicaciones y herramientas">
+                        </li>
+                        <li>
+                            <a href="/documentos/">Documentos t&eacute;cnicos</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Documentos t&eacute;cnicos">
+                        </li>
+                        <li>
+                            <a href="/ruta/">La Ruta del POT</a>
+                            <img src="/images/nav/ico-arrow.png" alt="La Ruta del POT">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="collapse-button-2">Acerca de
+                        <img src="/images/nav/ico-arrow.png" alt="Acerca de">
+                    </a>
+
+                    <ul id="collapse-menu-2" class="collapse-menu-2">
+                        <li>
+                            <a href="/acerca-de/">Qu&eacute; es el ordenamiento territorial (OT)</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Que es">
+                        </li>
+                        <li>
+                            <a href="/acerca-de/colombia-ot-del-igac.html">Colombia OT del IGAC</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Colombia OT">
+                        </li>
+                        <li>
+                            <a href="/acerca-de/actores-de-colombia-ot.html">Actores de Colombia OT</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Actores">
+                        </li>
+                        <li>
+                            <a href="/acerca-de/ot_del_pais_en_cifras.html">El OT del pa&iacute;s en cifras</a>
+                            <img src="/images/nav/ico-arrow.png" alt="Cifras">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a id="loginBtn" onclick="gotoLogin();">
+                        <img id="userPhoto" src="/images/icono_ingreso.png" onerror="defaultUserPhoto();" alt="Iniciar sesion" />
+                        <span id="userName" style="display: none;">Iniciar sesion</span>
+                    </a>
+                </li>
+            </ul>
+            <button class='nav-bar-toggle-igac'>
+                <div class='icon-bar'></div>
+                <div class='icon-bar'></div>
+                <div class='icon-bar'></div>            </button>
+        </div>
+        <div class='navbarnavigac'>
+        </div>
+    </nav>
+
+    <div class="calcite-map acercadeseccion">
+        <div id="jumbotron-acerca-de" class="jumbotron acerca-de-body">
+            <div class="container-main">
+                <div class="row-main">
+                    <div class="side-bar">
+                        <div class="top">
+                            <div class="tittle">
+                                <h1>/ Qué es el ordenamiento<br>territorial (OT)<a href="colombia-ot-del-igac.html"> / Colombia OT del IGAC </a>
+                                    <a href="actores-de-colombia-ot.html">/ Actores de <br> Colombia OT </a><a href="ot_del_pais_en_cifras.html">/ El OT del <br>país en cifras /</a></h1>
+                            </div>
+                            <div class="ilustracion">
+                                <img src="/images/acercade/ilustracionside.svg" alt="ilustracion igac">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-content">
+                        <div class="sumary">
+                            <div class="capital-letter">
+                                <img src="/images/acercade/letraa.svg" alt="letra a">
+                            </div>
+                            <div class="introduction">
+                                <h2>Dos enfoques del ordenamiento territorial en Colombia.</h2>
+                                <p>Desde la perspectiva especial, el territorio es donde las personas que habitan en el ejercen su soberan&iacute;a bajo un gobierno propio. Sin embargo, la territorialidad trasciende las barreras de poder siendo el territorio una construcci&oacute;n social en donde se viven din&aacute;micas de identidad y el lienzo en donde surgen los tejidos sociales y econ&oacute;micos. Desde el cambio estructural que se dio en la d&eacute;cada de los 90&rsquo;s, el Ordenamiento Territorial se posiciona desde dos enfoques que determinan sus pertenencia y vitalidad en la descentralizaci&oacute;n, el bienestar de la poblaci&oacute;n y el aprovechamiento sostenible del capital natural y social</p>
+                                <ul>
+                                    <li>
+                                        <a class="js-anchor-link" href="#materializar">La planeaci&oacute;n f&iacute;sica del territorio.</a>
+                                    </li>
+                                    <li>
+                                        <a class="js-anchor-link" href="#incidencia">La organizaci&oacute;n pol&iacute;tico administrativa.</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="objetives">
+                                <div id="materializar" class="title">
+                                    <div class="number">
+                                        <img src="/images/acercade/icon-one.svg" alt="numero 1">
+                                    </div>
+                                    <h3>La planeaci&#243;n f&#237;sica del territorio.</h3>
+                                </div>
+                                <div class="content">
+                                    <div class="title">
+                                        <div class="sumary-content">
+                                            <p>La ley 388 de 1997 define el Ordenamiento Territorial municipal y distrital como un conjunto de acciones pol&iacute;tico-administrativas y de planificaci&oacute;n f&iacute;sica, emprendidas por los municipios, distritos, &aacute;reas metropolitanas y departamentos, en el ejercicio de la funci&oacute;n p&uacute;blica en la planeaci&oacute;n de los recursos espaciales y naturales dentro de su espacio definido por los l&iacute;mites.</p>
+                                            <div class="info">
+                                                <div class="info-description">
+                                                    <div class="icon">
+                                                        <img src="/images/acercade/info-one.svg" alt="key icon">
+                                                    </div>
+                                                    <h3>Ley 388 de 1997, artículo 2</h3>
+                                                </div>
+                                                <p>El establecimiento de los mecanismos que permitan al municipio, en ejercicio de su autonom&iacute;a, promover el ordenamiento de su territorio, el uso equitativo y racional del suelo, la preservaci&oacute;n y defensa del patrimonio ecol&oacute;gico y cultural localizado en su &aacute;mbito territorial y la prevenci&oacute;n de desastres en asentamientos de alto riesgo, as&iacute; como la ejecuci&oacute;n de acciones urban&iacute;sticas eficientes.</p>
+                                            </div>
+                                            <p>Los entes territoriales tienen la responsabilidad de disponer instrumentos eficientes para orientar el desarrollo de territorio en su regular utilizaci&oacute;n, transformaci&oacute;n y ocupaci&oacute;n del espacio de acuerdo con las estrategias de desarrollo socioecon&oacute;mico y en armon&iacute;a con el medio ambiente y las tradiciones hist&oacute;ricas y culturales</p>
+                                            <div class="recursos-relacionados">
+                                                <b>RECURSOS RELACIONADOS</b>
+                                            </div>
+                                            <div class="section-cards">
+                                                <div class="card-component">
+                                                    <div class="card type-3">
+                                                        <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=1369">
+                                                            <div class="head">
+                                                                <div class="card-content">
+                                                                    <h2>Normatividad<span>›</span></h2>
+                                                                    <img src="/images/acercade/icon-card-star.svg" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="sumary-card">
+                                                            <div class="sub-title">
+                                                                <h5>Decreto 879 de 1998</h5>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="resume">
+                                                                <p>Decreto por el cual se reglamentan las disposiciones referentes al ordenamiento del territorio municipal y distrital y a los planes de ordenamiento territorial.</p>
+                                                            </div>
+                                                            <div class="detail">
+                                                                <strong>Detalle</strong>
+                                                                <ul>
+                                                                    <li>Fecha: 01-01-1998</li>
+                                                                    <li>Tematica: Ordenamiento territorial</li>
+                                                                    <li>Creador: Presidencia de la Rep&uacute;blica de Colombia</li>
+                                                                </ul>
+                                                            </div>
+                                                            <a class="ver-masbtn" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=1369">Ver m&aacute;s</a>
+                                                        </div>
+                                                        <div class="tags-section">
+                                                            <div class="tag territorio">
+                                                                Territorio
+                                                            </div>
+                                                            <div class="tag pot">
+                                                                POT
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-component">
+                                                    <div class="card type-3">
+                                                        <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=26993">
+                                                            <div class="head">
+                                                                <div class="card-content">
+                                                                    <h2>Normatividad<span>›</span></h2>
+                                                                    <img src="/images/acercade/icon-card-star.svg" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="sumary-card">
+                                                            <div class="sub-title">
+                                                                <h5>Decreto 3600 de 2007</h5>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="resume">
+                                                                <p>Decreto por el cual se reglamentan las disposiciones de las Leyes 99 de 1993 y 388 de 1997 relativas a las determinantes de ordenamiento del suelo rural y al desarrollo de actuaciones urban&iacute;sticas de parcelaci&oacute;n y edificaci&oacute;n rural.</p>
+                                                            </div>
+                                                            <div class="detail">
+                                                                <strong>Detalle</strong>
+                                                                <ul>
+                                                                    <li>Fecha: 01-01-2007</li>
+                                                                    <li>Tematica: Ordenamiento territorial</li>
+                                                                    <li>Creador: Ministerio de Ambiente y Desarrollo Sostenible</li>
+                                                                </ul>
+                                                            </div>
+                                                            <a class="ver-masbtn" href="https://www.minambiente.gov.co/images/normativa/decretos/2007/dec_3600_2007.pdf">Ver m&aacute;s</a>
+                                                        </div>
+                                                        <div class="tags-section">
+                                                            <div class="tag rural">
+                                                                Rural
+                                                            </div>
+                                                            <div class="tag desarrollo">
+                                                                Desarrollo
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-component">
+                                                    <div class="card type-3">
+                                                        <a href="http://wsp.presidencia.gov.co/Normativa/Decretos/2014/Documents/SEPTIEMBRE/19/DECRETO%201807%20DEL%2019%20DE%20SEPTIEMBRE%20DE%202014.pdf">
+                                                            <div class="head">
+                                                                <div class="card-content">
+                                                                    <h2>Normatividad<span>›</span></h2>
+                                                                    <img src="/images/acercade/icon-card-star.svg" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="sumary-card">
+                                                            <div class="sub-title">
+                                                                <h5>Decreto 1807 de 2014</h5>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="resume">
+                                                                <p>Decreto reglamentario del art&iacute;culo 189 del Decreto - Ley 019 de 2012 en lo relativo a la incorporaci&oacute;n de la gesti&oacute;n del riesgo en los planes de ordenamiento territorial.</p>
+                                                            </div>
+                                                            <div class="detail">
+                                                                <strong>Detalle</strong>
+                                                                <ul>
+                                                                    <li>Fecha: 01-01-2014</li>
+                                                                    <li>Tematica: Ordenamiento territorial</li>
+                                                                    <li>Creador: Ministerio de Vivienda, Ciudad y Territorio</li>
+                                                                </ul>
+                                                            </div>
+                                                            <a class="ver-masbtn" href="http://wsp.presidencia.gov.co/Normativa/Decretos/2014/Documents/SEPTIEMBRE/19/DECRETO%201807%20DEL%2019%20DE%20SEPTIEMBRE%20DE%202014.pdf">Ver m&aacute;s</a>
+                                                        </div>
+                                                        <div class="tags-section">
+                                                            <div class="tag pot">
+                                                                POT
+                                                            </div>
+                                                            <div class="tag riesgosAmenazas">
+                                                                Riesgos y amenazas
+                                                            </div>
+                                                            <div class="tag ambiente">
+                                                                Ambiente
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-component">
+                                                    <div class="card type-3">
+                                                        <a href="https://minvivienda.gov.co/sites/default/files/normativa/decreto-unico-vivienda-ciudad-y-territorio-.pdf">
+                                                            <div class="head">
+                                                                <div class="card-content">
+                                                                    <h2>Normatividad<span>›</span></h2>
+                                                                    <img src="/images/acercade/icon-card-star.svg" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="sumary-card">
+                                                            <div class="sub-title">
+                                                                <h5>Decreto 1077 de 2015</h5>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="resume">
+                                                                <p>Decreto único reglamentario del Sector Vivienda, Ciudad y Territorio, compila las normas de carácter reglamentario que rigen en el sector vivienda, ciudad y territorio.</p>
+                                                            </div>
+                                                            <div class="detail">
+                                                                <strong>Detalle</strong>
+                                                                <ul>
+                                                                    <li>Fecha: 01-01-2015</li>
+                                                                    <li>Tematica: Ordenamiento territorial</li>
+                                                                    <li>Creador: Presidencia de la Rep&uacute;blica de Colombia</li>
+                                                                </ul>
+                                                            </div>
+                                                            <a class="ver-masbtn" href="https://minvivienda.gov.co/sites/default/files/normativa/decreto-unico-vivienda-ciudad-y-territorio-.pdf">Ver m&aacute;s</a>
+                                                        </div>
+                                                        <div class="tags-section">
+                                                            <div class="tag reglaEspecial">
+                                                                Reglamentación especial
+                                                            </div>
+                                                            <div class="tag riesgosAmenazas">
+                                                                Riesgos y amenazas
+                                                            </div>
+                                                            <div class="tag ambiente">
+                                                                Ambiente
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-component">
+                                                    <div class="card type-3">
+                                                        <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=142020">
+                                                            <div class="head">
+                                                                <div class="card-content">
+                                                                    <h2>Normatividad<span>›</span></h2>
+                                                                    <img src="/images/acercade/icon-card-star.svg" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="sumary-card">
+                                                            <div class="sub-title">
+                                                                <h5>Decreto 1232 de 2020</h5>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="resume">
+                                                                <p>Por medio del cual se realizan adiciones y modificaciones al Decreto 1077 de 2015 &Uacute;nico Reglamentario del Sector Vivienda, Ciudad y Territorio, en lo relacionado con la planeaci&oacute;n del ordenamiento territorial.</p>
+                                                            </div>
+                                                            <div class="detail">
+                                                                <strong>Detalle</strong>
+                                                                <ul>
+                                                                    <li>Fecha: 01-01-2020</li>
+                                                                    <li>Tematica: Ordenamiento territorial</li>
+                                                                    <li>Creador: Presidencia de la Rep&uacute;blica de Colombia</li>
+                                                                </ul>
+                                                            </div>
+                                                            <a class="ver-masbtn" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=142020">Ver m&aacute;s</a>
+                                                        </div>
+                                                        <div class="tags-section">
+                                                            <div class="tag planeacion">
+                                                                Planeación
+                                                            </div>
+                                                            <div class="tag desarrollo">
+                                                                Desarrollo
+                                                            </div>
+                                                            <div class="tag vivienda">
+                                                                Vivienda
+                                                            </div>
+                                                            <div class="tag territorio">
+                                                                Territorio
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-horizontal-card">
+                                                <div class="horizontalcards">
+                                                    <div class="right-side">
+                                                        <div class="icon-card">
+                                                            <img src="/images/acercade/thunder-icon.svg" alt="igac">
+                                                        </div>
+                                                        <div class="sumary-card">
+                                                            <div class="title-card">
+                                                                Lineamientos para el uso de la información geográfica...
+                                                            </div>
+                                                            <div class="resume">
+                                                                Cartillas, guías y manuales
+                                                            </div>
+                                                            <div class="cta">
+                                                                <a href="">Ver en CeM</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="image">
+                                                        <img src="/images/acercade/lineamientos.svg" alt="igac">
+                                                    </div>
+                                                </div>
+                                                <div class="horizontalcards">
+                                                    <div class="right-side">
+                                                        <div class="icon-card">
+                                                            <img src="/images/acercade/north-icon.svg" alt="igac">
+                                                        </div>
+                                                        <div class="sumary-card">
+                                                            <div class="title-card">
+                                                                Contexto biofísico
+                                                            </div>
+                                                            <div class="resume">
+                                                                Datos para el OT
+                                                            </div>
+                                                            <div class="ctas">
+                                                                <div class="cta">
+                                                                    <a href="">Ver en CeM</a>
+                                                                </div>
+                                                                <div class="cta">
+                                                                    <a href="">Descargar</a>
+                                                                </div>
+                                                                <div class="cta">
+                                                                    <a href="">Metadato</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="image">
+                                                        <img src="/images/acercade/biofisico.svg" alt="igac">
+                                                    </div>
+                                                </div>
+                                                <div class="horizontalcards">
+                                                    <div class="right-side">
+                                                        <div class="icon-card">
+                                                            <img src="/images/acercade/start-icon.svg" alt="igac">
+                                                        </div>
+                                                        <div class="sumary-card">
+                                                            <div class="title-card">
+                                                                Ley 1332 de 2020
+                                                            </div>
+                                                            <div class="resume">
+                                                                Normatividad
+                                                            </div>
+                                                            <div class="cta">
+                                                                <a href="">Ver más</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="image">
+                                                        <img src="/images/acercade/ley.svg" alt="igac">
+                                                    </div>
+                                                </div>
+                                                <div class="horizontalcards">
+                                                    <div class="right-side">
+                                                        <div class="icon-card">
+                                                            <img src="/images/acercade/thunder-icon.svg" alt="igac">
+                                                        </div>
+                                                        <div class="sumary-card">
+                                                            <div class="title-card">
+                                                                Docuvisor de POT municipales
+                                                            </div>
+                                                            <div class="resume">
+                                                                Aplicaciones y herramientas
+                                                            </div>
+                                                            <div class="cta">
+                                                                <a href="">Ver más</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="image">
+                                                        <img src="/images/acercade/docuvisor.svg" alt="igac">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="objetives second">
+                                <div id="incidencia" class="title">
+                                    <div class="number">
+                                        <img src="/images/acercade/icon-two.svg" alt="numero 1">
+                                    </div>
+                                    <h3>La organizaci&oacute;n pol&iacute;tico administrativa.</h3>
+                                </div>
+                                <div class="content">
+                                    <div class="title">
+                                        <div class="sumary-content">
+                                            <p>Por otro lado, est&aacute; el Ordenamiento Territorial como instrumento de planeaci&oacute;n y de gesti&oacute;n de las entidades territoriales. Es una mirada m&aacute;s hol&iacute;stica del OT como dinamizador de la construcci&oacute;n colectiva de pa&iacute;s que se da de manera progresiva, flexible y estrat&eacute;gica y que requiere de planeaci&oacute;n. Lo entes territoriales en sus diferentes niveles y con responsabilidad fiscal sobre esto, tambi&eacute;n son los llamados a lograr una organizaci&oacute;n pol&iacute;tico-administrativa del Estado.</p>
+                                            <div class="info">
+                                                <div class="info-description">
+                                                    <div class="icon">
+                                                        <img src="/images/acercade/info-one.svg" alt="key icon">
+                                                    </div>
+                                                    <h3>Ley 1454 de 1997, artículo 2</h3>
+                                                </div>
+                                                <p>La finalidad del ordenamiento territorial es promover el aumento de la capacidad de descentralizaci&oacute;n, planeaci&oacute;n, gesti&oacute;n y administraci&oacute;n de sus propios intereses para las entidades e instancias de integraci&oacute;n territorial, fomentar el traslado de competencias y poder de decisi&oacute;n de los &oacute;rganos centrales o descentralizados de gobierno en el orden nacional hacia el nivel territorial pertinente, con la correspondiente asignaci&oacute;n de recursos</p>
+                                            </div>
+                                            <p>En esta actividad, se debe facilitar el desarrollo institucional, el fortalecimiento de a identidad cultural y el desarrollo econ&oacute;micamente competitivo, socialmente justo ambientalmente sostenible, f&iacute;sicamente distribuido y culturalmente pertinente.</p>
+                                            <div class="recursos-relacionados">
+                                                <b>RECURSOS RELACIONADOS</b>
+                                            </div>
+                                            <div class="section-cards">
+                                                <div class="card-component">
+                                                    <div class="card type-3">
+                                                        <a href="https://www.suin-juriscol.gov.co/viewDocument.asp?ruta=Decretos/1534456">
+                                                            <div class="head">
+                                                                <div class="card-content">
+                                                                    <h2>Normatividad<span>›</span></h2>
+                                                                    <img src="/images/acercade/icon-card-star.svg" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="sumary-card">
+                                                            <div class="sub-title">
+                                                                <h5>Decreto 3680 de 2011</h5>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="resume">
+                                                                <p>Decreto por el cual se reglamenta la ley 1454 de 2011, Ley Org&aacute;nica de Ordenamiento Territorial de Colombia.</p>
+                                                            </div>
+                                                            <div class="detail">
+                                                                <strong>Detalle</strong>
+                                                                <ul>
+                                                                    <li>Fecha: 01-01-2011</li>
+                                                                    <li>Tematica: Ordenamiento territorial</li>
+                                                                    <li>Creador: Presidencia de la Rep&uacute;blica de Colombia</li>
+                                                                </ul>
+                                                            </div>
+                                                            <a class="ver-masbtn" href="https://www.suin-juriscol.gov.co/viewDocument.asp?ruta=Decretos/1534456">Ver m&aacute;s</a>
+                                                        </div>
+                                                        <div class="tags-section">
+                                                            <div class="tag planeacion">
+                                                                Reglamentación especial
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-component">
+                                                    <div class="card type-3">
+                                                        <a href="https://pruebaw.mininterior.gov.co/sites/default/files/decreto_1066_de_2015_unico_reglamentario_del_sector_administrativo_del_interior.pdf">
+                                                            <div class="head">
+                                                                <div class="card-content">
+                                                                    <h2>Normatividad<span>›</span></h2>
+                                                                    <img src="/images/acercade/icon-card-star.svg" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="sumary-card">
+                                                            <div class="sub-title">
+                                                                <h5>Decreto 1066 de 2015</h5>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="resume">
+                                                                <p>Decreto &uacute;nico reglamentario del sector administrativo del interior, define las funciones de la Comisi&oacute;n Ordenamiento Territorial y la creaci&oacute;n del observatorio de ordenamiento territorial.</p>
+                                                            </div>
+                                                            <div class="detail">
+                                                                <strong>Detalle</strong>
+                                                                <ul>
+                                                                    <li>Fecha: 01-01-2015</li>
+                                                                    <li>Tematica: Ordenamiento territorial</li>
+                                                                    <li>Creador: Ministerio del Interior</li>
+                                                                </ul>
+                                                            </div>
+                                                            <a class="ver-masbtn" href="https://pruebaw.mininterior.gov.co/sites/default/files/decreto_1066_de_2015_unico_reglamentario_del_sector_administrativo_del_interior.pdf">Ver m&aacute;s</a>
+                                                        </div>
+                                                        <div class="tags-section">
+                                                            <div class="tag cot">
+                                                                COT
+                                                            </div>
+                                                            <div class="tag planeacion">
+                                                                Planeaci&oacute;n
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="capital-letter">
+                                <img src="/images/acercade/letrab.svg" alt="letra a">
+                            </div>
+                            <div class="introduction">
+                                <h2>Cinco niveles de OT.</h2>
+                                <p>El OT en Colombia tiene 5 niveles de instrumentalizaci&oacute;n e instacias que lo lideran. Cada uno tiene competencias diferentes dependiendo del alcance de las entidades territoriales y los esquemas asociativos. Desde el &aacute;mbito nacional hasta el nivel municipal, los instrumentos de ordenamiento territorial se ponen en marcha para buscar la construcci&oacute;n colectiva del pa&iacute;s; Desde las &aacute;reas de parques nacionales y &aacute;reas protegidas en los PGOT; hasta los niveles nivel m&aacute;s granulares y detallados de los desarrollos urbanos y rurales de las poblaciones y espacios en los POT.</p>
+                                <div class="tablero">
+                                    <img src="/images/acercade/tablero.svg" alt="">
+                                </div>
+                                <p>Lee m&aacute;s sobre el Ordenamiento Territorial en el cap&iacute;tulo 3 del <a>Atlas de Colombia del IGAC (próximamente)</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalLogin" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="border: none; padding-bottom: 0px;">
+                    <a href="#" class="close" onclick="closeLogin(); return false;" aria-label="Cerrar"><span aria-hidden="true">&times;</span></a>
+                    <h4 class="modal-title">Iniciar sesi&oacute;n</h4>
+                </div>
+                <div class="modal-body" style="padding-top: 0px;">
+                    <div id="loginContainer">
+                        <div id="authContainer">
+                        </div>
+                    </div>
+                    <div id="logoutContainer" style="text-align: center;padding: 10px;">
+                        <img id="userPhoto2" src="/images/icono_ingreso.png" style="width: 64px; height: 64px;border-radius: 50%;" alt="Imagen Usuario" />
+                        <h5><span id="userName2"></span></h5>
+                        <button id="logoutBtn" type="button" onclick="signOut();" class="btn btn-default btn-danger">
+                            Cerrar sesi&oacute;n
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="containerf">
+            <div class="footer-container">
+                <div class="rowf">
+                    <div class="col-md-6f">
+                        <h2 class="footer-titulo">Instituto Geográfico Agustín Codazzi - IGAC</h2>
+                    </div>
+                    <div class="logos-footer col-md-6f">&nbsp;</div>
+                </div>
+                <div class="rowf">
+                    <div class="col-md-6f">
+                        <h2 class="sub-titulo-sede-gov-co">Información sede principal</h2>
+
+                        <h3>Dirección:</h3>
+                        <p>Bogotá D.C. - Carrera 30 # 48-51</p>
+
+                        <h3>Horarios de atención al ciudadano:</h3>
+                        <p>Abierto al público de lunes a viernes de 9:00 a.m. a 4:00 p.m. jornada continua Sede Central y territorial Cundinamarca (Horario de atención temporal acatando las medidas y demás regulaciones de bioseguridad)</p>
+                        <h3>Teléfono Conmutador:</h3>
+                        <p>
+                            <a href="tel:6016531888">+57 601 653 18 88</a>
+                        </p>
+                        <h3>Correo de contacto:</h3>
+                        <p>
+                            <a href="mailto:contactenos@igac.gov.co">contactenos@igac.gov.co</a>
+                        </p>
+
+                        <h3>Correo de notificaciones judiciales:</h3>
+                        <p>
+                            <a href="mailto:judiciales@igac.gov.co">judiciales@igac.gov.co</a>
+                        </p>
+                        <p>NIT: 8999990049</p>
+
+                        <p>©Copyright 2021 - Todos los derechos reservados Gobierno de Colombia</p>
+                    </div>
+                    <div class="col-md-6f">
+                        <h3>Contáctenos en nuestras redes sociales</h3>
+
+                        <div class="redes-sociales">
+                            <p>
+                                <a href="https://www.facebook.com/IgacColombia" tabindex="-1" target="_blank">
+                                    <img alt="Visitar Facebook IGAC" class="icono-redes" src="/images/footer/facebook.svg">
+                                    Facebook IGAC
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="https://twitter.com/igacColombia" tabindex="-1" target="_blank">
+                                    <img alt="Visitar Twitter IGAC" class="icono-redes" src="/images/footer/twitter.svg">
+                                    Twitter IGAC
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="https://www.instagram.com/accounts/login/?next=/igacColombia/" tabindex="-1" target="_blank"><img alt="Visitar Instagram IGAC" class="icono-redes" src="/images/footer/instagram.svg">
+                                    Instagram IGAC
+                                </a>
+                            </p>
+                        </div>
+                        <div class="footer-enlaces"><a class="btn-low">Políticas</a>
+                            <a class="btn-low">Mapa del sitio</a>
+                            <a class="btn-low">Términos y condiciones</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gov-co-footer-pie">
+            <div class="gov-co-footer-auto containerf">
+                <img alt="Logo marca de Colombia" class="gov-co-logo-pie-blanco" src="/images/footer/marca_colombia.png">
+
+                <img alt="Logo de Gov Co" class="gov-co-logo-pie-mesa" src="/images/footer/header_govco.png">
+
+                <a class="text-white text-align-right" href="https://www.gov.co" target="_blank">
+                    Conoce GOV.CO aquí
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth__es.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/i18n/es.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.es.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.js-anchor-link').click(function(e){
+                e.preventDefault();
+                var target = $($(this).attr('href'));
+                if(target.length){
+                    var scrollTo = target.offset().top -80;
+                    $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+                }
+            });
+        });
+        </script>
+
+    <script type="text/javascript" src="/js/navbar.js"></script>
+    <script type="text/javascript" src="/js/maestra.js"></script>
+
+</body>
+</html>
