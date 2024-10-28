@@ -1030,9 +1030,8 @@ select {
 
 
 .panel-resultados-titulo2 {
-    font-family: 'Gill Sans Std Light';
-    font-size: 23px;
-    line-height: 1em;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
 
 
     text-overflow: ellipsis;
@@ -1040,13 +1039,12 @@ select {
     -webkit-box-orient: vertical;
     overflow: hidden;
     display: -webkit-box;
-    height: 50px;
-    max-height: 50px;
+    height: 46px;
+    max-height: 46px;
     padding-top: 5px;
 }
 
 .panel-resultados-descripcion2 {
-    color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
     line-height: 1.2em;
 }
@@ -1056,7 +1054,6 @@ select {
 }
 
 .panel-resultados-descripcion2 p {
-    color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
     word-wrap: anywhere;
     line-height: normal;
@@ -1108,7 +1105,6 @@ select {
 .panel-default {
     border: none;
     border-radius: 0 0 5px 5px;
-    background: #fff;
     border-radius: 0 0 5px 5px;
 }
 
@@ -1188,7 +1184,6 @@ select {
     margin-right: 5px;
     padding: 5px;
     display: inline-block;
-    background-color: gray;
 }
 
 .cubrimiento-text {
@@ -3267,7 +3262,6 @@ a {
     margin-right: 5px;
     padding: 0px;
     display: inline-block;
-    color: #fff;
     font-size: 13px;
 }
 
@@ -3297,7 +3291,6 @@ a {
     margin-right: 5px;
     padding: 5px;
     display: inline-block;
-    background-color: gray;
 }
 
 

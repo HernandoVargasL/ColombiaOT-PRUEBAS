@@ -143,24 +143,24 @@ function updateRows() {
     // strHTML = strHTML + "<div class='row'>";
 
     for (var i = 0; i < dataRow.length; i++) {
-        strHTML = strHTML + "<div class='doc-item' style='margin-bottom: 20px;'>";
+        strHTML = strHTML + "<div class='doc-item col-12 col-md-6 col-lg-3' style='margin-bottom: 20px;'>";
 
         strHTML = strHTML + "<div id='card-main-" + dataRow[i].ID_RECURSO + "' class='media media-resultados2'>";
 
         if (dataRow[i].TIPO_RECURSO == "Aplicaciones y herramientas") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header' style='background-color: #183F80;'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header' style='color: #183F80;'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Cartillas, guias y manuales") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header' style='background-color: #0CB391;'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header' style='color: #0CB391;'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Datos para el OT") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header' style='background-color: #EB6654;'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header' style='color: #EB6654;'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Normatividad") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header' style='background-color: #B57D32;'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header' style='color: #B57D32;'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Servicios") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header' style='background-color: #6445E1;'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header' style='color: #6445E1;'>";
         }
         strHTML = strHTML + "<span class='label'>" + dataRow[i].TIPO_RECURSO + "<span class='label'>" + "›" + "</span>" + "</span>";
         if ((dataRow[i].FLAG_ACTUALIZADO == "1") || (dataRow[i].FLAG_DESTACADO == "1") || (dataRow[i].FLAG_NUEVO == "1")) {
@@ -168,9 +168,9 @@ function updateRows() {
             if (dataRow[i].FLAG_ACTUALIZADO == "1") {
                 strHTML = strHTML + "<img src='/images/recursos/actualizado.png' style='height: 13px; width: 13px;' />";
             }
-            if (dataRow[i].FLAG_DESTACADO == "1") {
-                strHTML = strHTML + "<img src='/images/recursos/destacado.png' style='height: 13px; width: 13px;' />";
-            }
+            // if (dataRow[i].FLAG_DESTACADO == "1") {
+            //     strHTML = strHTML + "<img src='/images/recursos/destacado.png' style='height: 13px; width: 13px;' />";
+            // }
             if (dataRow[i].FLAG_NUEVO == "1") {
                 strHTML = strHTML + "<img src='/images/recursos/nuevo.png' style='height: 13px; width: 13px;' />";
             }
@@ -201,14 +201,13 @@ function updateRows() {
         strHTML = strHTML + "<div class='panel-body'>";
 
         strHTML = strHTML + "<div class='title-recursos'>" + "<div class='panel-resultados-titulo2'>" + dataRow[i].NOMBRE + "</div>" + "</div>";
-        strHTML = strHTML + "<hr/>"
         strHTML = strHTML + "<div class='panel-resultados-descripcion2'>";
         if (dataRow[i].DESCRIPCION != null) {
             strHTML = strHTML + "<p>" + dataRow[i].DESCRIPCION + "</p>";
         }
 
-        strHTML = strHTML + "<strong>Detalle</strong>";
-        strHTML = strHTML + "<ul class='list'>"
+        strHTML += "<strong class='d-flex w-100 justify-content-between align-items-center' role='button' onclick='expand(this)' style='cursor: pointer;'>Detalle <i class='fas fa-chevron-down'></i></strong>";
+        strHTML = strHTML + "<ul class='list'>"        
 
         if (dataRow[i].FECHA_PUBLICACION != null) {
             strHTML = strHTML + "<li><strong>Fecha:&nbsp;</strong>" + moment(dataRow[i].FECHA_PUBLICACION).format("DD-MM-YYYY") + "</li>";
@@ -223,7 +222,6 @@ function updateRows() {
         strHTML = strHTML + "</ul>"
 
         strHTML = strHTML + "</div>";
-        strHTML = strHTML + "<br>";
         var nbotones = 0;
         var botonesSize = "";
 
@@ -253,17 +251,17 @@ function updateRows() {
             }
             if (dataRow[i].URL1 != null) {
                 strHTML = strHTML + "<td style='width: " + botonesSize + ";'>";
-                strHTML = strHTML + "<button class='btn btn-default' style='width: 100%;margin-right: 10px;' onclick='window.open(\"" + dataRow[i].URL1 + "\", \"_blank\"); return false;'>Ver m&aacute;s</button>";
+                strHTML = strHTML + "<button class='btn btn-default' onclick='window.open(\"" + dataRow[i].URL1 + "\", \"_blank\"); return false;'>Ver m&aacute;s</button>";
                 strHTML = strHTML + "</td>";
             }
             if (dataRow[i].URL2 != null) {
                 strHTML = strHTML + "<td style='width: " + botonesSize + ";'>";
-                strHTML = strHTML + "<button class='btn btn-default' style='width: 100%;margin-right: 10px;' onclick='window.open(\"" + dataRow[i].URL2 + "\", \"_blank\"); return false;'>Ver en CeM</button>";
+                strHTML = strHTML + "<button class='btn btn-default' onclick='window.open(\"" + dataRow[i].URL2 + "\", \"_blank\"); return false;'>Ver en CeM</button>";
                 strHTML = strHTML + "</td>";
             }
             if (dataRow[i].URL_METADATO != null) {
                 strHTML = strHTML + "<td style='width: " + botonesSize + ";'>";
-                strHTML = strHTML + "<button class='btn btn-default' style='width: 100%;margin-right: 10px;' onclick='window.open(\"" + dataRow[i].URL_METADATO + "\", \"_blank\"); return false;'>Detalles</button>";
+                strHTML = strHTML + "<button class='btn btn-default' onclick='window.open(\"" + dataRow[i].URL_METADATO + "\", \"_blank\"); return false;'>Detalles</button>";
                 strHTML = strHTML + "</td>";
             }
             strHTML = strHTML + "</tr>";
@@ -279,7 +277,7 @@ function updateRows() {
         if (dataRow[i].PALABRAS_CLAVE != null) {
             var tagsT = JSON.parse(dataRow[i].PALABRAS_CLAVE);
             for (var j = 0; j < Math.min(tagsT.length, 7); j++) {
-                strHTML = strHTML + "<span class='label'  style='background-color:" + getColorByTag2(tagsT[j]) + ";'>" + tagsT[j] + "</span>";
+                strHTML = strHTML + "<span class='label' style='border: 2px solid " + getColorByTag2(tagsT[j]) + ";'>" + tagsT[j] + "</span>";
             }
         }
         strHTML = strHTML + "</div>";
@@ -292,3 +290,20 @@ function updateRows() {
 
     $("#recursosViewDiv").append(strHTML);
 }
+function expand(element) {
+    const list = element.nextElementSibling;
+    list.classList.toggle('expand');
+    element.classList.toggle('active');
+}
+document.querySelectorAll('.recursos .card').forEach(function(card) {
+    card.addEventListener('mouseenter', function() {
+        card.querySelector('.btn').classList.toggle('active');
+        card.querySelector('.btn p').innerHTML = 'Visitar sección'; // Change to innerHTML
+    });
+
+    card.addEventListener('mouseleave', function() {
+        card.querySelector('.btn').classList.toggle('active');
+        card.querySelector('.btn p').innerHTML = 'Más información';
+    });
+});
+
