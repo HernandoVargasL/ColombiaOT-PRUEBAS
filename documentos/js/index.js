@@ -233,7 +233,7 @@ function updateRows(){
 
         strHTML = strHTML + "</div>";
 
-        strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #532D96; background-image: url(/images/recursos/servicios.png);'>";
+        strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #532D96; background-image: url(./images/recursos/servicios.png);'>";
 
         strHTML = strHTML + "</div>";
 

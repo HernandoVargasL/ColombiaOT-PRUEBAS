@@ -260,19 +260,19 @@ function updateRows(){
         }
         strHTML = strHTML + "</div>";
         if (dataRow[i].TIPO_RECURSO == "Aplicaciones y herramientas") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #1E4A93; background-image: url(/images/recursos/aplicaciones.png);'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #1E4A93; background-image: url(./images/recursos/aplicaciones.png);'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Cartillas, guias y manuales") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #038D71; background-image: url(/images/recursos/cartillas.png);'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #038D71; background-image: url(./images/recursos/cartillas.png);'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Datos para el OT") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #EB6654; background-image: url(/images/recursos/datosOT.png);'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #EB6654; background-image: url(./images/recursos/datosOT.png);'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Normatividad") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #F2A742; background-image: url(/images/recursos/normatividad.png);'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #F2A742; background-image: url(./images/recursos/normatividad.png);'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Servicios") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #532D96; background-image: url(/images/recursos/servicios.png);'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #532D96; background-image: url(./images/recursos/servicios.png);'>";
         }
 
         strHTML = strHTML + "</div>";
