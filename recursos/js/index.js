@@ -263,23 +263,23 @@ function loadDestacados(){
                         if (pos < data.documentos.length) {
                             strHTMLItems = strHTMLItems + "<td style='width: 50%;'>";
                             if (data.documentos[pos].TIPO_RECURSO == "Aplicaciones y herramientas") {
-                                strHTMLItems = strHTMLItems + "<div class='carousel-container' style='background-image: url(../images/recursos/aplicaciones_bg.png);'>";
+                                strHTMLItems = strHTMLItems + "<div class='carousel-container' style='background-image: url(/images/recursos/aplicaciones_bg.png);'>";
                                 strHTMLItems = strHTMLItems + "<img class='image' src='/images/recursos/aplicaciones_icon.svg' style='width: 80px; height: auto;'/>";
                             }
                             if (data.documentos[pos].TIPO_RECURSO == "Cartillas, guias y manuales") {
-                                strHTMLItems = strHTMLItems + "<div class='carousel-container' style='background-image: url(../images/recursos/cartillas_bg.png);'>";
+                                strHTMLItems = strHTMLItems + "<div class='carousel-container' style='background-image: url(/images/recursos/cartillas_bg.png);'>";
                                 strHTMLItems = strHTMLItems + "<img class='image' src='/images/recursos/cartillas_icon.svg' style='width: 80px; height: auto;' /><br/>";
                             }
                             if (data.documentos[pos].TIPO_RECURSO == "Datos para el OT") {
-                                strHTMLItems = strHTMLItems + "<div class='carousel-container' style='background-image: url(../images/recursos/datosOT_bg.png);'>";
+                                strHTMLItems = strHTMLItems + "<div class='carousel-container' style='background-image: url(/images/recursos/datosOT_bg.png);'>";
                                 strHTMLItems = strHTMLItems + "<img class='image' src='/images/recursos/datosOT_icon.svg' style='width: 80px; height: auto;' /><br/>";
                             }
                             if (data.documentos[pos].TIPO_RECURSO == "Normatividad") {
-                                strHTMLItems = strHTMLItems + "<div class='carousel-container' style='background-image: url(../images/recursos/normatividad_bg.png);'>";
+                                strHTMLItems = strHTMLItems + "<div class='carousel-container' style='background-image: url(/images/recursos/normatividad_bg.png);'>";
                                 strHTMLItems = strHTMLItems + "<img class='image' src='/images/recursos/normatividad_icon.svg' style='width: 80px; height: auto;' /><br/>";
                             }
                             if (data.documentos[pos].TIPO_RECURSO == "Servicios") {
-                                strHTMLItems = strHTMLItems + "<div class='carousel-container' style='background-image: url(../images/recursos/servicios_bg.png);'>";
+                                strHTMLItems = strHTMLItems + "<div class='carousel-container' style='background-image: url(/images/recursos/servicios_bg.png);'>";
                                 strHTMLItems = strHTMLItems + "<img class='image' src='/images/recursos/servicios_icon.png' style='width: 80px; height: auto;' /><br/>";
                             }
                             strHTMLItems = strHTMLItems + "<p style='font-size: 19px;'>" + data.documentos[pos].NOMBRE + "</p>";
@@ -364,19 +364,19 @@ function updateRows() {
         }
         strHTML = strHTML + "</div>";
         if (dataRow[i].TIPO_RECURSO == "Aplicaciones y herramientas") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #1E4A93; background-image: url(../images/recursos/aplicaciones.png);'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #1E4A93; background-image: url(/images/recursos/aplicaciones.png);'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Cartillas, guias y manuales") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #038D71; background-image: url(../images/recursos/cartillas.png);'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #038D71; background-image: url(/images/recursos/cartillas.png);'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Datos para el OT") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #EB6654; background-image: url(../images/recursos/datosOT.png);'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #EB6654; background-image: url(/images/recursos/datosOT.png);'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Normatividad") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #F2A742; background-image: url(../images/recursos/normatividad.png);'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #F2A742; background-image: url(/images/recursos/normatividad.png);'>";
         }
         if (dataRow[i].TIPO_RECURSO == "Servicios") {
-            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #532D96; background-image: url(../images/recursos/servicios.png);'>";
+            strHTML = strHTML + "<div class='media-body panel-resultados-header-img' style='background-color: #532D96; background-image: url(/images/recursos/servicios.png);'>";
         }
 
         strHTML = strHTML + "</div>";

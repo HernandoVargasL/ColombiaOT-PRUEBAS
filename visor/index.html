@@ -15,7 +15,7 @@
     <meta name="image" property="og:image" content="https://www.colombiaenmapas.gov.co/images/Preview.png">
     <meta http-equiv="content-language" content="es" />
     <link rel="canonical" href="https://www.colombiaenmapas.gov.co" />
-    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
     <title>Observatorio de Ordenamiento Territorial</title>
 
     <link type="text/css" async rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
@@ -25,26 +25,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/css/dataTables.bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" /> 
-    <link rel="stylesheet" href="./js/lib/dist/css/calcite-maps-arcgis-3.x.min-v0.10.css">
+    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-arcgis-3.x.min-v0.10.css">
 
  
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="./css/maestra.css">
+    <link rel="stylesheet" href="/css/maestra.css">
 
 </head>
 <body class="calcite calcite-maps calcite-nav-top claro esri" style="background: lightgray;">
     <div class="barra_gov">
         <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
-            <img alt="Logo Gov.co" src="./images/nav/header_govco.png">
+            <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
         </a>
     </div>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbarigac">
         <div class="logos">
             <a rel="noopener" class="navbar-brand-igac" href="https://www.igac.gov.co" target="_blank">
-                <img src="./images/nav/logo.png" alt="Logo IGAC">
+                <img src="/images/nav/logo.png" alt="Logo IGAC">
             </a>
-            <img src="./images/Logo_OBS.png" alt="Colombia en Mapas">
+            <img src="/images/Logo_OBS.png" alt="Colombia en Mapas">
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar" style="background-color: white;"></span>
@@ -54,13 +54,13 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <li>
-                    <a href="./" rel="noopener" class="nav-item nav-link">Inicio</a>
+                    <a href="/" rel="noopener" class="nav-item nav-link">Inicio</a>
                 </li>
                 <li>
                     <a href="#" rel="noopener" class="nav-item nav-link active" href="#">Geovisor</a>
                 </li>
                 <a id="loginBtn" onclick="gotoLogin();">
-                    <img id="userPhoto" src="./images/user.png" onerror="defaultUserPhoto();" alt="Iniciar sesion">
+                    <img id="userPhoto" src="/images/user.png" onerror="defaultUserPhoto();" alt="Iniciar sesion">
                     <span id="userName" style="display: none;">Iniciar sesion</span>
                 </a>              
             </div>
@@ -79,7 +79,7 @@
                                 <div>
                                     <div id="searchHeader" class="panel-heading">
                                         <h3 class="panel-title" style="display: inline-block;">Filtrar</h3>
-                                        <a id="panelSearchToggle" style="float: right; color:white;" href="#" onclick="toggleFiltros();"><img src="./images/iconos/Close_01.png" alt="Minimizar" style="width: 10px; height: 2px;" /></a>
+                                        <a id="panelSearchToggle" style="float: right; color:white;" href="#" onclick="toggleFiltros();"><img src="/images/iconos/Close_01.png" alt="Minimizar" style="width: 10px; height: 2px;" /></a>
                                     </div>
                                     <div id="searchBody" class="panel-body">
                                         <div id="searchBarTab">
@@ -162,7 +162,7 @@
 
         <div id="mapViewDiv" class="calcite-map-absolute main-small-map">
             <a id="headingSearch" class="panel-close2 panel-close-small text-center hidden-sm hidden-xs" style="display: none;" onclick="toggleMenu();">
-                <img style="width: 25px; height: 25px;" src="./images/iconos/Forward_02.png" alt="Cerrar Menú">
+                <img style="width: 25px; height: 25px;" src="/images/iconos/Forward_02.png" alt="Cerrar Menú">
             </a>
             <div id="alertList" style="display: none;">
                 <div>
@@ -535,7 +535,7 @@
                         </div>
                     </div>
                     <div id="logoutContainer" style="text-align: center;padding: 10px;">
-                        <img id="userPhoto2" src="./images/icono_ingreso.png" style="width: 64px; height: 64px;border-radius: 50%;" alt="Imagen Usuario" />
+                        <img id="userPhoto2" src="/images/icono_ingreso.png" style="width: 64px; height: 64px;border-radius: 50%;" alt="Imagen Usuario" />
                         <h5><span id="userName2"></span></h5>
                         <button id="logoutBtn" type="button" onclick="signOut();" class="btn btn-default btn-danger">
                             Cerrar sesi&oacute;n
@@ -612,11 +612,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
  
 
-    <script type="text/javascript" async src="./js/lib/mkg-share.min.js"></script>
-    <script type="text/javascript" src="./js/lib/terraformer-arcgis-parser.min.js"></script>
+    <script type="text/javascript" async src="/js/lib/mkg-share.min.js"></script>
+    <script type="text/javascript" src="/js/lib/terraformer-arcgis-parser.min.js"></script>
 
     <!-- Se cargan los estilos -->
-<link rel="stylesheet" href="./visor/herramientas/busquedaAvanzada/styles.css">
+<link rel="stylesheet" href="/visor/herramientas/busquedaAvanzada/styles.css">
 <link rel="stylesheet" href="./herramientas/capasActivas/styles.css">
     <link rel="stylesheet" href="./herramientas/operadoresEspaciales/styles.css">
     <link rel="stylesheet" href="./herramientas/simbologiaEtiquetado/styles.css">

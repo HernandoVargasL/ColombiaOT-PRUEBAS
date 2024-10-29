@@ -1138,11 +1138,11 @@ function updateRows() {
 
             var rPos = parseInt(Math.random() * 4);
             if (dataRow[i].FORMA_REPRESENTACION == "Cartografía") {
-                strHTML = strHTML + "<div id='card-main-" + dataRow[i].ID_DOCUMENTO + "' class='media media-resultados2' style='background-image: url(../images/SIGOT/BG-Mapa.png);background-size: 150px 150px;'>";
+                strHTML = strHTML + "<div id='card-main-" + dataRow[i].ID_DOCUMENTO + "' class='media media-resultados2' style='background-image: url(/images/SIGOT/BG-Mapa.png);background-size: 150px 150px;'>";
             } else {
-                strHTML = strHTML + "<div id='card-main-" + dataRow[i].ID_DOCUMENTO + "' class='media media-resultados2' style='background-image: url(../images/SIGOT/BG-Mapa.png);background-size: 150px 150px;'>";            
+                strHTML = strHTML + "<div id='card-main-" + dataRow[i].ID_DOCUMENTO + "' class='media media-resultados2' style='background-image: url(/images/SIGOT/BG-Mapa.png);background-size: 150px 150px;'>";            
                 // strHTML = strHTML + "<div id='card-main-" + dataRow[i].ID_DOCUMENTO + "' class='media media-resultados2' style=''>";
-                //background-image: url(../images/sigot/Decoracion" + "0" + rPos + ".png);
+                //background-image: url(/images/sigot/Decoracion" + "0" + rPos + ".png);
             }
 
             if (dataRow[i].ETAPA != null) {
