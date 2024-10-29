@@ -725,10 +725,7 @@ wkt: 'PROJCS["MAGNA-SIRGAS / Origen-Nacional",GEOGCS["MAGNA-SIRGAS",DATUM["Marco
 viewMap.ui.remove(["zoom", "attribution"]);
         createNavigationButtons();
         viewCursorCoordinates();
-
-      
       });
-
 }
 
 function createNavigationButtons(){

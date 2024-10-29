@@ -285,6 +285,9 @@ function createActionsLayer(layer) {
     });
   });
 
+  console.log(layer.value.layer);
+  //Agregar funcion para comprobar si se puede o no acceder a la tabla de atributos, si no se puede ver inhabilitar el boton
+
   var simbologyLayer = $("<button>", {
     class: "btnSymbology",
     "aria-expanded": "false",

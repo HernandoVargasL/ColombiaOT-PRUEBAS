@@ -234,6 +234,12 @@ nav a {
     padding-bottom: 0;
 }
 
+#userPhoto {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
 /* Footer*/
 footer {
     padding-top: 1px;
@@ -371,15 +377,16 @@ footer .gov-co-logo-pie-mesa {
 }
 
 /* Media querys */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .navbarigac ul {
+        margin-top: 20px;
         display: none;
     }
-
     .nav-bar-toggle-igac {
         display: block;
     }
-
+}
+@media (max-width: 768px) {
     #link-list {
         margin-top: 0;
         border-top: 1.5px solid #3366cc;

@@ -68,76 +68,90 @@ function loadService(){
   var serviceName = ($("#otherServicesName").val() == "" ? "Servicio Importado" : $("#otherServicesName").val());
   if ($("#otherServicesType").val() == "url") {
     showLoading("Cargando el servicio", "loading", "gold", false);
-    require(["esri/layers/FeatureLayer", "esri/layers/TileLayer", "esri/layers/ImageryLayer", "esri/layers/GeoJSONLayer", "esri/layers/WMSLayer"], (FeatureLayer, TileLayer, ImageryLayer, GeoJSONLayer, WMSLayer) => { 
+    require(["esri/layers/FeatureLayer", "esri/layers/MapImageLayer", "esri/layers/ImageryLayer", "esri/layers/GeoJSONLayer", "esri/layers/WMSLayer", "esri/geometry/Extent"], (FeatureLayer, MapImageLayer, ImageryLayer, GeoJSONLayer, WMSLayer, Extent) => { 
        var _url = $("#otherServicesUrl").val();
-    if (checkURL(_url, true)) {
+    if (checkURL(_url.trim(), true)) {
       switch ($("#otherServicesUrlType").val()) {
         case "Arcgis FeatureLayer":
-          var tlayer =  new FeatureLayer({
-            url: _url,
-            id: serviceName,
+          var tlayer = new FeatureLayer({
+            url: _url.trim(),
+            title: serviceName,
             outFields: ["*"]
         });
         window.viewMap.map.add(tlayer);
         tlayer.on("layerview-create-error", function(event) {
          showLoading("No se pudo cargar la capa de informaci&oacute;n", null, "red", true);
         });
-        tlayer.on("layerview-create", function(event){
-          showLoading("Servicio cargado exitosamente", "ok", "green", true);
+
+        tlayer.when(() => {
+           showLoading("Servicio cargado exitosamente", "ok", "green", true);
+          const initialExtent = Extent.fromJSON(tlayer.sourceJSON.initialExtent);
+          console.log("Se cargo: ", tlayer, "con extent: ", initialExtent);
            window.viewMap.goTo(tlayer.fullExtent);
         });
+
           break;
 
         case  "Arcgis MapServer":
-            var tlayer =  new TileLayer({
-              url: _url,
+            var tlayer = new MapImageLayer({
+              url: _url.trim(),
+              title: serviceName,
               id: serviceName
           });
           window.viewMap.map.add(tlayer);
           tlayer.on("layerview-create-error", function(event) {
            showLoading("No se pudo cargar la capa de informaci&oacute;n", null, "red", true);
           });
-          tlayer.on("layerview-create", function(event){
+          tlayer.when(() => {
             showLoading("Servicio cargado exitosamente", "ok", "green", true);
-             window.viewMap.goTo(tlayer.fullExtent);
-          });
+           const initialExtent = Extent.fromJSON(tlayer.sourceJSON.initialExtent);
+            window.viewMap.goTo(initialExtent);
+         });
+ 
             break;
 
             case  "Arcgis ImageServer":
               var tlayer =  new ImageryLayer({
-                url: _url,
-                id: serviceName,
+                url: _url.trim(),
+                title: serviceName,
+  
                 format: "jpgpng"
             });
             window.viewMap.map.add(tlayer);
             tlayer.on("layerview-create-error", function(event) {
              showLoading("No se pudo cargar la capa de informaci&oacute;n", null, "red", true);
             });
-            tlayer.on("layerview-create", function(event){
+            tlayer.when(() => {
               showLoading("Servicio cargado exitosamente", "ok", "green", true);
-               window.viewMap.goTo(tlayer.fullExtent);
-            });
+             const initialExtent = Extent.fromJSON(tlayer.sourceJSON.initialExtent);
+              window.viewMap.goTo(initialExtent);
+           });
+   
               break;
       
               case  "GEOJSON":
                 var tlayer =  new GeoJSONLayer({
-                  url: _url,
+                  url: _url.trim(),
+                  title: serviceName,
                   id: serviceName
               });
                   window.viewMap.map.add(tlayer);
                   tlayer.on("layerview-create-error", function(event) {
                    showLoading("No se pudo cargar la capa de informaci&oacute;n", null, "red", true);
                   });
-                  tlayer.on("layerview-create", function(event){
+                  tlayer.when(() => {
                     showLoading("Servicio cargado exitosamente", "ok", "green", true);
-                     window.viewMap.goTo(tlayer.fullExtent);
-                  });
+                   const initialExtent = Extent.fromJSON(tlayer.sourceJSON.initialExtent);
+                    window.viewMap.goTo(initialExtent);
+                 });
+         
                 break;
       
                 case  "WMS":
                   var tlayer =  new WMSLayer({
-                    url: _url,
-                    id: serviceName,
+                    url: _url.trim(),
+                    title: serviceName,
+      
                     featureInfoFormat: "application/json",
                     name: serviceName,
                     title: serviceName
@@ -146,10 +160,12 @@ function loadService(){
                   tlayer.on("layerview-create-error", function(event) {
                    showLoading("No se pudo cargar la capa de informaci&oacute;n", null, "red", true);
                   });
-                  tlayer.on("layerview-create", function(event){
+                  tlayer.when(() => {
                     showLoading("Servicio cargado exitosamente", "ok", "green", true);
-                     window.viewMap.goTo(tlayer.fullExtent);
-                  });
+                   const initialExtent = Extent.fromJSON(tlayer.sourceJSON.initialExtent);
+                    window.viewMap.goTo(initialExtent);
+                 });
+         
                   break;
       
               }

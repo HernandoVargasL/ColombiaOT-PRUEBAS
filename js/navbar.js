@@ -21,7 +21,7 @@ function tabletSize(x) {
         nav.append(linklist);
     }
 }
-var x = window.matchMedia("(max-width: 768px)")
+var x = window.matchMedia("(max-width: 1024px)")
 tabletSize(x)
 x.addListener(tabletSize)
 

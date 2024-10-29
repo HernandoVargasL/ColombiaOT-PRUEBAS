@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="es-ES">
+<html lang="en">
 <head>
-
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
@@ -14,31 +13,17 @@
     <meta http-equiv="content-language" content="es" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <link rel="canonical" href="https://www.colombiaot.gov.co" />
-    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
     <title>Colombia OT</title>
 
-    <link type="text/css" async rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" />
-    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-bootstrap.min-v0.10.css">
-    <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-arcgis-3.x.min-v0.10.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/css/dataTables.bootstrap.min.css" />
-
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/maestra.css">
-    <link rel="stylesheet" href="/css/navbar-footer.css">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78PPLF47WW"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-78PPLF47WW');
-    </script>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/navbar-footer.css">
 </head>
-<body class="calcite calcite-nav-top">
+<body class="home">
     <div class="barra_gov">
         <a class="logo-gov" href="https://www.gov.co/home/" target="_blank">
             <img alt="Logo Gov.co" src="/images/nav/header_govco.png">
@@ -54,16 +39,16 @@
             </div>
             <ul id="link-list">
                 <li>
-                    <a class="active" href="/" rel="noopener">Inicio</a>
+                    <a class="active" href="./" rel="noopener">Inicio</a>
                 </li>
                 <li>
-                    <a href="/pot/" rel="noopener">Los POT del país</a>
+                    <a href="./pot/" rel="noopener">Los POT del país</a>
                 </li>
 				<li>
-				  	<a href="/vigencias/" rel="noopener">Visor  Vigencias POTs</a>
+				  	<a href="./vigencias/" rel="noopener">Visor  Vigencias POTs</a>
                 </li>
                 <li id="optionCargue" style="display: none;">
-                    <a href="/cargue/" rel="noopener">Cargue</a>
+                    <a href="./cargue/" rel="noopener">Cargue</a>
                 </li>
                 <li>
                     <a class="collapse-button-1">Otros recursos
@@ -72,27 +57,27 @@
 
                     <ul id="collapse-menu-1" class="collapse-menu-1">
                         <li>
-                            <a href="/cartillas/">Cartillas, gu&iacute;as y manuales</a>
+                            <a href="./cartillas/">Cartillas, gu&iacute;as y manuales</a>
                             <img src="/images/nav/ico-arrow.png" alt="Cartillas, gu&iacute;as y manuales">
                         </li>
                         <li>
-                            <a href="/normatividad/">Normatividad</a>
+                            <a href="./normatividad/">Normatividad</a>
                             <img src="/images/nav/ico-arrow.png" alt="Normatividad">
                         </li>
                         <li>
-                            <a href="/datosot/">Datos para el OT</a>
+                            <a href="./datosot/">Datos para el OT</a>
                             <img src="/images/nav/ico-arrow.png" alt="Datos para el OT">
                         </li>
                         <li>
-                            <a href="/aplicaciones/">Aplicaciones y herramientas</a>
+                            <a href="./aplicaciones/">Aplicaciones y herramientas</a>
                             <img src="/images/nav/ico-arrow.png" alt="Aplicaciones y herramientas">
                         </li>
                         <li>
-                            <a href="/documentos/">Documentos t&eacute;cnicos</a>
+                            <a href="./documentos/">Documentos t&eacute;cnicos</a>
                             <img src="/images/nav/ico-arrow.png" alt="Documentos t&eacute;cnicos">
                         </li>
                         <li>
-                            <a href="/ruta/">La Ruta del POT</a>
+                            <a href="./ruta/">La Ruta del POT</a>
                             <img src="/images/nav/ico-arrow.png" alt="La Ruta del POT">
                         </li>
                     </ul>
@@ -104,19 +89,19 @@
 
                     <ul id="collapse-menu-2" class="collapse-menu-2">
                         <li>
-                            <a href="/acerca-de/">Qu&eacute; es el ordenamiento territorial (OT)</a>
+                            <a href="./acerca-de/">Qu&eacute; es el ordenamiento territorial (OT)</a>
                             <img src="/images/nav/ico-arrow.png" alt="Que es">
                         </li>
                         <li>
-                            <a href="/acerca-de/colombia-ot-del-igac.html">Colombia OT del IGAC</a>
+                            <a href="./acerca-de/colombia-ot-del-igac.html">Colombia OT del IGAC</a>
                             <img src="/images/nav/ico-arrow.png" alt="Colombia OT">
                         </li>
                         <li>
-                            <a href="/acerca-de/actores-de-colombia-ot.html">Actores de Colombia OT</a>
+                            <a href="./acerca-de/actores-de-colombia-ot.html">Actores de Colombia OT</a>
                             <img src="/images/nav/ico-arrow.png" alt="Actores">
                         </li>
                         <li>
-                            <a href="/acerca-de/ot_del_pais_en_cifras.html">El OT del pa&iacute;s en cifras</a>
+                            <a href="./acerca-de/ot_del_pais_en_cifras.html">El OT del pa&iacute;s en cifras</a>
                             <img src="/images/nav/ico-arrow.png" alt="Cifras">
                         </li>
                     </ul>
@@ -137,411 +122,681 @@
         <div class='navbarnavigac'>
         </div>
     </nav>
-    <div class="calcite-map">
-        <section class="section-portada">
-            <div class="container-portada">
-                <div class="portada row">
-                    <div class="text-content col-12 col-sm-6 col-md-6 block">
-                        <div class="text-content">
-                            <div class="title">
-                                Colombia OT, un espacio para construir colectivamente nuestro territorio.
-                            </div>
-                            <div class="summary">
-                                <p>Colombia OT es el espacio que ha pensado el IGAC para que se construya el territorio. Esta plataforma es el punto de partida, consulta y llegada de quienes necesitan los instrumentos que orientan el desarrollo, la transformaci&#243;n, la ocupaci&#243;n y vocaci&#243;n, del espacio en donde habitamos. Colombia OT, es el punto de encuentro para empoderar y alinear a los entes territoriales en su tarea pol&#237;tico-administrativa de gestionar la planeaci&#243;n f&#237;sica y afianzar la identidad dentro de sus l&#237;mites competentes. S&#243;lo de esta forma logramos una construcci&#243;n colectiva de pa&#237;s.</p>
+    <main>
+        <section class="container-fluid position-relative mt-4">
+            <div class="herobanner">
+                <div class="container herocontent d-flex flex-wrap">
+                    <div class="text-white col-md-6">
+                        <h1 class="title mb-0">Colombia OT</h1>
+                        <p class="subtitle">Un espacio para construir colectivamente nuestro territorio.</p>
+                        <p>Colombia OT es el espacio que ha pensado el IGAC para que se construya el territorio. Esta plataforma es el punto de partida, consulta y llegada de quienes necesitan los instrumentos que orientan el desarrollo, la transformación, la ocupación y vocación, del espacio en donde habitamos. Colombia OT, es el punto de encuentro para empoderar y alinear a los entes territoriales en su tarea político-administrativa de gestionar la planeación física y afianzar la identidad dentro de sus límites competentes. Sólo de esta forma logramos una construcción colectiva de país.</p>
+                    </div>
+                </div>
+                <img class="shape" src="/images/home/shape.png" alt="">
+            </div>
+        </section>
+        <section class="recursos">
+            <div class="container container-slider text-center">
+                <h2 class="subtitle mb-4">¿Qué estás buscando?</h2>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card a text-left">
+                            <div class="card-body">
+                                <h5 class="card-title">Los POT del país</h5>
+                                <p class="card-text">Busque y explore los POT municipales de Colombia.</p>
+                                <a role="link" onclick="window.open('/pot/buscador.html', '_self');" class="btn p-0">
+                                    <img src="/images/home/pot-icon.svg" alt="">
+                                    <p class="mb-0 d-flex align-items-center">Más información</p>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-6 block">
-                        <img src="/images/SIGOT/home_cover.svg" alt="">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card b text-left">
+                            <div class="card-body">
+                                <h5 class="card-title">La Ruta del POT</h5>
+                                <p class="card-text">¡Municipios! Construyan sus POT municipales siguiendo la ruta.</p>
+                                <a role="link" onclick="window.open('/ruta/', '_self');" href="#" class="btn p-0">
+                                    <img src="/images/home/pot-icon.svg" alt="">
+                                    <p class="mb-0 d-flex align-items-center">Más información</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card c text-left">
+                            <div class="card-body">
+                                <h5 class="card-title">Indicadores</h5>
+                                <p class="card-text">Busque y explore los POT municipales de Colombia.</p>
+                                <a href="https://experience.arcgis.com/experience/a839d03522cb4796853dc12b2b684e9a" class="btn p-0">
+                                    <img src="/images/home/pot-icon.svg" alt="">
+                                    <p class="mb-0 d-flex align-items-center">Más información</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card c text-left">
+                            <div class="card-body">
+                                <h5 class="card-title">Normatividad OT</h5>
+                                <p class="card-text">Consulte toda la normatividad relacionada al ordenamiento territorial.</p>
+                                <a role="link" onclick="window.open('/normatividad/', '_self');" class="btn p-0">
+                                    <img src="/images/home/pot-icon.svg" alt="">
+                                    <p class="mb-0 d-flex align-items-center">Más información</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card c text-left">
+                            <div class="card-body">
+                                <h5 class="card-title">Cartillas, guías y manuales</h5>
+                                <p class="card-text">Haga uso de los documentos técnicos y manuales en su día a día.</p>
+                                <a role="link" onclick="window.open('/normatividad/', '_self');" class="btn p-0">
+                                    <img src="/images/home/pot-icon.svg" alt="">
+                                    <p class="mb-0 d-flex align-items-center">Más información</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card c text-left">
+                            <div class="card-body">
+                                <h5 class="card-title">Caracterizaciones territoriales</h5>
+                                <p class="card-text">Encuentre y explore todas las caracterizaciones de municipios en nuestra sección de Documentos técnicos.</p>
+                                <a role="link" onclick="window.open('/documentos/', '_self');" class="btn p-0">
+                                    <img src="/images/home/pot-icon.svg" alt="">
+                                    <p class="mb-0 d-flex align-items-center">Más información</p>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="container sumary card-element-container search">
-            <div class="call-back">¿Qué estás buscando?</div>
-            <div class="row">
-                <div class="col-md-4 card-elemnt">
-                    <div class="home-icons" onclick="window.open('/pot/buscador.html', '_self');">
-                        <img class="bottonimg" id="botton1img" src="/images/SIGOT/Boton1.png" />
-                        <p style="font-size: 25px;">Los POT del país</p>
-                        <span class="span">Busque y explore los POT municipales de Colombia.</span>
+        <section class="consultas container mt-4 pb-4">
+            <h2 class="subtitle text-center mb-4">Consulta de uso del suelo</h2>
+            <div class="position-relative">
+                <div class="swiper-consultas swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=68081&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/68081.png' alt=''>
+                                    <div class='title'>Barrancabermeja</div>
+                                    <div class='subtitle'>Santander</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15092&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/15092.png' alt=''>
+                                    <div class='title'>Betéitiva</div>
+                                    <div class='subtitle'>Boyacá</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=76109&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/76109.png' alt=''>
+                                    <div class='title'>Buenaventura</div>
+                                    <div class='subtitle'>Valle del Cauca</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15114&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/15114.png' alt=''>
+                                    <div class='title'>Busbanzá</div>
+                                    <div class='subtitle'>Boyacá</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=63130&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/63130.png' alt=''>
+                                    <div class='title'>Calarcá</div>
+                                    <div class='subtitle'>Quindio</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15215&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/15215.png' alt=''>
+                                    <div class='title'>Corrales</div>
+                                    <div class='subtitle'>Boyacá</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=25269&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/25269.png' alt=''>
+                                    <div class='title'>Facatativá</div>
+                                    <div class='subtitle'>Cundinamarca</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=18001&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/18001.png' alt=''>
+                                    <div class='title'>Florencia</div>
+                                    <div class='subtitle'>Caquetá</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=25322&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/25322.png' alt=''>
+                                    <div class='title'>Guasca</div>
+                                    <div class='subtitle'>Cundinamarca</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=91001&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/91001.png' alt=''>
+                                    <div class='title'>Leticia</div>
+                                    <div class='subtitle'>Amazonas</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=86001&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/86001.png' alt=''>
+                                    <div class='title'>Mocoa</div>
+                                    <div class='subtitle'>Putumayo</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=54498&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/54498.png' alt=''>
+                                    <div class='title'>Ocaña</div>
+                                    <div class='subtitle'>Norte de Santander</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15537&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/15537.png' alt=''>
+                                    <div class='title'>Paz De Rio</div>
+                                    <div class='subtitle'>Boyacá</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=19001&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/19001.png' alt=''>
+                                    <div class='title'>Popayán</div>
+                                    <div class='subtitle'>Cauca</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=47001&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/47001.png' alt=''>
+                                    <div class='title'>Santa Marta</div>
+                                    <div class='subtitle'>Magdalena</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=66682&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/66682.png' alt=''>
+                                    <div class='title'>Santa Rosa De Cabal</div>
+                                    <div class='subtitle'>Risaralda</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15723&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/15723.png' alt=''>
+                                    <div class='title'>Sativasur</div>
+                                    <div class='subtitle'>Boyacá</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15757&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/15757.png' alt=''>
+                                    <div class='title'>Socha</div>
+                                    <div class='subtitle'>Boyacá</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15755&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/15755.png' alt=''>
+                                    <div class='title'>Socotá</div>
+                                    <div class='subtitle'>Boyacá</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15790&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/15790.png' alt=''>
+                                    <div class='title'>Tasco</div>
+                                    <div class='subtitle'>Boyacá</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=52835&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/52835.png' alt=''>
+                                    <div class='title'>Tumaco</div>
+                                    <div class='subtitle'>Nariño</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=19845&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/19845.png' alt=''>
+                                    <div class='title'>Villa Rica</div>
+                                    <div class='subtitle'>Cauca</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=50001&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/50001.png' alt=''>
+                                    <div class='title'>Villavicencio</div>
+                                    <div class='subtitle'>Meta</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=85001&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/85001.png' alt=''>
+                                    <div class='title'>Yopal</div>
+                                    <div class='subtitle'>Casanare</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='card'>
+                                <a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=25899&module=usosuelo_punto#'>
+                                    <img src='/images/consultausodelsuelo/25899.png' alt=''>
+                                    <div class='title'>Zipaquirá</div>
+                                    <div class='subtitle'>Cundinamarca</div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 card-elemnt">
-                    <div class="home-icons" onclick="window.open('/ruta/', '_self');">
-                        <img class="bottonimg" id="botton2img" src="/images/SIGOT/Boton2.png" />
-                        <p style="font-size: 25px;">La Ruta del POT</p>
-                        <span class="span">¡Municipios! Construyan sus POT municipales siguiendo la ruta.</span>
-                    </div>
-                </div>
-                <div class="col-md-4 card-elemnt">
-                    <div class="home-icons" onclick="window.open('https://www.colombiaenmapas.gov.co', '_blank');">
-                        <img class="bottonimg" id="botton3img" src="/images/SIGOT/Boton3.png" />
-                        <p style="font-size: 25px;">Datos para OT</p>
-                        <span class="span">Datos geográficos útiles para la construcción OT, en un solo lugar.</span>
-                    </div>
-                </div>
-                <div class="col-md-4 card-elemnt">
-                    <div class="home-icons" onclick="window.open('/normatividad/', '_self');">
-                        <img class="bottonimg" id="botton4img" src="/images/SIGOT/Boton4.png" />
-                        <p style="font-size: 25px;">Normatividad OT</p>
-                        <span class="span">Consulte toda la normatividad relacionada al ordenamiento territorial.</span>
-                    </div>
-                </div>
-                <div class="col-md-4 card-elemnt">
-                    <div class="home-icons" onclick="window.open('/cartillas/', '_self');">
-                        <img class="bottonimg" id="botton5img" src="/images/SIGOT/Boton5.png" />
-                        <p style="font-size: 25px;">Cartillas, gu&iacute;as y manuales</p>
-                        <span class="span">Haga uso de los documentos t&eacute;cnicos y manuales en su d&iacute;a a d&iacute;a.</span>
-                    </div>
-                </div>
-                <div class="col-md-4 card-elemnt">
-                    <div class="home-icons" onclick="window.open('/documentos/', '_self');">
-                        <img class="bottonimg" id="botton6img" src="/images/SIGOT/Boton6.png" />
-                        <p style="font-size: 25px;">Caracterizaciones territoriales</p>
-                        <span class="span">Encuentre y explore todas las caracterizaciones de municipios en nuestra secci&oacute;n de Documentos t&eacute;cnicos.</span>
-                    </div>
-                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
+        </section>
+        <section class="destacados container mt-5">
+            <h2 class="subtitle text-center mb-4">Recursos destacados</h2>
+            <div id="recursosViewDiv">
+            </div>
+            <div id="recursosViewDivFooter" style="overflow: hidden; max-height: 60px;">
+                <table id="tableRecursos" class="table table-condensed table-hover" style="display: none; text-align: center;width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <div class="bottom-section">
+            <section class="cifras mt-4">
+                <div class="container">
+                    <h5 class="subtitle text-center mb-5">Cifras</h5>
+                    <div class="row">
+                        <div class="col-md-3 mb-3 text-center">
+                            <div class="icon">
+                                <img src="images/home/municipios.svg" alt="">
+                            </div>
+                            <div class="text">
+                                <b>30 MUNICIPIOS</b>
+                                <p class="mb-0">Con pot actualizado para <br> el 2021.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3 text-center">
+                            <div class="icon">
+                                <img src="images/home/suelo-rural.svg" alt="">
+                            </div>
+                            <div class="text">
+                                <b>5,456 km</b>
+                                <p class="mb-0">De suelo rural producto <br> registrado.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3 text-center">
+                            <div class="icon">
+                                <img src="images/home/expansion.svg" alt="">
+                            </div>
+                            <div class="text">
+                                <b>4,300 km</b>
+                                <p class="mb-0">Áreas de expansión rural documentadas.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3 text-center">
+                            <div class="icon">
+                                <img src="images/home/capas.svg" alt="">
+                            </div>
+                            <div class="text">
+                                <b>4,300 km</b>
+                                <p class="mb-0">Áreas de expansión rural documentadas.</p>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+            <section class="entidades mt-5 pb-5 d-flex flex-wrap justify-content-center">
+                <h5 class="subtitle text-center mb-4">¿QUÉ ES EL OOT?</h5>
+                <div class="container-fluid bg-white">
+                    <div class="container">
+                        <div class="logo-rotator pt-4 pb-4">
+                            <div class="icon-container d-flex" style="animation-play-state: running;">
+                                <!-- Loop through numbers 1 to 44 -->
+                                <!-- Note: Ensure the server can serve these files correctly -->
+                                <div class="img">
+                                    <img src="/images/logoshome/1.png" alt="Logo 1">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/2.png" alt="Logo 2">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/3.png" alt="Logo 3">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/4.png" alt="Logo 4">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/5.png" alt="Logo 5">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/6.png" alt="Logo 6">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/7.png" alt="Logo 7">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/8.png" alt="Logo 8">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/9.png" alt="Logo 9">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/10.png" alt="Logo 10">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/11.png" alt="Logo 11">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/12.png" alt="Logo 12">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/13.png" alt="Logo 13">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/14.png" alt="Logo 14">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/15.png" alt="Logo 15">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/16.png" alt="Logo 16">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/17.png" alt="Logo 17">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/18.png" alt="Logo 18">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/19.png" alt="Logo 19">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/20.png" alt="Logo 20">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/21.png" alt="Logo 21">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/22.png" alt="Logo 22">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/23.png" alt="Logo 23">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/24.png" alt="Logo 24">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/25.png" alt="Logo 25">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/26.png" alt="Logo 26">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/27.png" alt="Logo 27">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/28.png" alt="Logo 28">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/29.png" alt="Logo 29">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/30.png" alt="Logo 30">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/31.png" alt="Logo 31">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/32.png" alt="Logo 32">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/33.png" alt="Logo 33">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/34.png" alt="Logo 34">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/35.png" alt="Logo 35">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/36.png" alt="Logo 36">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/37.png" alt="Logo 37">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/38.png" alt="Logo 38">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/39.png" alt="Logo 39">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/40.png" alt="Logo 40">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/41.png" alt="Logo 41">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/42.png" alt="Logo 42">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/43.png" alt="Logo 43">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/44.png" alt="Logo 44">
+                                </div>
+                                <!-- Duplicate images for the looping effect -->
+                                <div class="img">
+                                    <img src="/images/logoshome/1.png" alt="Logo 1">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/2.png" alt="Logo 2">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/3.png" alt="Logo 3">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/4.png" alt="Logo 4">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/5.png" alt="Logo 5">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/6.png" alt="Logo 6">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/7.png" alt="Logo 7">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/8.png" alt="Logo 8">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/9.png" alt="Logo 9">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/10.png" alt="Logo 10">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/11.png" alt="Logo 11">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/12.png" alt="Logo 12">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/13.png" alt="Logo 13">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/14.png" alt="Logo 14">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/15.png" alt="Logo 15">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/16.png" alt="Logo 16">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/17.png" alt="Logo 17">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/18.png" alt="Logo 18">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/19.png" alt="Logo 19">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/20.png" alt="Logo 20">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/21.png" alt="Logo 21">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/22.png" alt="Logo 22">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/23.png" alt="Logo 23">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/24.png" alt="Logo 24">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/25.png" alt="Logo 25">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/26.png" alt="Logo 26">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/27.png" alt="Logo 27">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/28.png" alt="Logo 28">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/29.png" alt="Logo 29">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/30.png" alt="Logo 30">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/31.png" alt="Logo 31">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/32.png" alt="Logo 32">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/33.png" alt="Logo 33">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/34.png" alt="Logo 34">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/35.png" alt="Logo 35">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/36.png" alt="Logo 36">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/37.png" alt="Logo 37">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/38.png" alt="Logo 38">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/39.png" alt="Logo 39">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/40.png" alt="Logo 40">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/41.png" alt="Logo 41">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/42.png" alt="Logo 42">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/43.png" alt="Logo 43">
+                                </div>
+                                <div class="img">
+                                    <img src="/images/logoshome/44.png" alt="Logo 44">
+                                </div>
+                                <!-- Repeat for images 2 to 44 -->
+                                <!-- ... -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="container">
-            <div class="title-box">
-                <h2 class="title">Consulta de uso del suelo</h2>
-            </div>
-            <div id="slider">
-                <div class="controls">
-                    <a class="control_next"></a>
-                    <a class="control_prev"></a>
-                </div>
-                <ul>
-                    <li>
-                        <div class="cardContainer">
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=68081&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/68081.png' alt=''><div class='title'>Barrancabermeja</div><div class='subtitle'>Santander</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15092&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/15092.png' alt=''><div class='title'>Betéitiva</div><div class='subtitle'>Boyacá</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=76109&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/76109.png' alt=''><div class='title'>Buenaventura</div><div class='subtitle'>Valle del Cauca</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15114&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/15114.png' alt=''><div class='title'>Busbanzá</div><div class='subtitle'>Boyacá</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=63130&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/63130.png' alt=''><div class='title'>Calarcá</div><div class='subtitle'>Quindio</div></a></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cardContainer">
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15215&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/15215.png' alt=''><div class='title'>Corrales</div><div class='subtitle'>Boyacá</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=25269&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/25269.png' alt=''><div class='title'>Facatativá</div><div class='subtitle'>Cundinamarca</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=18001&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/18001.png' alt=''><div class='title'>Florencia</div><div class='subtitle'>Caquetá</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=25322&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/25322.png' alt=''><div class='title'>Guasca</div><div class='subtitle'>Cundinamarca</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=91001&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/91001.png' alt=''><div class='title'>Leticia</div><div class='subtitle'>Amazonas</div></a></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cardContainer">
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=86001&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/86001.png' alt=''><div class='title'>Mocoa</div><div class='subtitle'>Putumayo</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=54498&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/54498.png' alt=''><div class='title'>Ocaña</div><div class='subtitle'>Norte de Santander</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15537&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/15537.png' alt=''><div class='title'>Paz De Rio</div><div class='subtitle'>Boyacá</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=19001&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/19001.png' alt=''><div class='title'>Popayán</div><div class='subtitle'>Cauca</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=47001&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/47001.png' alt=''><div class='title'>Santa Marta</div><div class='subtitle'>Magdalena</div></a></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cardContainer">
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=66682&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/66682.png' alt=''><div class='title'>Santa Rosa De Cabal</div><div class='subtitle'>Risaralda</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15723&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/15723.png' alt=''><div class='title'>Sativasur</div><div class='subtitle'>Boyacá</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15757&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/15757.png' alt=''><div class='title'>Socha</div><div class='subtitle'>Boyacá</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15755&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/15755.png' alt=''><div class='title'>Socotá</div><div class='subtitle'>Boyacá</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=15790&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/15790.png' alt=''><div class='title'>Tasco</div><div class='subtitle'>Boyacá</div></a></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cardContainer">
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=52835&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/52835.png' alt=''><div class='title'>Tumaco</div><div class='subtitle'>Nariño</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=19845&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/19845.png' alt=''><div class='title'>Villa Rica</div><div class='subtitle'>Cauca</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=50001&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/50001.png' alt=''><div class='title'>Villavicencio</div><div class='subtitle'>Meta</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=85001&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/85001.png' alt=''><div class='title'>Yopal</div><div class='subtitle'>Casanare</div></a></div>
-                            <div class='card'><a target='_blank' href='https://www.colombiaenmapas.gov.co/?u=25899&module=usosuelo_punto#'><img src='/images/consultausodelsuelo/25899.png' alt=''><div class='title'>Zipaquirá</div><div class='subtitle'>Cundinamarca</div></a></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="recursos-destacados">
-            <div class="container" id="containerDestacados">
-                <div class="resourses-title" style="text-align: center;">
-                    <div class="title-box">
-                        <h2 class="title">Recursos destacados</h2>
-                    </div>
-                </div>
-
-                <div id="recursosViewDiv">
-
-                </div>
-
-                <div id="recursosViewDivFooter" style="overflow: hidden; max-height: 60px;">
-                    <table id="tableRecursos" class="table table-condensed table-hover" style="display: none; text-align: center;width: 100%;">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Fecha</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="grandes-cifras">
-            <div class="container">
-                <div class="row row-cifras">
-                    <div class="col-md-6 cifras">
-                        <div class="pre-title">
-                            <h3>GRANDES CIFRAS</h3>
-                        </div>
-                        <div class="title-box">
-                            <h2 class="title">El ordenamiento territorial </br>
-                                en cifras.
-                            </h2>
-                        </div>
-                        <div class="resume">
-                            <p>Un panorama completo de las cifras que explican y reportan el ordenamiento territorial en Colombia. Conoce, actual&#237;zte y consulta nuestro tablero OT</p>
-                        </div>
-                        <div class="buton">
-                            <a href="/acerca-de/ot_del_pais_en_cifras.html">Cifras OT</a>
-                        </div>
-                    </div>
-                    <div class="rightside-container">
-                        <div class="statements-circle">
-                        </div>
-                        <div class="col-md-6 statements-content">
-                            <div class="statements">
-                                <div class="icon">
-                                    <img src="/images/recursos/map-logo.svg" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3>30 municipios</h3>
-                                    <p>Con pot actualizado para el 2021.</p>
-                                </div>
-                            </div>
-                            <div class="statements">
-                                <div class="icon">
-                                    <img src="/images/recursos/table-logo.svg" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3>5,456 km</h3>
-                                    <p>De suelo rural producto registrado.</p>
-                                </div>
-                            </div>
-                            <div class="statements">
-                                <div class="icon">
-                                    <img src="/images/recursos/direction-logo.svg" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3>4,300 km</h3>
-                                    <p>&#225;reas de expansi&#243;n rural documentadas.</p>
-                                </div>
-                            </div>
-                            <div class="statements">
-                                <div class="icon">
-                                    <img src="/images/recursos/layer-logo.svg" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3>342 capas</h3>
-                                    <p>De datos vivos para descargar.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="leter">
-                            <img src="/images/recursos/leter-a.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="entidades-participantes container">
-            <div class="title-box">
-                <h2 class="title">Entidades participantes</h2>
-            </div>
-            <div class=carousel2>
-                <button class="carousel__button carousel__button--left is-hidden"></button>
-                <div class="carousel__track-container">
-                    <ul class="carousel__track">
-                        <li class="carousel__slide">
-                            <div class="carousel-line">
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/1.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/2.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/3.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/4.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/5.png">
-                                </div>
-                            </div>
-                            <div class="carousel-line">
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/6.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/7.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/8.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/9.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/10.png">
-                                </div>
-                            </div>
-                            <div class="carousel-line">
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/11.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/12.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/13.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/14.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/15.png">
-                                </div>
-                            </div>
-                            <div class="carousel-line">
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/16.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/17.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/18.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/19.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/20.png">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="carousel__slide current-slide">
-                            <div class="carousel-line">
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/21.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/22.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/23.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/24.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/25.png">
-                                </div>
-                            </div>
-                            <div class="carousel-line">
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/26.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/27.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/28.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/29.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/30.png">
-                                </div>
-                            </div>
-                            <div class="carousel-line">
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/31.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/32.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/33.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/34.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/35.png">
-                                </div>
-                            </div>
-                            <div class="carousel-line">
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/36.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/37.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/38.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/39.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/40.png">
-                                </div>
-                            </div>
-                            <div class="carousel-line">
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/41.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/42.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/43.png">
-                                </div>
-                                <div class="carousel__image">
-                                    <img src="/images/logoshome/44.png">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <button class="carousel__button carousel__button--right"></button>
-                <hr>
-                <div class="carousel__nav">
-                    <button class="carousel__indicator"></button>
-                    <button class="carousel__indicator current-slide"></button>
-                </div>
-            </div>
-
-            <div class="buttons">
-                <div class="buton">
-                    <a href="/acerca-de/actores-de-colombia-ot.html" class="btn botton-primary">Actores OT</a>
-                </div>
-                <div class="buton">
-                    <a href="https://leadlineup.typeform.com/to/qlNypknU" target="_blank" class="btn botton-secondary">Intégrese</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+    </main>
     <footer class="footer">
         <div class="containerf">
             <div class="footer-container">
@@ -622,30 +877,6 @@
         </div>
     </footer>
 
-    <div id="modalLogin" class="modal fade" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="border: none; padding-bottom: 0px;">
-                    <a href="#" class="close" onclick="closeLogin(); return false;" aria-label="Cerrar"><span aria-hidden="true">&times;</span></a>
-                    <h4 class="modal-title">Iniciar sesi&oacute;n</h4>
-                </div>
-                <div class="modal-body" style="padding-top: 0px;">
-                    <div id="loginContainer">
-                        <div id="authContainer">
-                        </div>
-                    </div>
-                    <div id="logoutContainer" style="text-align: center;padding: 10px;">
-                        <img id="userPhoto2" src="/images/icono_ingreso.png" style="width: 64px; height: 64px;border-radius: 50%;" alt="Imagen Usuario" />
-                        <h5><span id="userName2"></span></h5>
-                        <button id="logoutBtn" type="button" onclick="signOut();" class="btn btn-default btn-danger">
-                            Cerrar sesi&oacute;n
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth__es.js"></script>
@@ -661,11 +892,46 @@
     <script type="text/javascript" src="/js/navbar.js"></script>
     <script type="text/javascript" src="/js/maestra.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/navbar.js"></script>
+
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
-        $('.carousel').carousel({
-            interval: false,
+        const swiper = new Swiper('.swiper-consultas', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // Pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Navigation
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            slidesPerGroup: 5,
+            
+            breakpoints: {
+                1024: {
+                    slidesPerView: 5,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                640: {
+                    slidesPerView: 2,
+                },
+                320: {
+                    slidesPerView: 2,
+                },
+            },
         });
     </script>
-
 </body>
 </html>
