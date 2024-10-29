@@ -80,13 +80,13 @@
     background-position: center;
 }
 .recursos .card.a {
-    background-image: url('/images/home/bg-los-pot.png');
+    background-image: url('../images/home/bg-los-pot.png');
 }
 .recursos .card.b {
-    background-image: url('/images/home/bg-la-ruta.png');
+    background-image: url('../images/home/bg-la-ruta.png');
 }
 .recursos .card.c {
-    background-image: url('/images/home/bg-indicadores.png');
+    background-image: url('../images/home/bg-indicadores.png');
 }
 .recursos .card .card-title {
     font-weight: 800;
@@ -333,7 +333,7 @@
 
 /* home cifras */       
 .bottom-section {
-    background: url('/images/home/bg-home-recursos.png');          
+    background: url('../images/home/bg-home-recursos.png');          
     background-size: cover;
     background-repeat: no-repeat;
 }
