@@ -16,7 +16,7 @@
     position: relative;
     border-radius: 20px 20px 0 0;
     overflow: hidden;
-    background: url(/images/bg-home-hero.png);
+    background: url(../images/bg-home-hero.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
