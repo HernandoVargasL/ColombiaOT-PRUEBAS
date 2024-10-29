@@ -111,7 +111,7 @@ input {
 }
 
 select {
-    background-image: url(./images/select.svg) !important;
+    background-image: url(../images/select.svg) !important;
     -webkit-appearance: none;
     appearance: none;
     -moz-appearance: none;
@@ -553,7 +553,7 @@ select {
     right: 5px;
     top: 15px;
     color: white;
-    background-image: url(./images/iconos/Tool.png);
+    background-image: url(../images/iconos/Tool.png);
     background-size: contain;
 }
 
@@ -2337,7 +2337,7 @@ select.input-sm {
 }
 
 .select2-selection {
-    background-image: url(./images/select.svg);
+    background-image: url(../images/select.svg);
     background-position: center right;
     background-repeat: no-repeat;
     background-size: 18px;
@@ -2420,7 +2420,7 @@ body.dragging, body.dragging * {
     display: block;
     right: 15px;
     bottom: 108px;
-    background-image: url(./images/iconos/Center.png);
+    background-image: url(../images/iconos/Center.png);
     background-size: contain;
     background-color: transparent !important;
     cursor: pointer;
@@ -2434,7 +2434,7 @@ body.dragging, body.dragging * {
     display: block;
     right: 15px;
     bottom: 145px;
-    background-image: url(./images/iconos/HomeExtent.png);
+    background-image: url(../images/iconos/HomeExtent.png);
     background-size: contain;
     background-color: transparent !important;
     cursor: pointer;
@@ -2448,7 +2448,7 @@ body.dragging, body.dragging * {
     display: block;
     right: 15px;
     bottom: 40px;
-    background-image: url(./images/iconos/ZoomBox.png);
+    background-image: url(../images/iconos/ZoomBox.png);
     background-size: contain;
     background-color: transparent !important;
     
@@ -2461,7 +2461,7 @@ body.dragging, body.dragging * {
     position: absolute;
     bottom: 35px;
     right: -6px;
-    background-image: url(./images/iconos/ZoomIn.png);
+    background-image: url(../images/iconos/ZoomIn.png);
     background-size: contain;
     background-color: transparent !important;
     background-repeat: no-repeat;
@@ -2475,7 +2475,7 @@ body.dragging, body.dragging * {
     position: absolute;
     bottom: 5px;
     right: -6px;
-    background-image: url(./images/iconos/ZoomOut.png);
+    background-image: url(../images/iconos/ZoomOut.png);
     background-size: contain;
     background-color: transparent !important;
     background-repeat: no-repeat;
@@ -2509,7 +2509,7 @@ body.dragging, body.dragging * {
     border-radius: 10px;
     width: 30px;
     height: 30px;
-    background-image: url(./images/iconos/HomeExtent.png);
+    background-image: url(../images/iconos/HomeExtent.png);
     background-size: contain;
     background-color: transparent !important;
 }
@@ -2521,7 +2521,7 @@ body.dragging, body.dragging * {
 .calcite .esriSimpleSlider {
     right: 17px;
     border-radius: 10px;
-    background-image: url(./images/iconos/ZoomBox.png);
+    background-image: url(../images/iconos/ZoomBox.png);
     background-size: contain;
     background-color: transparent;
 }
@@ -2530,7 +2530,7 @@ body.dragging, body.dragging * {
     opacity: 1 !important;
     border: none;
     background-color: transparent !important;
-    background-image: url(./images/iconos/ZoomIn.png);
+    background-image: url(../images/iconos/ZoomIn.png);
     background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position: center;
@@ -2543,7 +2543,7 @@ body.dragging, body.dragging * {
 .esriSimpleSliderDecrementButton {
     opacity: 1 !important;
     background-color: transparent !important;
-    background-image: url(./images/iconos/ZoomOut.png);
+    background-image: url(../images/iconos/ZoomOut.png);
     background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position: center;
@@ -3158,17 +3158,17 @@ footer .gov-co-logo-pie-mesa {
 }
 
 #layersToolBtn {
-    background-image: url(./images/iconos/mapa_base.png);
+    background-image: url(../images/iconos/mapa_base.png);
     top: 95px;
 }
 
 #legendBtn {
-    background-image: url(./images/iconos/leyenda2.png);
+    background-image: url(../images/iconos/leyenda2.png);
     top: 55px;
 }
 
 #infoToolBtn {
-    background-image: url(./images/iconos/informacion_adicional.png);
+    background-image: url(../images/iconos/informacion_adicional.png);
     top: 135px;
 }
 

@@ -92,7 +92,7 @@ input {
 }
 
 select {
-    background-image: url(./images/select.svg) !important;
+    background-image: url(../images/select.svg) !important;
     -webkit-appearance: none;
     appearance: none;
     -moz-appearance: none;
@@ -549,7 +549,7 @@ select {
     right: 5px;
     top: 5px;
     color: white;
-    background-image: url(./images/iconos/Tool.png);
+    background-image: url(../images/iconos/Tool.png);
     background-size: contain;
 }
 
@@ -1669,7 +1669,7 @@ select.input-sm {
 }
 
 .select2-selection {
-    background-image: url(./images/select.svg);
+    background-image: url(../images/select.svg);
     background-position: center right;
     background-repeat: no-repeat;
     background-size: 18px;
@@ -1748,7 +1748,7 @@ body.dragging, body.dragging * {
     border-radius: 10px;
     width: 30px;
     height: 30px;
-    background-image: url(./images/iconos/Center.png);
+    background-image: url(../images/iconos/Center.png);
     background-size: contain;
     background-color: transparent !important;
 }
@@ -1761,7 +1761,7 @@ body.dragging, body.dragging * {
     border-radius: 10px;
     width: 30px;
     height: 30px;
-    background-image: url(./images/iconos/HomeExtent.png);
+    background-image: url(../images/iconos/HomeExtent.png);
     background-size: contain;
     background-color: transparent !important;
 }
@@ -1773,7 +1773,7 @@ body.dragging, body.dragging * {
 .calcite .esriSimpleSlider {
     right: 17px;
     border-radius: 10px;
-    background-image: url(./images/iconos/ZoomBox.png);
+    background-image: url(../images/iconos/ZoomBox.png);
     background-size: contain;
     background-color: transparent;
 }
@@ -1782,7 +1782,7 @@ body.dragging, body.dragging * {
     opacity: 1 !important;
     border: none;
     background-color: transparent !important;
-    background-image: url(./images/iconos/ZoomIn.png);
+    background-image: url(../images/iconos/ZoomIn.png);
     background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position: center;
@@ -1795,7 +1795,7 @@ body.dragging, body.dragging * {
 .esriSimpleSliderDecrementButton {
     opacity: 1 !important;
     background-color: transparent !important;
-    background-image: url(./images/iconos/ZoomOut.png);
+    background-image: url(../images/iconos/ZoomOut.png);
     background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position: center;
@@ -1825,23 +1825,23 @@ body.dragging, body.dragging * {
 }
 
 .fase0 .panel-resultados-thumb-prev {
-    background-image: url(./images/SIGOT/Fase0.png);
+    background-image: url(../images/SIGOT/Fase0.png);
 }
 
 .fase1 .panel-resultados-thumb-prev {
-    background-image: url(./images/SIGOT/Fase1.png);}
+    background-image: url(../images/SIGOT/Fase1.png);}
 
 
 .fase2 .panel-resultados-thumb-prev {
-    background-image: url(./images/SIGOT/Fase2.png);
+    background-image: url(../images/SIGOT/Fase2.png);
 }
 
 .fase3 .panel-resultados-thumb-prev {
-    background-image: url(./images/SIGOT/Fase3.png);
+    background-image: url(../images/SIGOT/Fase3.png);
 }
 
 .fase4 .panel-resultados-thumb-prev {
-    background-image: url(./images/SIGOT/Fase4.png);
+    background-image: url(../images/SIGOT/Fase4.png);
 }
 
 .rep-documentos {
