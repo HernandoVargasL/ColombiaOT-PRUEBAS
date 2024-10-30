@@ -224,7 +224,7 @@ header{
 }
 
 /*.image-home-div{
-    background: url(/images/image_home.png);
+    background: url(images/image_home.png);
     background-size: 100% 100% !important;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0);
@@ -324,7 +324,7 @@ header{
   border: inherit;
   border-radius: 20px;
   overflow: hidden;
-  background: url(/images/rutadelpot/bg-welcome.png);
+  background: url(../images/bg-welcome.png);
   background-position: center;
   background-size: cover;
 }
