@@ -1,71 +1,71 @@
 @font-face {
     font-family: 'Gill Sans Std Bold';
-    src: url(/fonts/GillSansStd-Bold.eot);
-    src: url(/fonts/GillSansStd-Bold.eot?#iefix) format('embedded-opentype'), url(/fonts/GillSansStd-Bold.woff2) format('woff2'), url(/fonts/GillSansStd-Bold.woff) format('woff'), url(/fonts/GillSansStd-Bold.ttf) format('truetype'), url(/fonts/GillSansStd-Bold.svg#GillSansStd-Bold) format('svg');
+    src: url(../fonts/GillSansStd-Bold.eot);
+    src: url(../fonts/GillSansStd-Bold.eot?#iefix) format('embedded-opentype'), url(../fonts/GillSansStd-Bold.woff2) format('woff2'), url(../fonts/GillSansStd-Bold.woff) format('woff'), url(../fonts/GillSansStd-Bold.ttf) format('truetype'), url(../fonts/GillSansStd-Bold.svg#GillSansStd-Bold) format('svg');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gill Sans Std Bold Italic';
-    src: url(/fonts/GillSansStd-BoldItalic.eot);
-    src: url(/fonts/GillSansStd-BoldItalic.eot?#iefix) format('embedded-opentype'), url(/fonts/GillSansStd-BoldItalic.woff2) format('woff2'), url(/fonts/GillSansStd-BoldItalic.woff) format('woff'), url(/fonts/GillSansStd-BoldItalic.ttf) format('truetype'), url(/fonts/GillSansStd-BoldItalic.svg#GillSansStd-BoldItalic) format('svg');
+    src: url(../fonts/GillSansStd-BoldItalic.eot);
+    src: url(../fonts/GillSansStd-BoldItalic.eot?#iefix) format('embedded-opentype'), url(../fonts/GillSansStd-BoldItalic.woff2) format('woff2'), url(../fonts/GillSansStd-BoldItalic.woff) format('woff'), url(../fonts/GillSansStd-BoldItalic.ttf) format('truetype'), url(../fonts/GillSansStd-BoldItalic.svg#GillSansStd-BoldItalic) format('svg');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Gill Sans Std Bold Condensed';
-    src: url(/fonts/GillSansStd-BoldCondensed.eot);
-    src: url(/fonts/GillSansStd-BoldCondensed.eot?#iefix) format('embedded-opentype'), url(/fonts/GillSansStd-BoldCondensed.woff2) format('woff2'), url(/fonts/GillSansStd-BoldCondensed.woff) format('woff'), url(/fonts/GillSansStd-BoldCondensed.ttf) format('truetype'), url(/fonts/GillSansStd-BoldCondensed.svg#GillSansStd-BoldCondensed) format('svg');
+    src: url(../fonts/GillSansStd-BoldCondensed.eot);
+    src: url(../fonts/GillSansStd-BoldCondensed.eot?#iefix) format('embedded-opentype'), url(../fonts/GillSansStd-BoldCondensed.woff2) format('woff2'), url(../fonts/GillSansStd-BoldCondensed.woff) format('woff'), url(../fonts/GillSansStd-BoldCondensed.ttf) format('truetype'), url(../fonts/GillSansStd-BoldCondensed.svg#GillSansStd-BoldCondensed) format('svg');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gill Sans Std Italic';
-    src: url(/fonts/GillSansStd-Italic.eot);
-    src: url(/fonts/GillSansStd-Italic.eot?#iefix) format('embedded-opentype'), url(/fonts/GillSansStd-Italic.woff2) format('woff2'), url(/fonts/GillSansStd-Italic.woff) format('woff'), url(/fonts/GillSansStd-Italic.ttf) format('truetype'), url(/fonts/GillSansStd-Italic.svg#GillSansStd-Italic) format('svg');
+    src: url(../fonts/GillSansStd-Italic.eot);
+    src: url(../fonts/GillSansStd-Italic.eot?#iefix) format('embedded-opentype'), url(../fonts/GillSansStd-Italic.woff2) format('woff2'), url(../fonts/GillSansStd-Italic.woff) format('woff'), url(../fonts/GillSansStd-Italic.ttf) format('truetype'), url(../fonts/GillSansStd-Italic.svg#GillSansStd-Italic) format('svg');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Gill Sans Std Light';
-    src: url(/fonts/GillSansStd-Light.eot);
-    src: url(/fonts/GillSansStd-Light.eot?#iefix) format('embedded-opentype'), url(/fonts/GillSansStd-Light.woff2) format('woff2'), url(/fonts/GillSansStd-Light.woff) format('woff'), url(/fonts/GillSansStd-Light.ttf) format('truetype'), url(/fonts/GillSansStd-Light.svg#GillSansStd-Light) format('svg');
+    src: url(../fonts/GillSansStd-Light.eot);
+    src: url(../fonts/GillSansStd-Light.eot?#iefix) format('embedded-opentype'), url(../fonts/GillSansStd-Light.woff2) format('woff2'), url(../fonts/GillSansStd-Light.woff) format('woff'), url(../fonts/GillSansStd-Light.ttf) format('truetype'), url(../fonts/GillSansStd-Light.svg#GillSansStd-Light) format('svg');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gill Sans Std';
-    src: url(/fonts/GillSansStd.eot);
-    src: url(/fonts/GillSansStd.eot?#iefix) format('embedded-opentype'), url(/fonts/GillSansStd.woff2) format('woff2'), url(/fonts/GillSansStd.woff) format('woff'), url(/fonts/GillSansStd.ttf) format('truetype'), url(/fonts/GillSansStd.svg#GillSansStd) format('svg');
+    src: url(../fonts/GillSansStd.eot);
+    src: url(../fonts/GillSansStd.eot?#iefix) format('embedded-opentype'), url(../fonts/GillSansStd.woff2) format('woff2'), url(../fonts/GillSansStd.woff) format('woff'), url(../fonts/GillSansStd.ttf) format('truetype'), url(../fonts/GillSansStd.svg#GillSansStd) format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gill Sans Std Extra Bold Disp';
-    src: url(/fonts/GillSansStd-ExtraBoldDisp.eot);
-    src: url(/fonts/GillSansStd-ExtraBoldDisp.eot?#iefix) format('embedded-opentype'), url(/fonts/GillSansStd-ExtraBoldDisp.woff2) format('woff2'), url(/fonts/GillSansStd-ExtraBoldDisp.woff) format('woff'), url(/fonts/GillSansStd-ExtraBoldDisp.ttf) format('truetype'), url(/fonts/GillSansStd-ExtraBoldDisp.svg#GillSansStd-ExtraBoldDisp) format('svg');
+    src: url(../fonts/GillSansStd-ExtraBoldDisp.eot);
+    src: url(../fonts/GillSansStd-ExtraBoldDisp.eot?#iefix) format('embedded-opentype'), url(../fonts/GillSansStd-ExtraBoldDisp.woff2) format('woff2'), url(../fonts/GillSansStd-ExtraBoldDisp.woff) format('woff'), url(../fonts/GillSansStd-ExtraBoldDisp.ttf) format('truetype'), url(../fonts/GillSansStd-ExtraBoldDisp.svg#GillSansStd-ExtraBoldDisp) format('svg');
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gill Sans Std Condensed';
-    src: url(/fonts/GillSansStd-Condensed.eot);
-    src: url(/fonts/GillSansStd-Condensed.eot?#iefix) format('embedded-opentype'), url(/fonts/GillSansStd-Condensed.woff2) format('woff2'), url(/fonts/GillSansStd-Condensed.woff) format('woff'), url(/fonts/GillSansStd-Condensed.ttf) format('truetype'), url(/fonts/GillSansStd-Condensed.svg#GillSansStd-Condensed) format('svg');
+    src: url(../fonts/GillSansStd-Condensed.eot);
+    src: url(../fonts/GillSansStd-Condensed.eot?#iefix) format('embedded-opentype'), url(../fonts/GillSansStd-Condensed.woff2) format('woff2'), url(../fonts/GillSansStd-Condensed.woff) format('woff'), url(../fonts/GillSansStd-Condensed.ttf) format('truetype'), url(../fonts/GillSansStd-Condensed.svg#GillSansStd-Condensed) format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gill Sans Std Extra Bold';
-    src: url(/fonts/GillSansStd-ExtraBold.eot);
-    src: url(/fonts/GillSansStd-ExtraBold.eot?#iefix) format('embedded-opentype'), url(/fonts/GillSansStd-ExtraBold.woff2) format('woff2'), url(/fonts/GillSansStd-ExtraBold.woff) format('woff'), url(/fonts/GillSansStd-ExtraBold.ttf) format('truetype'), url(/fonts/GillSansStd-ExtraBold.svg#GillSansStd-ExtraBold) format('svg');
+    src: url(../fonts/GillSansStd-ExtraBold.eot);
+    src: url(../fonts/GillSansStd-ExtraBold.eot?#iefix) format('embedded-opentype'), url(../fonts/GillSansStd-ExtraBold.woff2) format('woff2'), url(../fonts/GillSansStd-ExtraBold.woff) format('woff'), url(../fonts/GillSansStd-ExtraBold.ttf) format('truetype'), url(../fonts/GillSansStd-ExtraBold.svg#GillSansStd-ExtraBold) format('svg');
     font-weight: 800;
     font-style: normal;
 }
@@ -92,7 +92,7 @@ input {
 }
 
 select {
-    background-image: url(/images/select.svg) !important;
+    background-image: url(../images/select.svg) !important;
     -webkit-appearance: none;
     appearance: none;
     -moz-appearance: none;
@@ -549,7 +549,7 @@ select {
     right: 5px;
     top: 5px;
     color: white;
-    background-image: url(/images/iconos/Tool.png);
+    background-image: url(../images/iconos/Tool.png);
     background-size: contain;
 }
 
@@ -1669,7 +1669,7 @@ select.input-sm {
 }
 
 .select2-selection {
-    background-image: url(/images/select.svg);
+    background-image: url(../images/select.svg);
     background-position: center right;
     background-repeat: no-repeat;
     background-size: 18px;
@@ -1748,7 +1748,7 @@ body.dragging, body.dragging * {
     border-radius: 10px;
     width: 30px;
     height: 30px;
-    background-image: url(/images/iconos/Center.png);
+    background-image: url(../images/iconos/Center.png);
     background-size: contain;
     background-color: transparent !important;
 }
@@ -1761,7 +1761,7 @@ body.dragging, body.dragging * {
     border-radius: 10px;
     width: 30px;
     height: 30px;
-    background-image: url(/images/iconos/HomeExtent.png);
+    background-image: url(../images/iconos/HomeExtent.png);
     background-size: contain;
     background-color: transparent !important;
 }
@@ -1773,7 +1773,7 @@ body.dragging, body.dragging * {
 .calcite .esriSimpleSlider {
     right: 17px;
     border-radius: 10px;
-    background-image: url(/images/iconos/ZoomBox.png);
+    background-image: url(../images/iconos/ZoomBox.png);
     background-size: contain;
     background-color: transparent;
 }
@@ -1782,7 +1782,7 @@ body.dragging, body.dragging * {
     opacity: 1 !important;
     border: none;
     background-color: transparent !important;
-    background-image: url(/images/iconos/ZoomIn.png);
+    background-image: url(../images/iconos/ZoomIn.png);
     background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position: center;
@@ -1795,7 +1795,7 @@ body.dragging, body.dragging * {
 .esriSimpleSliderDecrementButton {
     opacity: 1 !important;
     background-color: transparent !important;
-    background-image: url(/images/iconos/ZoomOut.png);
+    background-image: url(../images/iconos/ZoomOut.png);
     background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position: center;
@@ -1825,23 +1825,23 @@ body.dragging, body.dragging * {
 }
 
 .fase0 .panel-resultados-thumb-prev {
-    background-image: url(/images/SIGOT/Fase0.png);
+    background-image: url(../images/SIGOT/Fase0.png);
 }
 
 .fase1 .panel-resultados-thumb-prev {
-    background-image: url(/images/SIGOT/Fase1.png);}
+    background-image: url(../images/SIGOT/Fase1.png);}
 
 
 .fase2 .panel-resultados-thumb-prev {
-    background-image: url(/images/SIGOT/Fase2.png);
+    background-image: url(../images/SIGOT/Fase2.png);
 }
 
 .fase3 .panel-resultados-thumb-prev {
-    background-image: url(/images/SIGOT/Fase3.png);
+    background-image: url(../images/SIGOT/Fase3.png);
 }
 
 .fase4 .panel-resultados-thumb-prev {
-    background-image: url(/images/SIGOT/Fase4.png);
+    background-image: url(../images/SIGOT/Fase4.png);
 }
 
 .rep-documentos {
