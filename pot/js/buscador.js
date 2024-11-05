@@ -703,7 +703,7 @@ function toggleMenu(param) {
             updateRows();
             $("#mapViewDiv").removeClass("main-small-map");
             $("#mapViewDiv").addClass("main-large-map");
-            $("#headingSearch img").attr("src", "/images/iconos/Back_02.png");
+            $("#headingSearch img").attr("src", "../images/iconos/Back_02.png");
             $(".item-heading").removeClass("small-heading");
             $(".item-heading").addClass("large-heading");
             $("#menuItem").removeClass("small-heading");
@@ -717,7 +717,7 @@ function toggleMenu(param) {
         updateRows();
         $("#mapViewDiv").removeClass("main-large-map");
         $("#mapViewDiv").addClass("main-small-map");
-        $("#headingSearch img").attr("src", "/images/iconos/Forward_02.png");
+        $("#headingSearch img").attr("src", "../images/iconos/Forward_02.png");
         $(".item-heading").removeClass("large-heading");
         $(".item-heading").addClass("small-heading");
         $("#menuItem").removeClass("large-heading");
@@ -730,7 +730,7 @@ function toggleMenu(param) {
         updateRows();
         $("#mapViewDiv").removeClass("main-large-map");
         $("#mapViewDiv").addClass("main-small-map");
-        $("#headingSearch img").attr("src", "/images/iconos/Forward_02.png");
+        $("#headingSearch img").attr("src", "../images/iconos/Forward_02.png");
         $(".item-heading").removeClass("large-heading");
         $(".item-heading").addClass("small-heading");
         $("#menuItem").removeClass("large-heading");
@@ -1357,9 +1357,9 @@ function gotoDetalleDocumento(id) {
             var cPos = getEtapaPosicion(cacheDocumentos[i].ETAPA);
 
             if (cPos) {
-                $("#cardDetailEtapaImg").attr("src", "/images/SIGOT/Fase" + cPos + ".png");
+                $("#cardDetailEtapaImg").attr("src", "../images/SIGOT/Fase" + cPos + ".png");
             } else {                    
-                $("#cardDetailEtapaImg").attr("src", "/images/SIGOT/Fase0.png");
+                $("#cardDetailEtapaImg").attr("src", "../images/SIGOT/Fase0.png");
             }
 
             var strHTML = "";
@@ -1885,13 +1885,13 @@ function showLoading(text, imagen, color, autohide) {
         $("#alertContentLeft").hide();
     } else {
         if (imagen == "loading") {
-            $("#alertContentLeft img").attr("src", "/images/iconos/clock-face-three-oclock_1f552.png");
+            $("#alertContentLeft img").attr("src", "../images/iconos/clock-face-three-oclock_1f552.png");
         }
         if (imagen == "ok") {
-            $("#alertContentLeft img").attr("src", "/images/iconos/thumbs-up-sign_1f44d.png");
+            $("#alertContentLeft img").attr("src", "../images/iconos/thumbs-up-sign_1f44d.png");
         }
         if (imagen == "error") {
-            $("#alertContentLeft img").attr("src", "/images/iconos/smiling-face-with-smiling-eyes-and-hand-covering-mouth_1f92d.png");
+            $("#alertContentLeft img").attr("src", "../images/iconos/smiling-face-with-smiling-eyes-and-hand-covering-mouth_1f92d.png");
         }
         $("#alertContentLeft").show();
     }
