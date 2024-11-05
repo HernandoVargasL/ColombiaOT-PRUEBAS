@@ -2245,7 +2245,7 @@ body.dragging * {
 }
 
 .rep-documentos .panel-resultados-thumb-prev {
-    background-image: url('/images/SIGOT/Documentos.png');
+    background-image: url('../images/SIGOT/Documentos.png');
     background-size: 120px 80px;
 }
 
@@ -2274,7 +2274,7 @@ body.dragging * {
 }
 
 .rep-mapas .panel-resultados-thumb-prev {
-    background-image: url('/images/SIGOT/Mapas.png');
+    background-image: url('../images/SIGOT/Mapas.png');
     background-size: 120px 80px;
 }
 
@@ -2550,7 +2550,7 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 
 #instruccionesDiv::before {
     content: '';
-    background-image: url('/images/iconos/ctaIlustration.svg') !important;
+    background-image: url('../images/iconos/ctaIlustration.svg') !important;
     width: 298px;
     height: 105px;
     position: absolute;
@@ -2628,7 +2628,7 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 }
 
 .jumbotron1back {
-    background: url('/images/SIGOT/Home.svg');
+    background: url('../images/SIGOT/Home.svg');
     background-color: #EAEFF2 !important;
     background-position-x: right;
     background-position-y: bottom;

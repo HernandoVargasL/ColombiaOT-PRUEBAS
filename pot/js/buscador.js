@@ -677,11 +677,11 @@ function toggleFiltros(param) {
         }
     }
     if (param == "small") {
-        $("#panelSearchToggle").html("<img src='/images/iconos/Open_01.png' alt='Minimizar' style='width: 10px; height: 10px;' />");
+        $("#panelSearchToggle").html("<img src='../images/iconos/Open_01.png' alt='Minimizar' style='width: 10px; height: 10px;' />");
         $("#searchBody").hide();
     }
     if (param == "large") {
-        $("#panelSearchToggle").html("<img src='/images/iconos/Close_01.png' alt='Minimizar' style='width: 10px; height: 2px;' />");
+        $("#panelSearchToggle").html("<img src='../images/iconos/Close_01.png' alt='Minimizar' style='width: 10px; height: 2px;' />");
         $("#searchBody").show();
     }
 }
@@ -1157,10 +1157,10 @@ function updateRows() {
                 strHTML = strHTML + "<div class='title-card-resultados'>";
 
                 if (cPos) {
-                    strHTML = strHTML + "<img src='/images/SIGOT/Fase" + cPos + ".png' class='panel-resultados2-thumb1' />";
+                    strHTML = strHTML + "<img src='../images/SIGOT/Fase" + cPos + ".png' class='panel-resultados2-thumb1' />";
                     strHTML = strHTML + "Etapa " + cPos;                    
                 } else {                    
-                    strHTML = strHTML + "<img src='/images/SIGOT/Fase0.png' class='panel-resultados2-thumb1' />";
+                    strHTML = strHTML + "<img src='../images/SIGOT/Fase0.png' class='panel-resultados2-thumb1' />";
                     strHTML = strHTML + "Sin etapa";
                 }
                 strHTML = strHTML + "</div>";
