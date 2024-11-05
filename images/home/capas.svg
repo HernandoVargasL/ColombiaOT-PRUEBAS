@@ -4,7 +4,7 @@
 	 viewBox="0 0 106.6 106.6" style="enable-background:new 0 0 106.6 106.6;" xml:space="preserve">
 <style type="text/css">
 	.st0{clip-path:url(#SVGID_2_);}
-	.st1{fill:#355068;}
+	.st1{fill:var(--azul-igac-dark);}
 	.st2{fill:none;stroke:#FFFFFF;stroke-width:2.48;stroke-linecap:round;stroke-linejoin:round;}
 </style>
 <g id="Capa_2_1_">

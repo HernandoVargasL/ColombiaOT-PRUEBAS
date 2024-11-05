@@ -8,7 +8,7 @@
 	.st2{fill:#0E243F;}
 	.st3{fill:none;}
 	.st4{fill:#3268DF;}
-	.st5{fill:#3595E0;}
+	.st5{fill:var(--azul-igac);}
 	.st6{fill:#6BDBB7;}
 	.st7{fill:#F4A833;}
 	.st8{fill:#FACE33;}

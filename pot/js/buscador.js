@@ -46,8 +46,8 @@ var fase_data = [
 var color_defecto_tags = "#CF394B;#E64459;#F3AA42;#F8C354;#42874F;#6BD279;#3D99DE;#55BFF2;#8E398D;#B15BDB";
 var color_defecto = [{ "color1": "#6BD279", "color2": "#42874F", "tags": "#478A53;#4A9157;#4F995C;#53A060;#57A864;#5CAF69;#60B76D;#64BE71;#69C575;#6DCD7A" },
 { "color1": "#6BDBB7", "color2": "#6BD279", "tags": "#6ED07F;#6FD286;#6FD38C;#6FD491;#6FD597;#6FD69D;#6FD7A2;#6FD8A8;#6FD9AE;#70DAB5" },
-{ "color1": "#3595E0", "color2": "#6BDBB7", "tags": "#3E9ADA;#43A0D8;#48A7D4;#4DADD0;#54B5CA;#57BBC8;#5CC3C4;#61C9BF;#68CFBD;#6CD6B9" },
-{ "color1": "#58CCFB", "color2": "#3595E0", "tags": "#3D99DE;#409EE1;#44A4E3;#47A9E6;#4BAFE9;#4EB5EC;#51BAF0;#55BFF2;#58C5F5;#5CCAF8" },
+{ "color1": "var(--azul-igac)", "color2": "#6BDBB7", "tags": "#3E9ADA;#43A0D8;#48A7D4;#4DADD0;#54B5CA;#57BBC8;#5CC3C4;#61C9BF;#68CFBD;#6CD6B9" },
+{ "color1": "#58CCFB", "color2": "var(--azul-igac)", "tags": "#3D99DE;#409EE1;#44A4E3;#47A9E6;#4BAFE9;#4EB5EC;#51BAF0;#55BFF2;#58C5F5;#5CCAF8" },
 { "color1": "#B64FDD", "color2": "#58CCFB", "tags": "#B15BDB;#A766DE;#9E72E1;#957EE5;#8C8AE7;#8396EA;#7BA2ED;#73ADEF;#6BB9F3;#62C7F7" },
 { "color1": "#B64FDD", "color2": "#8D338A", "tags": "#8E398D;#923B95;#973E9D;#9B42A6;#9E45AD;#A246B5;#A74ABE;#AB4DC5;#AF51CE;#B354D6" },
 { "color1": "#EE8F90", "color2": "#E06AC2", "tags": "#DF6FBE;#E073BA;#E275B4;#E379AF;#E47DAB;#E67FA7;#E783A1;#E8879F;#EA8A98;#EB8E94" },
@@ -61,6 +61,10 @@ var color_defecto = [{ "color1": "#6BD279", "color2": "#42874F", "tags": "#478A5
 { "color1": "#999999", "color2": "#C3AF98", "tags": "#C5AE96;#C0AC96;#BAA997;#B7A797;#B2A597;#AEA398;#A9A198;#A59F98;#A09C99;#9B9A99" },
 { "color1": "#808080", "color2": "#999999", "tags": "#818181;#848484;#868686;#898989;#8B8B8B;#8E8E8E;#909090;#939393;#959595;#989898" },
 ];
+
+function modalHide() {    
+    $('#modalTutorial').modal('hide');
+}
 
 $(document).ready(function () {
     toggleMenu(currentEstado);
@@ -83,7 +87,11 @@ $(document).ready(function () {
             }
         });
     }, 1000);
-    $("#modalTutorial").modal({ backdrop: 'static', keyboard: false }, "show");
+    $("#modalTutorial").modal({
+        keyboard: false,
+        backdrop: false
+    });
+    initData();
 });
 
 function initData(data) {
@@ -123,7 +131,6 @@ function initData(data) {
             return $("<span class='" + data.type + "'>" + data.text + "</span>");
         }
     });
-    $("#searchFiltro").val(null);
     $("#searchFiltro").trigger("change");
     $("#searchFiltro").on("change", function (e) {
         if (firstOpen) {
@@ -1134,7 +1141,7 @@ function updateRows() {
         var maxViewWidth = (viewWidth-100)/5;
         
         for (var i = 0; i < dataRow.length; i++) {
-            strHTML = strHTML + "<div class='doc-item'>";
+            strHTML = strHTML + "<div class='doc-item col-md-4'>";
 
             var rPos = parseInt(Math.random() * 4);
             if (dataRow[i].FORMA_REPRESENTACION == "Cartografía") {
@@ -1164,7 +1171,6 @@ function updateRows() {
             strHTML = strHTML + "<div class='panel-body'>";
 
             strHTML = strHTML + "<div class='title-recursos'>" + "<div class='panel-resultados-titulo2 panel-resultados-titulo2x'>" + dataRow[i].NOMBRE + "</div>Instrumento: " + dataRow[i].POT + "</div>";
-            strHTML = strHTML + "<hr/>"
             strHTML = strHTML + "<div class='panel-resultados-descripcion2'>";
             if ($("#searchFiltro").val() != dataRow[i].CODIGO) {
                 try {
@@ -1175,9 +1181,13 @@ function updateRows() {
                     console.error(error)
                 }
             }
+            strHTML = strHTML + "<div class='d-flex justify-content-between align-items-center' data-toggle='collapse' href='#collapseCards"+ i +"' role='button' aria-expanded='false' aria-controls='collapseExample"+ i +"'>"
             strHTML = strHTML + "<strong class='title-inner'>" + dataRow[i].FORMA_REPRESENTACION + "</strong>";
-
-            strHTML = strHTML + "<ul style='margin-left: 10px; margin-top: 15px; padding-left: 5px;'>"
+            strHTML = strHTML + "<i class='fa fa-chevron-down text-light'></i>";
+            strHTML = strHTML + "</div>"
+            
+            strHTML = strHTML + "<div class='collapse' id='collapseCards"+ i +"'>";
+            strHTML = strHTML + "<ul class='pt-3'>"
             strHTML = strHTML + "<li><strong class='title'>Tipo:&nbsp;</strong><a href='#' onclick='filtroTipoDocumento(\"" + dataRow[i].TIPO_DOCUMENTO + "\");'>" + dataRow[i].TIPO_DOCUMENTO + "</a></li>";
             if (dataRow[i].DIMENSION != null) {
                 strHTML = strHTML + "<li><strong class='title'>Dimensi&oacute;n:&nbsp;</strong><a href='#' onclick='filtroDimension(\"" + dataRow[i].DIMENSION + "\");'>" + dataRow[i].DIMENSION + "</a></li>";
@@ -1199,9 +1209,8 @@ function updateRows() {
             }
 
             strHTML = strHTML + "</ul>"
-
+            strHTML = strHTML + "</div>"
             strHTML = strHTML + "</div>";
-            strHTML = strHTML + "<br>";
             strHTML = strHTML + "<table class='contenedor-botones-cta'>";
             strHTML = strHTML + "<tbody>";
             strHTML = strHTML + "<tr class='content-botones-cta'>";
@@ -1240,10 +1249,10 @@ function updateRows() {
                     if (cTagsDocLen <= maxViewWidth) {
                         cTagsDocLen = cTagsDocLen + tagsT[j].width() + 10;
                         cTagsDocCount = cTagsDocCount + 1;
-                        strHTML = strHTML + "<span class='label' style='background-color:" + getColorByTag(tagsT[j]) + ";'>" + tagsT[j] + "</span>";
+                        strHTML = strHTML + "<span class='label' style='border: 2px solid" + getColorByTag(tagsT[j]) + ";'>" + tagsT[j] + "</span>";
                     } else {
                         cTagsDocExcede = true;
-                        tempTags += "<span class='label' style='background-color:" + getColorByTag(tagsT[j]) + ";'>" + tagsT[j] + "</span>";
+                        tempTags += "<span class='label' style='border: 2px solid" + getColorByTag(tagsT[j]) + ";'>" + tagsT[j] + "</span>";
                     }
 
                 }            

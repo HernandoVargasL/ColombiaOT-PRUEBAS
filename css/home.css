@@ -3,13 +3,13 @@
     background: #e7e5e3;
 }
 .subtitle {
-    color: #355068;
+    color: var(--azul-igac-dark);
     font-size: 1.8rem;
     font-weight: 800;
 }
 .recursos h5.subtitle {
     font-weight: 800;
-    color: #355068;
+    color: var(--azul-igac-dark);
 }
 /* home herobanner */        
 .herobanner {
@@ -100,7 +100,7 @@
 }
 .recursos .card .btn {
     position: relative;
-    color: #355068;
+    color: var(--azul-igac-dark);
     display: inline-flex;
     font-size: 1rem;
     font-weight: 500;
@@ -110,7 +110,7 @@
     cursor: pointer;
 }
 .recursos .card .btn:hover {
-    color: #355068;
+    color: var(--azul-igac-dark);
 }
 .recursos .card .btn.active {
     background: #ffffffdd;
@@ -148,7 +148,7 @@
 }
 .consultas .swiper-slide .card {
     border-radius: 20px;
-    background: #355068;
+    background: var(--azul-igac-dark);
 }
 .consultas .swiper-slide .card a {
     display: flex;
@@ -220,7 +220,7 @@
     width: 100%;
     color: #fff;
     padding: 15px;
-    background: #355068;
+    background: var(--azul-igac-dark);
     background-size: cover;
     background-position: center;
 }

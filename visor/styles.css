@@ -981,7 +981,7 @@ select {
 }
 
 .titulo-interior2 {
-    color: #3595E0;
+    color: var(--azul-igac);
 }
 
 .titulo-interior {
@@ -1542,13 +1542,13 @@ tr:hover .btn-resultados3 img {
 
     #coordPanel > li.active > a {
         border: none;
-        border-bottom: 1px solid #3595E0;
+        border-bottom: 1px solid var(--azul-igac);
         background: #FAFAFA;
     }
 
     #coordPanel > li > a:hover {
         border: none;
-        border-bottom: 1px solid #3595E0 !important;
+        border-bottom: 1px solid var(--azul-igac) !important;
         background: #FAFAFA !important;
     }
 
@@ -1561,13 +1561,13 @@ tr:hover .btn-resultados3 img {
 
     #usosueloPanel > li.active > a {
         border: none;
-        border-bottom: 1px solid #3595E0;
+        border-bottom: 1px solid var(--azul-igac);
         background: #FAFAFA;
     }
 
     #usosueloPanel > li > a:hover {
         border: none;
-        border-bottom: 1px solid #3595E0 !important;
+        border-bottom: 1px solid var(--azul-igac) !important;
         background: #FAFAFA !important;
     }
 
@@ -1580,13 +1580,13 @@ tr:hover .btn-resultados3 img {
 
     #agroPanel > li.active > a {
         border: none;
-        border-bottom: 1px solid #3595E0;
+        border-bottom: 1px solid var(--azul-igac);
         background: #FAFAFA;
     }
 
     #agroPanel > li > a:hover {
         border: none;
-        border-bottom: 1px solid #3595E0 !important;
+        border-bottom: 1px solid var(--azul-igac) !important;
         background: #FAFAFA !important;
     }
 
@@ -1600,13 +1600,13 @@ tr:hover .btn-resultados3 img {
 
     #catastralPanel > li.active > a {
         border: none;
-        border-bottom: 1px solid #3595E0;
+        border-bottom: 1px solid var(--azul-igac);
         background: #FAFAFA;
     }
 
     #catastralPanel > li > a:hover {
         border: none;
-        border-bottom: 1px solid #3595E0 !important;
+        border-bottom: 1px solid var(--azul-igac) !important;
         background: #FAFAFA !important;
     }
 
@@ -1623,13 +1623,13 @@ tr:hover .btn-resultados3 img {
 
 #usosueloPanel > li.active > a {
     border: none;
-    border-bottom: 1px solid #3595E0;
+    border-bottom: 1px solid var(--azul-igac);
     background: #FAFAFA;
 }
 
     #usosueloPanel > li > a:hover {
         border: none;
-        border-bottom: 1px solid #3595E0 !important;
+        border-bottom: 1px solid var(--azul-igac) !important;
         background: #FAFAFA !important;
     }
 
@@ -2645,12 +2645,12 @@ body.dragging, body.dragging * {
 
     #searchBarTab > .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
         font-weight: bold;
-        border-bottom: 1px #3595E0 solid !important;
+        border-bottom: 1px var(--azul-igac) solid !important;
     }
 
     #drawMain > .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
         font-weight: bold;
-        border-bottom: 1px #3595E0 solid !important;
+        border-bottom: 1px var(--azul-igac) solid !important;
     }
 
 

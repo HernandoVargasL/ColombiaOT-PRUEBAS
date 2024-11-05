@@ -621,7 +621,7 @@
                       $("#pagin li a").eq(i).removeClass("current");
                       $("#pagin li a").eq(i).css({"color": '#000000'});
                       showPage(i);
-                      $("#pagin li a").eq(i-1).css({"color": '#3595E0'});
+                      $("#pagin li a").eq(i-1).css({"color": 'var(--azul-igac)'});
                       $("#pagin li a").eq(i-1).addClass("current");
           
                       /*if (i < ($('.line-content').length)/7) {
@@ -645,7 +645,7 @@
                       $("#pagin li a").eq(i-2).removeClass("current");
                       $("#pagin li a").eq(i-2).css({"color": '#000000'});
                       showPage(i);
-                      $("#pagin li a").eq(i-1).css({"color": '#3595E0'});
+                      $("#pagin li a").eq(i-1).css({"color": 'var(--azul-igac)'});
                       $("#pagin li a").eq(i-1).addClass("current");
           
                       /*if (i < ($('.line-content').length)/7) {
@@ -690,12 +690,12 @@
                 
             showPage(i);
           
-            $("#pagin li a").eq(0).css({"color": '#3595E0'});
+            $("#pagin li a").eq(0).css({"color": 'var(--azul-igac)'});
             $("#pagin li a").eq(0).addClass("current");
             
             $("#pagin li a").click(function() {
               $("#pagin li a").css({"color": '#000000'});
-              $(this).css({"color": '#3595E0'});
+              $(this).css({"color": 'var(--azul-igac)'});
           
               $(this).siblings("#pagin li a").css({"color": 'red'});
               $("#pagin li a").removeClass("current");

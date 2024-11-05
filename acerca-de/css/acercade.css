@@ -126,7 +126,7 @@
     color: #eb6654;
 }
 .contenido-pagina .list-numbers .list .blue {
-    color: #3595e0;
+    color: var(--azul-igac);
 }
 .contenido-pagina .list-numbers .list .green {
     color: #038d71;
@@ -284,7 +284,7 @@
     margin-top: 40px;
 }
 .contenido-pagina .list-numbers .boton a {
-    background-color: #3595e0;
+    background-color: var(--azul-igac);
     color: #fff;
     font-size: 14px;
     line-height: 16px;
@@ -346,7 +346,7 @@
 }
 .contenido-pagina .call-to-action a {
     color: #fff;
-    background: #3595e0;
+    background: var(--azul-igac);
     padding: 10px 40px;
     border-radius: 5px;
     font-size: 14px;

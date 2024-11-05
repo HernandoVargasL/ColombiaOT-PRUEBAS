@@ -12,7 +12,7 @@
 	.st6{fill:#EB6654;}
 	.st7{fill:#DEE3FC;}
 	.st8{fill:#F0F4FF;}
-	.st9{fill:#3595E0;}
+	.st9{fill:var(--azul-igac);}
 	.st10{fill:#FACE33;}
 	.st11{fill:#455A64;}
 	.st12{fill:#495AD6;}

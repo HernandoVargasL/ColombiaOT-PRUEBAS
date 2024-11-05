@@ -246,7 +246,7 @@ header{
   width: 876.117px;
 }
 .desc-nota {
-  background-color: #3595E0;
+  background-color: var(--azul-igac);
   color: white;
   border: 0px;
   width: 133.756px;
@@ -255,7 +255,7 @@ header{
 }
 
 .entendido{
-  background-color: #3595E0;
+  background-color: var(--azul-igac);
   width: 133.756px;
   height: 32px;
   border-radius: 8px;
@@ -329,13 +329,15 @@ header{
   background-size: cover;
 }
 #instruccionesDiv .card-body {
-  background: #355068c6;
+  background: #365068de;
   backdrop-filter: blur(5px);
+}
+#instruccionesDiv .card-body p {
+  color: #fff;
 }
 .containertarjetas {
   padding: 15px 0 15px 15px;
   position: relative;
-  background-color: var(--bg-igac-gris);
   height: fit-content;  
 }
 .tarjetas {
@@ -458,12 +460,12 @@ a.ancla:visited:active{
   background: rgba(255, 255, 255, 0.881)
 }
 .mensaje h1 {
-  color: #355068;
+  color: var(--azul-igac-custome);
   margin-top: 0;
   font-size: 16px;
   font-weight: bold;
   padding-bottom: 10px;
-  border-bottom: 1px solid #355068;
+  border-bottom: 1px solid var(--azul-igac-custome);
 }
 .mensaje h2 {
   font-family: 'Gill Sans Std semi Bold';
@@ -480,7 +482,7 @@ a.ancla:visited:active{
   position: sticky;
   z-index: 1;
   top: 60px;
-  background-color: #355068;
+  background-color: var(--azul-igac-custome);
   padding: 20px;
   height: fit-content;
   box-shadow: 3px 0px 9px 4px #BABFB5;
@@ -518,10 +520,10 @@ a.ancla:visited:active{
   cursor:pointer;
 }
 .paso:hover {
-  color: #365068;
+  color: var(--azul-igac-custome);
 }
 .pasoclic{
-  color: #3595E0;
+  color: var(--azul-igac);
   background: #fff;
 }
 .pasoclicked{
@@ -647,7 +649,7 @@ a.ancla:visited:active{
 .anuncio a{
   padding: 7px 25px;
   border-radius: 8px;
-  background-color: #3595E0;
+  background-color: var(--azul-igac);
   color: white;
   width: 133.756px;
   height: 32px;
@@ -661,16 +663,16 @@ a.ancla:visited:active{
   border-radius: 8px;
   width: 133.756px;
   height: 32px;
-  border: solid 1px #3595E0;
+  border: solid 1px var(--azul-igac);
   background-color: white;
-  color: #3595E0;
+  color: var(--azul-igac);
   margin-left: 10px;
 }
 .informacion-paso h1{
   font-family: 'Gill Sans Std Bold';
   font-size: 30px;
   /*line-height: 0%;*/
-  color: #3595E0;
+  color: var(--azul-igac);
 }
 
 .informacion-paso-h3{ 
@@ -745,7 +747,7 @@ a.ancla:visited:active{
 }*/
 
 .no{
-  color: #808080;
+  color: #375068;
 }
 
 .informacion-paso ul u{
@@ -986,7 +988,7 @@ a.ancla:visited:active{
   font-family: 'Gill Sans Std';
   font-size: 13px;
   color: var(--rojo-igac);
-  margin-top: 20px;
+  margin-top: 0;
   display: inline-block;
 }
 
@@ -1012,7 +1014,6 @@ a.ancla:visited:active{
 
 .imgadminalone{
   float: left;
-  margin-right: 20px;
 }
 
 .tooltiptarjeta {
@@ -1243,7 +1244,7 @@ a.ancla:visited:active{
 }
 
 .notas .p-3 {
-  background: #365068;
+  background: var(--azul-igac-custome);
   border-radius: 20px;
   margin-top: 15px;
 }
@@ -1472,17 +1473,6 @@ a.ancla:visited:active{
   margin-top: 10px;
 }
 
-/*.section2 {
-  height: 50px;
-  background-color: green;
-  color: white;
-  margin:10px;
-  opacity: 1 !important;
-  box-shadow: 3px 3px 15px #666;
-  border: 1px solid #7d7d7d;
-}*/
-
-
 .newcontainer2{
   width: fit-content;
   margin: auto;
@@ -1501,14 +1491,14 @@ a.ancla:visited:active{
   /*margin: 20px;*/
   opacity: 1 !important;
   
-  border-radius: 8px;
+  border-radius: 20px;
   background-color: #f7f7f7;
   display: inline-block;
   vertical-align: top;
   z-index: 60;
 }
 
-connection {
+.connection {
   border: 1px solid #3268DF;
   border-radius: 11px;
   z-index: 500;
@@ -1516,8 +1506,8 @@ connection {
 
 .more, .more-5, .more-7, .more-9, .more-10, .more-16, .more-17,  .more-18, .more-19, .more-20, .more-21, .more-22, .more-26,  .more-27, .more-29,  .more-30, .more-31, .more-33, .more-34, .more-35, .more-36, .more-38, .more-39, .more-41, .more-42, .more-43, .more-44, .more-45, .more-46, .more-47, .more-48, .more-49, .more-50, .more-51, .more-52, .more-53, .more-54, .more-59, .more-67, .more-68, .more-69 {
   cursor: pointer;
-  color: #3595E0;
-  text-decoration: underline #3595E0;
+  color: var(--azul-igac);
+  text-decoration: underline var(--azul-igac);
 }
 
 .complete, .complete-5, .complete-7, .complete-9, .complete-10, .complete-16, .complete-17, .complete-18, .complete-19, .complete-20, .complete-21, .complete-22, .complete-26, .complete-27, .complete-29, .complete-30, .complete-31, .complete-33, .complete-34, .complete-35, .complete-36, .complete-38, .complete-39, .complete-41, .complete-42, .complete-43, .complete-44, .complete-45, .complete-46, .complete-47, .complete-48, .complete-49, .complete-50, .complete-51, .complete-52, .complete-53, .complete-54, .complete-59, .complete-67, .complete-68, .complete-69  {
@@ -1530,7 +1520,7 @@ connection {
 
 
 .current {
-  /*color: #3595E0;*/
+  /*color: var(--azul-igac);*/
   color: yellow;
   
 }

@@ -1258,7 +1258,7 @@ tr {}
 }
 
 .titulo-interior2 {
-    color: #3595E0;
+    color: var(--azul-igac);
 }
 
 .titulo-interior {
@@ -1789,13 +1789,13 @@ tr:hover .btn-resultados3 img {
 
 #coordPanel>li.active>a {
     border: none;
-    border-bottom: 1px solid #3595E0;
+    border-bottom: 1px solid var(--azul-igac);
     background: #FAFAFA;
 }
 
 #coordPanel>li>a:hover {
     border: none;
-    border-bottom: 1px solid #3595E0 !important;
+    border-bottom: 1px solid var(--azul-igac) !important;
     background: #FAFAFA !important;
 }
 
@@ -1808,13 +1808,13 @@ tr:hover .btn-resultados3 img {
 
 #catastralPanel>li.active>a {
     border: none;
-    border-bottom: 1px solid #3595E0;
+    border-bottom: 1px solid var(--azul-igac);
     background: #FAFAFA;
 }
 
 #catastralPanel>li>a:hover {
     border: none;
-    border-bottom: 1px solid #3595E0 !important;
+    border-bottom: 1px solid var(--azul-igac) !important;
     background: #FAFAFA !important;
 }
 
@@ -2615,7 +2615,7 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 }
 
 #instruccionesDiv>.instrucciones-introduccion #collapseExample .btn {
-    background: #3595e0;
+    background: var(--azul-igac);
     color: #fff !important;
     width: auto;
     padding: 7px 20px 5px;
@@ -2817,7 +2817,7 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 }
 
 .entidades-participantes .buttons .botton-primary {
-    background-color: #3595e0;
+    background-color: var(--azul-igac);
     color: #fff;
     padding-left: 30px;
     padding-right: 30px;
@@ -2858,7 +2858,7 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 
 .call-to-action-section .botton-primary {
     font-size: 14px;
-    background-color: #3595e0;
+    background-color: var(--azul-igac);
     color: #fff;
     padding-left: 30px;
     padding-right: 30px;
@@ -3189,7 +3189,7 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 }
 
 .acerca-de-body .container-main .row-main .main-content .sumary .objetives .content .title .sumary-content .section-cards .card .sumary-card .detail ul a {
-    color: #3595e0;
+    color: var(--azul-igac);
     text-decoration: underline;
 }
 
@@ -3422,11 +3422,11 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 }
 
 .acerca-de-body .container-main .row-main .main-content .sumary .objetives .content .inner-cards .cards .top-bar.typeb {
-    background-image: linear-gradient(to right, #3595e0, #6bdbb7);
+    background-image: linear-gradient(to right, var(--azul-igac), #6bdbb7);
 }
 
 .acerca-de-body .container-main .row-main .main-content .sumary .objetives .content .inner-cards .cards .top-bar.typec {
-    background-image: linear-gradient(to right, #58ccfb, #3595e0);
+    background-image: linear-gradient(to right, #58ccfb, var(--azul-igac));
 }
 
 .acerca-de-body .container-main .row-main .main-content .sumary .objetives .content .inner-cards .cards .top-bar.typed {
@@ -3502,7 +3502,7 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 
 .acerca-de-body .container-main .row-main .main-content .sumary .objetives .content .collapse-block .collapse-button-1 {
     padding: 0;
-    color: #3595e0;
+    color: var(--azul-igac);
 }
 
 .acerca-de-body .container-main .row-main .main-content .sumary .objetives .content .collapse-block .collapse-button-1::before {
@@ -3570,7 +3570,7 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 
 .acerca-de-body .container-main .row-main .main-content .sumary .objetives .content .banner .background-back .background-front .content-banner .content-text a {
     color: #fff;
-    background: #3595e0;
+    background: var(--azul-igac);
     padding: 10px 40px;
     border-radius: 5px;
 }
@@ -3636,7 +3636,7 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 }
 
 .acerca-de-body .container-main .row-main .main-content .sumary .objetives .content .section-horizontal-card .cta a {
-    color: #3595e0;
+    color: var(--azul-igac);
 }
 
 .acerca-de-body .container-main .row-main .main-content .sumary .objetives .content .section-horizontal-card .image {
@@ -4405,18 +4405,18 @@ input::placeholder {
 }
 
 .nav-pills li.active {
-    border-bottom: 2px solid #3595E0;
+    border-bottom: 2px solid var(--azul-igac);
 }
 
 .nav-pills li.active a {
     background: transparent;
-    color: #3595E0;
+    color: var(--azul-igac);
 }
 
 .nav-pills li a:hover,
 .nav-pills li a:focus {
     background-color: transparent !important;
-    color: #3595E0 !important;
+    color: var(--azul-igac) !important;
 }
 
 .nav-pills li a {

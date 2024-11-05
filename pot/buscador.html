@@ -27,13 +27,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-bootstrap.min-v0.10.css">
     <link rel="stylesheet" href="/js/lib/dist/css/calcite-maps-arcgis-3.x.min-v0.10.css">
 
     <link rel="stylesheet" href="/css/navbar-footer.css">
-    <link rel="stylesheet" href="/css/maestra.css">
     <link rel="stylesheet" href="/css/buscador.css">
+    <link rel="stylesheet" href="/css/maestra.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-78PPLF47WW"></script>
     <script>
@@ -142,89 +142,93 @@
         <div class='navbarnavigac'>
         </div>
     </nav>
-
-    <div class="calcite-map docuvisor-content">
-        <div id="mainDiv" class="main-small">
-            <!-- Search Panel -->
-            <div id="panelSearch" class="panel collapse">
-                <div id="collapseSearch" class="panel-collapse">
-                    <div class="panel-body" style="background: #FAFAFA;padding: 0px;">
-                        <div id="containerFiltros">
-                            <div id="panelSearchFiltros" class="panel panel-default" data-toggle="popover">
-                                <div>
-                                    <div id="searchHeader" class="panel-heading">
-                                        <h3 class="panel-title" style="display: inline-block;">Filtra resultados</h3>
-                                        <label style="margin-bottom: 0;" id="limpiarBtn"><a href="#" onclick="limpiarMain(); return false;">Limpiar</a></label>
-                                    </div>
-                                    <div id="searchBody" class="panel-body">
-                                        <p class="unidad-container" style="width: 100%;">
-                                            <label style="font-size: 14px;"><strong>Filtra por entidad territorial</strong></label>
-                                            <select class="form-control" id="searchFiltro" style="width: 100%;font-size: 14px;">
-                                            </select>
-                                        </p>
-                                        <p>
-                                            <label style="font-size: 14px;"><strong>Etapa</strong></label>
-                                            <select class="form-control" id="searchEtapa" style="width: 100%;font-size: 14px;">
-                                                <option value="Todas">Todas las etapas</option>
-                                                <option value="Diagnóstico">Diagnóstico</option>
-                                                <option value="Formulación">Formulación</option>
-                                                <option value="Implementación">Implementación</option>
-                                                <option value="Evaluación y Seguimiento">Evaluación y Seguimiento</option>
-                                            </select>
-                                        </p>
-                                        <div id="searchFiltrosDocumentos" style="display: none;">
-                                            <p id="filtroDimension" style="display: none;">
-                                                <label><strong>Dimensi&oacute;n:</strong></label>
-                                                <select class="form-control" id="searchFiltroDimension" style="width: 100%;font-size: 14px;">
-                                                </select>
-                                            </p>
-                                            <p id="filtroComponente" style="display: none;">
-                                                <label><strong>Componente:</strong></label>
-                                                <select class="form-control" id="searchFiltroComponente" style="width: 100%;font-size: 14px;">
-                                                </select>
-                                            </p>
-                                            <p>
-                                                <label><strong>Forma de representaci&oacute;n:</strong></label>
-                                                <select class="form-control" id="searchFiltroFormaRepresentacion" style="width: 100%;font-size: 14px;">
-                                                </select>
-                                            </p>
-                                            <p>
-                                                <label><strong>Tipo:</strong></label>
-                                                <select class="form-control" id="searchFiltroTipo" style="width: 100%;font-size: 14px;">
-                                                </select>
-                                            </p>
-                                            <!-- <p>
-        <label><strong>Categor&iacute;a tem&aacute;tica:</strong></label>
-        <select class="form-control" id="searchFiltroCategoria" style="width: 100%;font-size: 14px;">
-        </select>
-    </p> -->
-                                            <p>
-                                                <label><strong>Etiquetas:</strong></label>
-                                                <select class="form-control" id="searchFiltroTags" style="width: 100%;font-size: 14px;">
-                                                </select>
-                                            </p>
-                                            <p id="filtroFecha" style="display: none;">
-                                                <label><strong>A&ntilde;o:</strong></label>
-                                                <select class="form-control" id="searchFiltroFecha" style="width: 100%;font-size: 14px;">
-                                                </select>
-                                            </p>
-                                            <p>
-                                                <label><strong>Instrumento:</strong></label>
-                                                <select class="form-control" id="searchFiltroPOT" style="width: 100%;font-size: 14px;">
-                                                </select>
-                                            </p>
+    <div class="container-fluid">
+        <div class="calcite-map docuvisor-content row">
+            <div id="mainDiv" class="col-md-3">
+                <!-- Search Panel -->
+                <div id="panelSearch" class="panel collapse">
+                    <div id="collapseSearch" class="panel-collapse">
+                        <div class="panel-body">
+                            <div id="containerFiltros" class="w-100">
+                                <div id="panelSearchFiltros" class="panel panel-default" data-toggle="popover">
+                                    <div>
+                                        <div id="searchHeader" class="panel-heading">
+                                            <div class="d-flex align-items-center" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <h3 class="panel-title" style="display: inline-block;">Filtra resultados</h3>
+                                                <i class="fa fa-chevron-down"></i>
+                                            </div>
+                                            <label style="margin-bottom: 0;" id="limpiarBtn"><a href="#" onclick="limpiarMain(); return false;">Limpiar</a></label>
+                                        </div>
+                                        <div class="collapse" id="collapseExample">
+                                            <div id="searchBody" class="p-3">
+                                                <p class="unidad-container" style="width: 100%;">
+                                                    <label style="font-size: 14px;"><strong>Filtra por entidad territorial</strong></label>
+                                                    <select class="form-control" id="searchFiltro" style="width: 100%;font-size: 14px;">
+                                                    </select>
+                                                </p>
+                                                <p>
+                                                    <label style="font-size: 14px;"><strong>Etapa</strong></label>
+                                                    <select class="form-control" id="searchEtapa" style="width: 100%;font-size: 14px;">
+                                                        <option value="Todas">Todas las etapas</option>
+                                                        <option value="Diagnóstico">Diagnóstico</option>
+                                                        <option value="Formulación">Formulación</option>
+                                                        <option value="Implementación">Implementación</option>
+                                                        <option value="Evaluación y Seguimiento">Evaluación y Seguimiento</option>
+                                                    </select>
+                                                </p>
+                                                <div id="searchFiltrosDocumentos" style="display: none;">
+                                                    <p id="filtroDimension" style="display: none;">
+                                                        <label><strong>Dimensi&oacute;n:</strong></label>
+                                                        <select class="form-control" id="searchFiltroDimension" style="width: 100%;font-size: 14px;">
+                                                        </select>
+                                                    </p>
+                                                    <p id="filtroComponente" style="display: none;">
+                                                        <label><strong>Componente:</strong></label>
+                                                        <select class="form-control" id="searchFiltroComponente" style="width: 100%;font-size: 14px;">
+                                                        </select>
+                                                    </p>
+                                                    <p>
+                                                        <label><strong>Forma de representaci&oacute;n:</strong></label>
+                                                        <select class="form-control" id="searchFiltroFormaRepresentacion" style="width: 100%;font-size: 14px;">
+                                                        </select>
+                                                    </p>
+                                                    <p>
+                                                        <label><strong>Tipo:</strong></label>
+                                                        <select class="form-control" id="searchFiltroTipo" style="width: 100%;font-size: 14px;">
+                                                        </select>
+                                                    </p>
+                                                    <!-- <p>
+                <label><strong>Categor&iacute;a tem&aacute;tica:</strong></label>
+                <select class="form-control" id="searchFiltroCategoria" style="width: 100%;font-size: 14px;">
+                </select>
+            </p> -->
+                                                    <p>
+                                                        <label><strong>Etiquetas:</strong></label>
+                                                        <select class="form-control" id="searchFiltroTags" style="width: 100%;font-size: 14px;">
+                                                        </select>
+                                                    </p>
+                                                    <p id="filtroFecha" style="display: none;">
+                                                        <label><strong>A&ntilde;o:</strong></label>
+                                                        <select class="form-control" id="searchFiltroFecha" style="width: 100%;font-size: 14px;">
+                                                        </select>
+                                                    </p>
+                                                    <p>
+                                                        <label><strong>Instrumento:</strong></label>
+                                                        <select class="form-control" id="searchFiltroPOT" style="width: 100%;font-size: 14px;">
+                                                        </select>
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div id="panelSearchResultados" style="background: #fff; display:none;">
-
-                            <div id="panelSearchNivel1" style="display: none;">
-
-                                <div class="row">
-                                    <div class="typeahead__container">
+    
+                            <div id="panelSearchResultados">
+    
+                                <div id="panelSearchNivel1" style="display: none;">
+    
+                                    <div class="typeahead__container mb-2">
                                         <div class="typeahead__field">
                                             <div style="width: 100%;" class="btn-grouptypeahead__query">
                                                 <span class="searchTextBtn glyphicon glyphicon-search"></span>
@@ -233,358 +237,371 @@
                                             </div>
                                         </div>
                                     </div>
+    
+                                    <div class="media media-resultados" id="panelSearchCaracterizacion" data-tematica="-1" data-tematica-label="A - Caracterizacion">
+                                        <div class="media-body">
+                                            <div class="pull-right tooltip-class-carac">
+                                                <div class="shareLink" onclick="shareLink();return false;" data-placement="right" title="Click para copiar el Link"><img src="/images/iconos/Link.png" alt="Compartir" style="width: 15px; height: 15px;" /></div>
+                                            </div>
+                                            <div class="panel panel-default panel-resultados" id="panelSearchCaracterizacionContainer">
+                                                <div class="panel-body">
+                                                    <div class="panel-resultados-titulo2" id="panelSearchCaracterizacionTitulo"></div>
+                                                    <div id="panelSearchCaracterizacionTable">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default panel-resultados" id="panelSearchCaracterizacionPOTContainer" style="display: none;">
+                                                <div class="panel-body">
+                                                    <div id="panelSearchCaracterizacionPOTTable">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div id="panelSearchDocumentos1">
+                                        <!-- Fase 0 -->
+                                        <div class="media media-resultados fase0" id="panelSearchFase0" style="border-left: #6445E1 5px solid;">
+                                            <div class="media-body">
+                                                <div class="panel panel-default panel-resultados">
+                                                    <div class="panel-body" onclick="gotoSearchFase(0);return false;">
+                                                        <div class="panel-resultados-titulo2" style="color: #6445E1;font-family: 'Gill Sans Std Light';">Etapa 0<br /><span style="font-family: 'Gill Sans Std';">Alistamento</span></div>
+                                                        <div id="panelSearchFase0KPI" class="panel-resultados-descripcion2">
+    
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                            <div class="media-right panel-resultados-media-right">
+                                                <div class="panel-resultados-thumb-prev" onclick="gotoSearchFase(0);return false;">
+                                                    <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
+                                                </div>
+                                            </div>
+                                            <div id="panelSearchFase0Tags" class="media-body panel-resultados-tags">
+    
+                                            </div>
+                                        </div>
+    
+                                        <!-- Fase 1 -->
+                                        <div class="media media-resultados fase1" id="panelSearchFase1">
+                                            <div class="media-body">
+                                                <div class="panel panel-default panel-resultados">
+                                                    <div class="panel-body" onclick="gotoSearchFase(1);return false;">
+                                                        <div class="panel-resultados-titulo2" style="color: #874F43;font-family: 'Gill Sans Std Light';">Etapa 1<br /><span style="font-family: 'Gill Sans Std';">Diagn&oacute;stico</span></div>
+                                                        <div id="panelSearchFase1KPI" class="panel-resultados-descripcion2">
+    
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                            <div class="media-right panel-resultados-media-right">
+                                                <div class="panel-resultados-thumb-prev" onclick="gotoSearchFase(1);return false;">
+                                                    <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
+                                                </div>
+                                            </div>
+                                            <!-- <div id="panelSearchFase1Tags" class="media-body panel-resultados-tags">
+    
+                                            </div> -->
+                                        </div>
+    
+                                        <!-- Fase 2 -->
+                                        <div class="media media-resultados fase2" id="panelSearchFase2">
+                                            <div class="media-body">
+                                                <div class="panel panel-default panel-resultados">
+                                                    <div class="panel-body" onclick="gotoSearchFase(2);return false;">
+                                                        <div class="panel-resultados-titulo2" style="color: #57A1BF;font-family: 'Gill Sans Std Light';">Etapa 2<br /><span style="font-family: 'Gill Sans Std';">Formulaci&oacute;n</span></div>
+                                                        <div id="panelSearchFase2KPI" class="panel-resultados-descripcion2">
+    
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                            <div class="media-right panel-resultados-media-right">
+                                                <div class="panel-resultados-thumb-prev" onclick="gotoSearchFase(2);return false;">
+                                                    <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
+                                                </div>
+                                            </div>
+                                            <!-- <div id="panelSearchFase2Tags" class="media-body panel-resultados-tags">
+    
+                                            </div> -->
+                                        </div>
+    
+                                        <!-- Fase 3 -->
+                                        <div class="media media-resultados fase3" id="panelSearchFase3">
+                                            <div class="media-body">
+                                                <div class="panel panel-default panel-resultados">
+                                                    <div class="panel-body" onclick="gotoSearchFase(3);return false;">
+                                                        <div class="panel-resultados-titulo2" style="color: #8D338A;font-family: 'Gill Sans Std Light';">Etapa 3<br /><span style="font-family: 'Gill Sans Std';">Implementaci&oacute;n</span></div>
+                                                        <div id="panelSearchFase3KPI" class="panel-resultados-descripcion2">
+    
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                            <div class="media-right panel-resultados-media-right">
+                                                <div class="panel-resultados-thumb-prev" onclick="gotoSearchFase(3);return false;">
+                                                    <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
+                                                </div>
+                                            </div>
+                                            <!-- <div id="panelSearchFase3Tags" class="media-body panel-resultados-tags">
+    
+                                            </div> -->
+                                        </div>
+    
+                                        <!-- Fase 4 -->
+                                        <div class="media media-resultados fase4" id="panelSearchFase4">
+                                            <div class="media-body">
+                                                <div class="panel panel-default panel-resultados">
+                                                    <div class="panel-body" onclick="gotoSearchFase(4);return false;">
+                                                        <div class="panel-resultados-titulo2" style="color: #F4A833;font-family: 'Gill Sans Std Light';">Etapa 4<br /><span style="font-family: 'Gill Sans Std';">Evaluación y Seguimiento</span></div>
+                                                        <div id="panelSearchFase4KPI" class="panel-resultados-descripcion2">
+    
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                </div>
+    
+                                            </div>
+                                            <div class="media-right panel-resultados-media-right">
+                                                <div class="panel-resultados-thumb-prev" onclick="gotoSearchFase(4);return false;">
+                                                    <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
+                                                </div>
+                                            </div>
+                                            <!-- <div id="panelSearchFase4Tags" class="media-body panel-resultados-tags">
+    
+                                            </div> -->
+                                        </div>
+    
+                                    </div>
+    
                                 </div>
-
-                                <div class="media media-resultados" id="panelSearchCaracterizacion" data-tematica="-1" data-tematica-label="A - Caracterizacion">
-                                    <div class="media-body">
-                                        <div class="pull-right tooltip-class-carac">
-                                            <div class="shareLink" onclick="shareLink();return false;" data-placement="right" title="Click para copiar el Link"><img src="/images/iconos/Link.png" alt="Compartir" style="width: 15px; height: 15px;" /></div>
-                                        </div>
-                                        <div class="panel panel-default panel-resultados" id="panelSearchCaracterizacionContainer">
-                                            <div class="panel-body">
-                                                <div class="panel-resultados-titulo2" id="panelSearchCaracterizacionTitulo"></div>
-                                                <div id="panelSearchCaracterizacionTable">
-                                                </div>
+    
+                                <div id="panelSearchNivelFase" style="display: none;">
+                                    <div id="searchFaseHeader" class="header-tematica">
+                                        <div id="searchFaseHeaderImg"></div>
+                                        <!-- <div id="searchFaseHeaderTxt"></div> -->
+                                    </div>
+                                    <div style="padding: 20px 20px 0px 20px; position: relative;">
+                                        <a href="#" onclick="backSearchMain();" class="volver-btn"><img src="/images/iconos/Back_03.png" style="width: 8px; height: 10px;" /> &nbsp; Volver</a>
+                                        <div class="contentTitle">
+                                            <div id="searchFaseTitle" class="titulo-interior"></div>
+                                            <div class="pull-right tooltip-class">
+                                                <div id="cantidadEtapa" style="color: #4788D3;"></div>
+                                                <div class="shareLink" onclick="shareLink();return false;" data-placement="right" title="Click para copiar el Link"><img src="/images/iconos/Link.png" alt="Compartir" style="width: 15px; height: 15px;" /></div>
                                             </div>
                                         </div>
-                                        <div class="panel panel-default panel-resultados" id="panelSearchCaracterizacionPOTContainer" style="display: none;">
-                                            <div class="panel-body">
-                                                <div id="panelSearchCaracterizacionPOTTable">
+                                        <div id="searchFaseDescripcion"></div>
+                                    </div>
+    
+                                    <div class="clearfix"></div>
+    
+                                    <!-- Mapas -->
+                                    <div class="media media-resultados rep-mapas" id="panelSearchMapas">
+                                        <div class="media-body">
+                                            <div class="panel panel-default panel-resultados">
+                                                <div class="panel-body" onclick="filterMapas();return false;">
+                                                    <div class="panel-resultados-titulo2" style="color: #6F3272;">Cartografía</div>
+                                                    <hr>
+                                                    <div id="panelSearchMapasKPI" class="panel-resultados-descripcion2">
+    
+                                                    </div>
+    
                                                 </div>
                                             </div>
+    
+                                        </div>
+                                        <div class="media-right panel-resultados-media-right">
+                                            <div class="panel-resultados-thumb-prev" onclick="return false;">
+                                                <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
+                                            </div>
+                                        </div>
+                                        <div id="panelSearchMapasTags" class="media-body panel-resultados-tags2">
                                         </div>
                                     </div>
+    
+                                    <!-- Documentos-->
+                                    <div class="media media-resultados rep-documentos" id="panelSearchDocumentos">
+                                        <div class="media-body">
+                                            <div class="panel panel-default panel-resultados">
+                                                <div class="panel-body" onclick="filterDocumentos();return false;">
+                                                    <div class="panel-resultados-titulo2" style="color: #5A88EF;">Documentos</div>
+                                                    <hr>
+                                                    <div id="panelSearchDocumentosKPI" class="panel-resultados-descripcion2">
+    
+                                                    </div>
+    
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                        <div class="media-right panel-resultados-media-right">
+                                            <div class="panel-resultados-thumb-prev" onclick="return false;">
+                                                <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
+                                            </div>
+                                        </div>
+                                        <div id="panelSearchDocumentosTags" class="media-body panel-resultados-tags2">
+                                        </div>
+                                    </div>
+    
+                                    <!-- Modelos -->
+                                    <div class="media media-resultados rep-modelos" id="panelSearchModelos">
+                                        <div class="media-body">
+                                            <div class="panel panel-default panel-resultados">
+                                                <div class="panel-body" onclick="return false;">
+                                                    <div class="panel-resultados-titulo2">Modelos</div>
+                                                    <div id="panelSearchModelosKPI" class="panel-resultados-descripcion2">
+    
+                                                    </div>
+    
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                        <div class="media-right panel-resultados-media-right">
+                                            <div class="panel-resultados-thumb-prev" onclick="return false;">
+                                                <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
+                                            </div>
+                                        </div>
+                                        <!--
+                                        <div class="media-body panel-resultados-tags">
+                                            &Uacute;ltima actualizaci&oacute;n: 20/03/2019
+                                        </div>
+                                        -->
+                                    </div>
+    
+                                    <!-- Tablas -->
+                                    <div class="media media-resultados rep-tablas" id="panelSearchTablas">
+                                        <div class="media-body">
+                                            <div class="panel panel-default panel-resultados">
+                                                <div class="panel-body" onclick="return false;">
+                                                    <div class="panel-resultados-titulo2">Tablas</div>
+                                                    <div id="panelSearchTablasKPI" class="panel-resultados-descripcion2">
+    
+                                                    </div>
+    
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                        <div class="media-right panel-resultados-media-right">
+                                            <div class="panel-resultados-thumb-prev" onclick="return false;">
+                                                <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
+                                            </div>
+                                        </div>
+                                        <!--
+                                        <div class="media-body panel-resultados-tags">
+                                            &Uacute;ltima actualizaci&oacute;n: 20/03/2019
+                                        </div>
+                                        -->
+                                    </div>
+                                    <br />
+                                    <br />
                                 </div>
-
-                                <div id="panelSearchDocumentos1">
-                                    <!-- Fase 0 -->
-                                    <div class="media media-resultados fase0" id="panelSearchFase0" style="border-left: #6445E1 5px solid;">
-                                        <div class="media-body">
-                                            <div class="panel panel-default panel-resultados">
-                                                <div class="panel-body" onclick="gotoSearchFase(0);return false;">
-                                                    <div class="panel-resultados-titulo2" style="color: #6445E1;font-family: 'Gill Sans Std Light';">Etapa 0<br /><span style="font-family: 'Gill Sans Std';">Alistamento</span></div>
-                                                    <div id="panelSearchFase0KPI" class="panel-resultados-descripcion2">
-
-                                                    </div>
-                                                    <br />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="media-right panel-resultados-media-right">
-                                            <div class="panel-resultados-thumb-prev" onclick="gotoSearchFase(0);return false;">
-                                                <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
-                                            </div>
-                                        </div>
-                                        <div id="panelSearchFase0Tags" class="media-body panel-resultados-tags">
-
-                                        </div>
-                                    </div>
-
-                                    <!-- Fase 1 -->
-                                    <div class="media media-resultados fase1" id="panelSearchFase1">
-                                        <div class="media-body">
-                                            <div class="panel panel-default panel-resultados">
-                                                <div class="panel-body" onclick="gotoSearchFase(1);return false;">
-                                                    <div class="panel-resultados-titulo2" style="color: #874F43;font-family: 'Gill Sans Std Light';">Etapa 1<br /><span style="font-family: 'Gill Sans Std';">Diagn&oacute;stico</span></div>
-                                                    <div id="panelSearchFase1KPI" class="panel-resultados-descripcion2">
-
-                                                    </div>
-                                                    <br />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="media-right panel-resultados-media-right">
-                                            <div class="panel-resultados-thumb-prev" onclick="gotoSearchFase(1);return false;">
-                                                <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
-                                            </div>
-                                        </div>
-                                        <!-- <div id="panelSearchFase1Tags" class="media-body panel-resultados-tags">
-
-                                        </div> -->
-                                    </div>
-
-                                    <!-- Fase 2 -->
-                                    <div class="media media-resultados fase2" id="panelSearchFase2">
-                                        <div class="media-body">
-                                            <div class="panel panel-default panel-resultados">
-                                                <div class="panel-body" onclick="gotoSearchFase(2);return false;">
-                                                    <div class="panel-resultados-titulo2" style="color: #57A1BF;font-family: 'Gill Sans Std Light';">Etapa 2<br /><span style="font-family: 'Gill Sans Std';">Formulaci&oacute;n</span></div>
-                                                    <div id="panelSearchFase2KPI" class="panel-resultados-descripcion2">
-
-                                                    </div>
-                                                    <br />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="media-right panel-resultados-media-right">
-                                            <div class="panel-resultados-thumb-prev" onclick="gotoSearchFase(2);return false;">
-                                                <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
-                                            </div>
-                                        </div>
-                                        <!-- <div id="panelSearchFase2Tags" class="media-body panel-resultados-tags">
-
-                                        </div> -->
-                                    </div>
-
-                                    <!-- Fase 3 -->
-                                    <div class="media media-resultados fase3" id="panelSearchFase3">
-                                        <div class="media-body">
-                                            <div class="panel panel-default panel-resultados">
-                                                <div class="panel-body" onclick="gotoSearchFase(3);return false;">
-                                                    <div class="panel-resultados-titulo2" style="color: #8D338A;font-family: 'Gill Sans Std Light';">Etapa 3<br /><span style="font-family: 'Gill Sans Std';">Implementaci&oacute;n</span></div>
-                                                    <div id="panelSearchFase3KPI" class="panel-resultados-descripcion2">
-
-                                                    </div>
-                                                    <br />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="media-right panel-resultados-media-right">
-                                            <div class="panel-resultados-thumb-prev" onclick="gotoSearchFase(3);return false;">
-                                                <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
-                                            </div>
-                                        </div>
-                                        <!-- <div id="panelSearchFase3Tags" class="media-body panel-resultados-tags">
-
-                                        </div> -->
-                                    </div>
-
-                                    <!-- Fase 4 -->
-                                    <div class="media media-resultados fase4" id="panelSearchFase4">
-                                        <div class="media-body">
-                                            <div class="panel panel-default panel-resultados">
-                                                <div class="panel-body" onclick="gotoSearchFase(4);return false;">
-                                                    <div class="panel-resultados-titulo2" style="color: #F4A833;font-family: 'Gill Sans Std Light';">Etapa 4<br /><span style="font-family: 'Gill Sans Std';">Evaluación y Seguimiento</span></div>
-                                                    <div id="panelSearchFase4KPI" class="panel-resultados-descripcion2">
-
-                                                    </div>
-                                                    <br />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="media-right panel-resultados-media-right">
-                                            <div class="panel-resultados-thumb-prev" onclick="gotoSearchFase(4);return false;">
-                                                <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
-                                            </div>
-                                        </div>
-                                        <!-- <div id="panelSearchFase4Tags" class="media-body panel-resultados-tags">
-
-                                        </div> -->
-                                    </div>
-
-                                </div>
-
+    
                             </div>
-
-                            <div id="panelSearchNivelFase" style="display: none;">
-                                <div id="searchFaseHeader" class="header-tematica">
-                                    <div id="searchFaseHeaderImg"></div>
-                                    <!-- <div id="searchFaseHeaderTxt"></div> -->
-                                </div>
-                                <div style="padding: 20px 20px 0px 20px; position: relative;">
-                                    <a href="#" onclick="backSearchMain();" class="volver-btn"><img src="/images/iconos/Back_03.png" style="width: 8px; height: 10px;" /> &nbsp; Volver</a>
-                                    <div class="contentTitle">
-                                        <div id="searchFaseTitle" class="titulo-interior"></div>
-                                        <div class="pull-right tooltip-class">
-                                            <div id="cantidadEtapa" style="color: #4788D3;"></div>
-                                            <div class="shareLink" onclick="shareLink();return false;" data-placement="right" title="Click para copiar el Link"><img src="/images/iconos/Link.png" alt="Compartir" style="width: 15px; height: 15px;" /></div>
-                                        </div>
-                                    </div>
-                                    <div id="searchFaseDescripcion"></div>
-                                    <hr />
-                                </div>
-
-                                <div class="clearfix"></div>
-
-                                <!-- Mapas -->
-                                <div class="media media-resultados rep-mapas" id="panelSearchMapas">
-                                    <div class="media-body">
-                                        <div class="panel panel-default panel-resultados">
-                                            <div class="panel-body" onclick="filterMapas();return false;">
-                                                <div class="panel-resultados-titulo2" style="color: #6F3272;">Cartografía</div>
-                                                <hr>
-                                                <div id="panelSearchMapasKPI" class="panel-resultados-descripcion2">
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="media-right panel-resultados-media-right">
-                                        <div class="panel-resultados-thumb-prev" onclick="return false;">
-                                            <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
-                                        </div>
-                                    </div>
-                                    <div id="panelSearchMapasTags" class="media-body panel-resultados-tags2">
-                                    </div>
-                                </div>
-
-                                <!-- Documentos-->
-                                <div class="media media-resultados rep-documentos" id="panelSearchDocumentos">
-                                    <div class="media-body">
-                                        <div class="panel panel-default panel-resultados">
-                                            <div class="panel-body" onclick="filterDocumentos();return false;">
-                                                <div class="panel-resultados-titulo2" style="color: #5A88EF;">Documentos</div>
-                                                <hr>
-                                                <div id="panelSearchDocumentosKPI" class="panel-resultados-descripcion2">
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="media-right panel-resultados-media-right">
-                                        <div class="panel-resultados-thumb-prev" onclick="return false;">
-                                            <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
-                                        </div>
-                                    </div>
-                                    <div id="panelSearchDocumentosTags" class="media-body panel-resultados-tags2">
-                                    </div>
-                                </div>
-
-                                <!-- Modelos -->
-                                <div class="media media-resultados rep-modelos" id="panelSearchModelos">
-                                    <div class="media-body">
-                                        <div class="panel panel-default panel-resultados">
-                                            <div class="panel-body" onclick="return false;">
-                                                <div class="panel-resultados-titulo2">Modelos</div>
-                                                <div id="panelSearchModelosKPI" class="panel-resultados-descripcion2">
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="media-right panel-resultados-media-right">
-                                        <div class="panel-resultados-thumb-prev" onclick="return false;">
-                                            <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
-                                        </div>
-                                    </div>
-                                    <!--
-                                    <div class="media-body panel-resultados-tags">
-                                        &Uacute;ltima actualizaci&oacute;n: 20/03/2019
-                                    </div>
-                                    -->
-                                </div>
-
-                                <!-- Tablas -->
-                                <div class="media media-resultados rep-tablas" id="panelSearchTablas">
-                                    <div class="media-body">
-                                        <div class="panel panel-default panel-resultados">
-                                            <div class="panel-body" onclick="return false;">
-                                                <div class="panel-resultados-titulo2">Tablas</div>
-                                                <div id="panelSearchTablasKPI" class="panel-resultados-descripcion2">
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="media-right panel-resultados-media-right">
-                                        <div class="panel-resultados-thumb-prev" onclick="return false;">
-                                            <a href="#" class="btn-resultados"><img src='/images/iconos/Forward_01.png' alt='Siguiente' style='width: 25px; height: 25px;' /></a>
-                                        </div>
-                                    </div>
-                                    <!--
-                                    <div class="media-body panel-resultados-tags">
-                                        &Uacute;ltima actualizaci&oacute;n: 20/03/2019
-                                    </div>
-                                    -->
-                                </div>
-                                <br />
-                                <br />
+                        </div>
+                    </div>
+                </div>
+                <a id="headingSearch" class="position-absolute panel-close2 panel-close-small text-center hidden-sm hidden-xs" style="display: none;" onclick="toggleMenu();">
+                    <img style="width: 25px; height: 25px;" src="/images/iconos/Forward_02.png" alt="Cerrar Menú">
+                </a>
+            </div>
+            <div id="modalTutorial" class="col-md-9 modal" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content row">
+                        <div class="col-md-8 text-light p-4 card-body d-flex flex-wrap flex-column">
+                            <div id="modalTutorialDiv" class="modal-body">
+                                <h3>Bienvenido a los pot del pais</h3>
+                                <p>
+                                    La información dispuesta en la plataforma incluye documentos y cartografía de los planes de ordenamiento territorial que han sido recopiladas por el Instituto Geográfico Agustín Codazzi, suministrada de los entes territoriales, por tanto, el IGAC no se hace responsable de los datos aportados por esas entidades.
+                                </p>
                             </div>
-
+                            <div class="modal-footer" style="text-align: center;padding-top: 10px;line-height: 2.5em;">
+                                <a href="#" class="btn btn-primary" onclick="modalHide()">Aceptar</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="calltocontext">
-            <i class="fas fa-chevron-left"></i>
-            <p>Empieza<br>tu búsqueda<br>aquí</p>
-        </div>
-        <div id="instruccionesDiv" class="calcite-map-absolute main-small-map instrucciones">
-            <img src="/images/SIGOT/Persona1.png" style="position: absolute;height: calc(50vh);top: calc(10vh); left: calc(5vw);">
-            <img src="/images/SIGOT/Persona2.png" style="position: absolute;height: calc(50vh);bottom: calc(10vh);right: calc(10vh);">
-            <img src="/images/SIGOT/Elemento.png" style="position: absolute;height: calc(10vh);top: 0px;left: 50%;">
-        </div>
-        <div id="mapViewDiv" class="calcite-map-absolute main-small-map" style="background: var(--bg-igac-gris); display: none;">
-            <a id="headingSearch" class="panel-close2 panel-close-small text-center hidden-sm hidden-xs" style="display: none;" onclick="toggleMenu();">
-                <img style="width: 25px; height: 25px;" src="/images/iconos/Forward_02.png" alt="Cerrar Menú">
-            </a>
-            <div id="alertList" style="display: none;">
-                <div>
-                    <div id="alertHeader" class="alert-header" style="background-color:white;"></div>
-                    <div style="background: white;" class="alert-media">
-                        <div id="alertContentLeft" class="media-left">
-                            <img alt="imagen" class="media-object" style="width: 20px; height: 20px;" src="" />
-                        </div>
-                        <div id="alertContent" class="media-body alert-media-body" style="width: 250px;">
-
-                        </div>
-                        <div class="media-right" style="color: gray;" onclick="$('#alertList').hide();">
-                            <span class="esri-icon esri-icon-close" aria-hidden="true"></span>
+            <div id="mapViewDiv" class="col-md-9 calcite-map-absolute main-small-map" style="background: var(--bg-igac-gris); display: none;">
+                <div id="alertList" style="display: none;">
+                    <div>
+                        <div id="alertHeader" class="alert-header" style="background-color:white;"></div>
+                        <div style="background: white;" class="alert-media">
+                            <div id="alertContentLeft" class="media-left">
+                                <img alt="imagen" class="media-object" style="width: 20px; height: 20px;" src="" />
+                            </div>
+                            <div id="alertContent" class="media-body alert-media-body" style="width: 250px;">
+    
+                            </div>
+                            <div class="media-right" style="color: gray;" onclick="$('#alertList').hide();">
+                                <span class="esri-icon esri-icon-close" aria-hidden="true"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="headerResult" class="headerResult">
-                <div id="docViewCount">
-                </div>
-                <div id="docViewPage">
-                    &nbsp; | &nbsp; Ver:
-                    <a href="#" onclick="changeLenDocs(24);">&nbsp;24&nbsp;</a>
-                    <a href="#" onclick="changeLenDocs(48);">&nbsp;48&nbsp;</a>
-                    <a href="#" onclick="changeLenDocs(96);">&nbsp;96&nbsp;</a>
-                </div>
-                <div>Ordenar por:</div>
-                <p class="unidad-container" style="width: 30%;">
-                    <select class="form-control" id="ordenarResultados" style="width: 100%;font-size: 14px;">
-                        <option data-column="4" value="asc">Etapa &#x2191;</option>
-                        <option data-column="4" value="desc">Etapa &#x2193;</option>
-                        <option data-column="2" value="asc">Fecha publicación &#x2191;</option>
-                        <option data-column="2" value="desc" selected>Fecha publicación &#x2193;</option>
-                        <option data-column="1" value="asc">Nombre &#x2191;</option>
-                        <option data-column="1" value="desc">Nombre &#x2193;</option>
-                    </select>
-                </p>
-            </div>
-            <div id="docViewDivSingle" style="display: none;">
-                <div class="doc-item">
-                    <div id="card-detail" class="media media-resultados2">
-                        <div class="title-card-resultados" style="display: flex;" onclick="backDetalleDocumento(); return false;">
-                            <div style="display: inline-block;width: 50%;">
-                                <img id="cardDetailEtapaImg" src="" class="panel-resultados2-thumb1">
+                <div id="headerResult" class="headerResult row">
+                    <div class="d-flex w-100 p-0 justify-content-between">
+                        <div class="d-flex align-items-center w-50">
+                            <div id="docViewCount">
                             </div>
-                            <div style="text-align: right;display: inline-block;width: 50%;font-size: 20px;color: gray;">
-                                <span aria-hidden="true">&times;</span>
+                            <div id="docViewPage">
+                                &nbsp; | &nbsp; Ver:
+                                <a href="#" onclick="changeLenDocs(24);">&nbsp;24&nbsp;</a>
+                                <a href="#" onclick="changeLenDocs(48);">&nbsp;48&nbsp;</a>
+                                <a href="#" onclick="changeLenDocs(96);">&nbsp;96&nbsp;</a>
                             </div>
                         </div>
-                        <div class="media-body">
-                            <div class="panel panel-default panel-resultados">
-                                <div class="panel-body">
-                                    <div class="title-recursos">
-                                        <div id="cardDetailNombre" class="panel-resultados-titulo2 panel-resultados-titulo2x" style="width: 100%;"></div>
-                                        <div id="cardDetailId"></div>
-                                    </div>
-                                    <hr>
-                                    <div class="panel-resultados-descripcion2">
-                                        <strong class="title-inner">DATOS B&Aacute;SICOS</strong>
-                                        <div id="cardDetailDescripcion" class="panel-resultados-descripcion2">
+                        <div class="d-flex align-items-center justify-content-end w-50">
+                            <div class="spanSearch">Ordenar por:</div>
+                            <p class="unidad-container" style="width: 30%;">
+                                <select class="form-control" id="ordenarResultados" style="width: 100%;font-size: 14px;">
+                                    <option data-column="4" value="asc">Etapa &#x2191;</option>
+                                    <option data-column="4" value="desc">Etapa &#x2193;</option>
+                                    <option data-column="2" value="asc">Fecha publicación &#x2191;</option>
+                                    <option data-column="2" value="desc" selected>Fecha publicación &#x2193;</option>
+                                    <option data-column="1" value="asc">Nombre &#x2191;</option>
+                                    <option data-column="1" value="desc">Nombre &#x2193;</option>
+                                </select>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="docViewDivSingle" style="display: none;">
+                    <div class="doc-item">
+                        <div id="card-detail" class="media media-resultados2">
+                            <div class="title-card-resultados" style="display: flex;" onclick="backDetalleDocumento(); return false;">
+                                <div style="display: inline-block;width: 50%;">
+                                    <img id="cardDetailEtapaImg" src="" class="panel-resultados2-thumb1">
+                                </div>
+                                <div style="text-align: right;display: inline-block;width: 50%;font-size: 20px;color: gray;">
+                                    <span aria-hidden="true">&times;</span>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <div class="panel panel-default panel-resultados">
+                                    <div class="panel-body">
+                                        <div class="title-recursos">
+                                            <div id="cardDetailNombre" class="panel-resultados-titulo2 panel-resultados-titulo2x" style="width: 100%;"></div>
+                                            <div id="cardDetailId"></div>
                                         </div>
                                         <hr>
-                                        <strong class="title-inner">CONTENIDO</strong>
-                                        <div id="cardDetailDescripcion2" class="panel-resultados-descripcion2">
+                                        <div class="panel-resultados-descripcion2">
+                                            <strong class="title-inner">DATOS B&Aacute;SICOS</strong>
+                                            <div id="cardDetailDescripcion" class="panel-resultados-descripcion2">
+                                            </div>
+                                            <hr>
+                                            <strong class="title-inner">CONTENIDO</strong>
+                                            <div id="cardDetailDescripcion2" class="panel-resultados-descripcion2">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -592,70 +609,52 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="docViewDiv" style="display: none;">
-            </div>
-            <div id="divSinResultados" style="display: none;">
-                <div class="image">
-                    <img src="/images/404/sin-resultados.svg" alt="Sin resultados" style="width: 100%; height: auto;">
+                <div id="docViewDiv" class="row py-4" style="display: none;">
                 </div>
-            </div>
-            <div id="docViewDivFooter" style="overflow: hidden; max-height: 60px;">
-                <table id="tableDocumentos" data-order='[[ 2, "desc" ]]' class="table table-condensed table-hover" style="display: none; text-align: center;width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Fecha</th>
-                            <th>Tipo</th>
-                            <th>Etapa</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-
-            </div>
-
-            <div id="recursosViewCount">
-            </div>
-            <div id="recursosViewDiv">
-
-            </div>
-            <div id="recursosViewDivFooter" style="overflow: hidden; max-height: 60px;">
-                <table id="tableRecursos" class="table table-condensed table-hover" style="display: none; text-align: center;width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-
+                <div id="divSinResultados" style="display: none;">
+                    <div class="image">
+                        <img src="/images/404/sin-resultados.svg" alt="Sin resultados" style="width: 100%; height: auto;">
+                    </div>
+                </div>
+                <div id="docViewDivFooter" style="overflow: hidden; max-height: 60px;">
+                    <table id="tableDocumentos" data-order='[[ 2, "desc" ]]' class="table table-condensed table-hover" style="display: none; text-align: center;width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                                <th>Tipo</th>
+                                <th>Etapa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+    
+                </div>
+    
+                <div id="recursosViewCount">
+                </div>
+                <div id="recursosViewDiv">
+    
+                </div>
+                <div id="recursosViewDivFooter" style="overflow: hidden; max-height: 60px;">
+                    <table id="tableRecursos" class="table table-condensed table-hover" style="display: none; text-align: center;width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+    
+            </div>             
         </div>
-    </div>
-    <div id="modalTutorial" class="modal fade" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="border: none; padding-bottom: 0px;">
-                    <a href="#" class="close" onclick="$('#modalTutorial').modal('hide'); return false;" aria-label="Cerrar"><span aria-hidden="true">&times;</span></a>
-                </div>
-                <div id="modalTutorialDiv" class="modal-body" style="text-align: center;padding-top: 0px;">
-                    <span style='color: #6445E1;font-size: 22px;'>BIENVENIDO A LOS POT DEL PAIS</span><br /><br />
-                    <p>
-                        La información dispuesta en la plataforma incluye documentos y cartografía de los planes de ordenamiento territorial que han sido recopiladas por el Instituto Geográfico Agustín Codazzi, suministrada de los entes territoriales, por tanto, el IGAC no se hace responsable de los datos aportados por esas entidades.
-                    </p>
-                </div>
-                <div class="modal-footer" style="text-align: center;padding-top: 10px;line-height: 2.5em;">
-                    <a href="#" class="btn btn-primary" onclick="$('#modalTutorial').modal('hide'); return false;" style="background-color: #6445E1;float: right;">Aceptar</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div>    
     <div class="mobile-image" id="mobile-image">
         <div class="wraper">
             <!-- <div class="we-sorry">
