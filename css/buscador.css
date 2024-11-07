@@ -520,14 +520,24 @@ body {
     position: relative;
 }
 
-#docViewDiv .doc-item .media,
-#docViewDivSingle .doc-item .media {
+#docViewDiv .doc-item .media {
     margin-bottom: 20px;
 }
 
 #docViewDiv .panel-resultados,
 #docViewDivSingle .panel-resultados {
     width: 100%;
+}
+
+#docViewDivSingle .panel-resultados .panel-resultados-titulo2 {
+    height: auto;
+    font-family: 'Gill Sans Std Bold';
+    color: var(--azul-igac);
+    margin-bottom: 0;
+}
+
+#docViewDivSingle .panel-resultados .panel-resultados-descripcion2 .panel-resultados-descripcion2 {
+    padding: 0;
 }
 
 .main-small-map #docViewDiv .doc-item,
@@ -561,11 +571,9 @@ body {
 
 #docViewDivSingle {
     z-index: 10;
-    left: 0;
-    right: 0;
     margin-right: 0;
     margin-left: auto;
-    position: fixed;
+    position: relative;
     height: calc(100vh - 108px);
     overflow: hidden;
     backdrop-filter: blur(5px);
@@ -2219,9 +2227,8 @@ select.input-sm {
 }
 
 #panelSearch {
-    height: 100%;
+    margin-bottom: 0;
     background: transparent;
-    margin-bottom: 0px;
 }
 
 #panelSearchCaracterizacion {

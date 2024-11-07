@@ -1347,7 +1347,6 @@ function downloadDocumento(id) {
 function gotoDetalleDocumento(id) {
     $("#docViewCount").hide();
     $("#mapViewDiv").css("overflow", "hidden");
-    $("body").addClass('modal-open');
     $("#docViewDivFooter").hide();
     $("#docViewDivSingle").show();
     currentDocumento = id;
@@ -1422,7 +1421,6 @@ function gotoDetalleDocumento(id) {
             strHTML = strHTML + "</tr>";
             strHTML = strHTML + "</tbody>";
             strHTML = strHTML + " </table>";
-            strHTML = strHTML + "<br/>";
             $("#cardDetailDescripcion2").html(strHTML);
         }
     }
@@ -1431,7 +1429,6 @@ function gotoDetalleDocumento(id) {
 function backDetalleDocumento() {
     $("#docViewCount").show();
     $("#mapViewDiv").css("overflow", "auto");
-    $("body").removeClass('modal-open');
     $("#docViewDiv").show();
     $("#docViewDivFooter").show();
     $("#docViewDivSingle").hide();

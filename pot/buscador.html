@@ -510,10 +510,7 @@
                         </div>
                     </div>
                 </div>
-                <a id="headingSearch" class="position-absolute panel-close2 panel-close-small text-center hidden-sm hidden-xs" style="display: none;" onclick="toggleMenu();">
-                    <img style="width: 25px; height: 25px;" src="../images/iconos/Forward_02.png" alt="Cerrar Menú">
-                </a>
-            </div>
+            </div>            
             <div id="modalTutorial" class="col-md-9 modal" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content row">
@@ -531,7 +528,42 @@
                     </div>
                 </div>
             </div>
+            <div id="docViewDivSingle" class="col-md-9" style="display: none;">
+                <div class="doc-item col-md-6 m-auto">
+                    <div id="card-detail" class="media media-resultados2">
+                        <div class="title-card-resultados" style="display: flex;" onclick="backDetalleDocumento(); return false;">
+                            <div style="display: inline-block;width: 50%;">
+                                <img id="cardDetailEtapaImg" src="" class="panel-resultados2-thumb1">
+                            </div>
+                            <div style="text-align: right;display: inline-block;width: 50%;font-size: 20px;color: gray;">
+                                <span aria-hidden="true">&times;</span>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <div class="panel panel-default panel-resultados">
+                                <div class="panel-body">
+                                    <div class="title-recursos">
+                                        <div id="cardDetailNombre" class="panel-resultados-titulo2 panel-resultados-titulo2x" style="width: 100%;"></div>
+                                        <div id="cardDetailId"></div>
+                                    </div>
+                                    <div class="panel-resultados-descripcion2">
+                                        <strong class="title-inner">DATOS B&Aacute;SICOS</strong>
+                                        <div id="cardDetailDescripcion" class="panel-resultados-descripcion2">
+                                        </div>
+                                        <strong class="title-inner">CONTENIDO</strong>
+                                        <div id="cardDetailDescripcion2" class="panel-resultados-descripcion2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="mapViewDiv" class="col-md-9 calcite-map-absolute main-small-map" style="background: var(--bg-igac-gris); display: none;">
+                <a id="headingSearch" class="position-absolute panel-close2 panel-close-small text-center hidden-sm hidden-xs" style="display: none;" onclick="toggleMenu();">
+                    <img style="width: 25px; height: 25px;" src="../images/iconos/Forward_02.png" alt="Cerrar Menú">
+                </a>
                 <div id="alertList" style="display: none;">
                     <div>
                         <div id="alertHeader" class="alert-header" style="background-color:white;"></div>
@@ -574,40 +606,8 @@
                             </p>
                         </div>
                     </div>
-                </div>
-                <div id="docViewDivSingle" class="col-md-9" style="display: none;">
-                    <div class="doc-item col-md-6 m-auto">
-                        <div id="card-detail" class="media media-resultados2">
-                            <div class="title-card-resultados" style="display: flex;" onclick="backDetalleDocumento(); return false;">
-                                <div style="display: inline-block;width: 50%;">
-                                    <img id="cardDetailEtapaImg" src="" class="panel-resultados2-thumb1">
-                                </div>
-                                <div style="text-align: right;display: inline-block;width: 50%;font-size: 20px;color: gray;">
-                                    <span aria-hidden="true">&times;</span>
-                                </div>
-                            </div>
-                            <div class="media-body">
-                                <div class="panel panel-default panel-resultados">
-                                    <div class="panel-body">
-                                        <div class="title-recursos">
-                                            <div id="cardDetailNombre" class="panel-resultados-titulo2 panel-resultados-titulo2x" style="width: 100%;"></div>
-                                            <div id="cardDetailId"></div>
-                                        </div>
-                                        <div class="panel-resultados-descripcion2">
-                                            <strong class="title-inner">DATOS B&Aacute;SICOS</strong>
-                                            <div id="cardDetailDescripcion" class="panel-resultados-descripcion2">
-                                            </div>
-                                            <strong class="title-inner">CONTENIDO</strong>
-                                            <div id="cardDetailDescripcion2" class="panel-resultados-descripcion2">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="docViewDiv" class="row py-4" style="display: none;">
+                </div>                
+                <div id="docViewDiv" class="row pt-4" style="display: none;">
                 </div>
                 <div id="divSinResultados" style="display: none;">
                     <div class="image">

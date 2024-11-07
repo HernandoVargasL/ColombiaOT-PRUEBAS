@@ -37,7 +37,7 @@ footer {
 nav {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 10000;
 }
 
 nav ul {
@@ -73,6 +73,7 @@ nav a {
 .navbarigac {
     position: sticky;
     top: 0;
+    z-index: 1000;
     height: 60px;
     background: #eff0f1;
     display: flex;
