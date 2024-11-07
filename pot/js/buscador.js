@@ -1444,9 +1444,9 @@ function gotoSearchFase(id) {
     $("#searchFaseHeader").css("background", "linear-gradient(90deg, " + currentEtapa.color + " 0%, " + currentEtapa.color + " 100%)");
     // $("#searchFaseHeaderTxt").html("Etapa " + (currentEtapa.id));
     if (currentEtapa) {
-        $("#searchFaseHeaderImg").css("background", "url(/images/SIGOT/Fase" + currentEtapa.id + ".png)");
+        $("#searchFaseHeaderImg").css("background", "url(../images/SIGOT/Fase" + currentEtapa.id + ".png)");
     } else {                    
-        $("#searchFaseHeaderImg").css("background", "url(/images/SIGOT/Fase0.png)");
+        $("#searchFaseHeaderImg").css("background", "url(../images/SIGOT/Fase0.png)");
     }
 
     $("#panelSearchNivelFase").show();
