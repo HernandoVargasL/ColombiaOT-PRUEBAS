@@ -1346,7 +1346,8 @@ function downloadDocumento(id) {
 
 function gotoDetalleDocumento(id) {
     $("#docViewCount").hide();
-    $("#docViewDiv").hide();
+    $("#mapViewDiv").css("overflow", "hidden");
+    $("body").addClass('modal-open');
     $("#docViewDivFooter").hide();
     $("#docViewDivSingle").show();
     currentDocumento = id;
@@ -1406,14 +1407,12 @@ function gotoDetalleDocumento(id) {
             if (cacheDocumentos[i].RESPONSABLE != null) {
                 strHTML = strHTML + "<strong>Fuente:&nbsp;</strong><br/>" + cacheDocumentos[i].RESPONSABLE + "<br/>";
             }
-            strHTML = strHTML + "<br/>";
-            strHTML = strHTML + "<br/>";
             strHTML = strHTML + "<table style='width: 100%;'>";
             strHTML = strHTML + "<tbody>";
             strHTML = strHTML + "<tr>";
             if (cacheDocumentos[i].FORMATO == ".pdf") {
-                strHTML = strHTML + "<td style='width: 100%;'>";
-                strHTML = strHTML + "<button class='btn btn-default' style='width: 100%;margin-right: 10px;' onclick='verDocumento(" + cacheDocumentos[i].ID_DOCUMENTO + "); return false;'>Ver</button>";
+                strHTML = strHTML + "<td>";
+                strHTML = strHTML + "<button class='btn btn-default' onclick='verDocumento(" + cacheDocumentos[i].ID_DOCUMENTO + "); return false;'>Ver</button>";
                 strHTML = strHTML + "</td>";
             } else {
                 strHTML = strHTML + "<td style='width: 100%;'>";
@@ -1431,6 +1430,8 @@ function gotoDetalleDocumento(id) {
 
 function backDetalleDocumento() {
     $("#docViewCount").show();
+    $("#mapViewDiv").css("overflow", "auto");
+    $("body").removeClass('modal-open');
     $("#docViewDiv").show();
     $("#docViewDivFooter").show();
     $("#docViewDivSingle").hide();

@@ -386,16 +386,16 @@
     
                                 <div id="panelSearchNivelFase" style="display: none;">
                                     <div id="searchFaseHeader" class="header-tematica">
+                                        <div id="searchFaseTitle" class="titulo-interior"></div>
                                         <div id="searchFaseHeaderImg"></div>
                                         <!-- <div id="searchFaseHeaderTxt"></div> -->
                                     </div>
                                     <div style="padding: 20px 20px 0px 20px; position: relative;">
                                         <a href="#" onclick="backSearchMain();" class="volver-btn"><img src="../images/iconos/Back_03.png" style="width: 8px; height: 10px;" /> &nbsp; Volver</a>
                                         <div class="contentTitle">
-                                            <div id="searchFaseTitle" class="titulo-interior"></div>
                                             <div class="pull-right tooltip-class">
                                                 <div id="cantidadEtapa" style="color: #4788D3;"></div>
-                                                <div class="shareLink" onclick="shareLink();return false;" data-placement="right" title="Click para copiar el Link"><img src="../images/iconos/Link.png" alt="Compartir" style="width: 15px; height: 15px;" /></div>
+                                                <div class="shareLink" onclick="shareLink();return false;" data-placement="right" title="Click para copiar el Link"><img src="../images/iconos/Link.png" alt="Compartir"></div>
                                             </div>
                                         </div>
                                         <div id="searchFaseDescripcion"></div>
@@ -575,8 +575,8 @@
                         </div>
                     </div>
                 </div>
-                <div id="docViewDivSingle" style="display: none;">
-                    <div class="doc-item">
+                <div id="docViewDivSingle" class="col-md-9" style="display: none;">
+                    <div class="doc-item col-md-6 m-auto">
                         <div id="card-detail" class="media media-resultados2">
                             <div class="title-card-resultados" style="display: flex;" onclick="backDetalleDocumento(); return false;">
                                 <div style="display: inline-block;width: 50%;">
@@ -593,12 +593,10 @@
                                             <div id="cardDetailNombre" class="panel-resultados-titulo2 panel-resultados-titulo2x" style="width: 100%;"></div>
                                             <div id="cardDetailId"></div>
                                         </div>
-                                        <hr>
                                         <div class="panel-resultados-descripcion2">
                                             <strong class="title-inner">DATOS B&Aacute;SICOS</strong>
                                             <div id="cardDetailDescripcion" class="panel-resultados-descripcion2">
                                             </div>
-                                            <hr>
                                             <strong class="title-inner">CONTENIDO</strong>
                                             <div id="cardDetailDescripcion2" class="panel-resultados-descripcion2">
                                             </div>

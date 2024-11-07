@@ -520,10 +520,6 @@ body {
     position: relative;
 }
 
-#docViewDivSingle .doc-item {
-    width: 100%;
-}
-
 #docViewDiv .doc-item .media,
 #docViewDivSingle .doc-item .media {
     margin-bottom: 20px;
@@ -537,6 +533,62 @@ body {
 .main-small-map #docViewDiv .doc-item,
 .main-small-map #docViewDivSingle .doc-item {
     width: 33.333333%;
+}
+
+.media-resultados2 {
+    background: white;
+    background-size: 50px 50px;
+    background-position: top right;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 7px 0px #00000026;
+}
+
+.media-resultados2 .btn-resultados {
+    display: none;
+}
+
+.media-resultados2:hover .btn-resultados {
+    display: block;
+}
+
+.media-resultados2 .title-card-resultados {
+    padding: 15px 15px 0;
+}
+
+.media-resultados2 .title-card-resultados span {
+    cursor: pointer;
+}
+
+#docViewDivSingle {
+    z-index: 10;
+    left: 0;
+    right: 0;
+    margin-right: 0;
+    margin-left: auto;
+    position: fixed;
+    height: calc(100vh - 108px);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    background: #00000093;
+}
+
+#docViewDivSingle .panel-resultados-descripcion2 {
+    color: var(--azul-igac);
+    background: #f6f3eb;
+}
+#docViewDivSingle .panel-resultados-descripcion2 .title-inner {
+    font-family: 'Gill Sans Std Bold';
+}
+#docViewDivSingle .panel-resultados-descripcion2 strong {
+    color: var(--azul-igac-custome);
+}
+#docViewDivSingle .panel-resultados .panel-body table {
+    margin-top: 10px;
+    background: transparent;
+}
+#docViewDivSingle .panel-resultados .panel-body table .btn-default {
+    border-radius: 5px;
+    padding: 7px 30px 3px 30px;
 }
 
 #divSinResultados {
@@ -887,12 +939,12 @@ body {
 }
 
 #searchFaseHeaderImg {
-    background-size: 35px, cover !important;
+    background-size: 25px, cover !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
     display: inline-block;
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     left: 0;
     position: relative;
 }
@@ -902,8 +954,8 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+    left: 0;
     background: rgba(255, 255, 255, 0.066);
-    right: 0;
     border-radius: 5px;
 }
 
@@ -1114,6 +1166,16 @@ body {
     background: var(--azul-igac-custome);
 }
 
+.panel-resultados .panel-body .panel-resultados-descripcion2 .d-flex[aria-expanded='false'] .fa {
+    transform: rotate(0deg);
+    transition: 0.2s transform ease; 
+}
+
+.panel-resultados .panel-body .panel-resultados-descripcion2 .d-flex[aria-expanded='true'] .fa {
+    transform: rotate(180deg);
+    transition: 0.2s transform ease; 
+}
+
 .panel-resultados .panel-body .panel-resultados-descripcion2 p {
     color: #fff;
 }
@@ -1172,7 +1234,8 @@ tr {
 
 .titulo-interior {
     text-align: center;
-    font-size: 18px;
+    font-size: 1.2rem;
+    margin-right: 10px;
     font-weight: bold;
     font-family: 'Gill Sans Std semi bold';
     margin-top: 0px;
@@ -1472,8 +1535,10 @@ tr {
 }
 #panelSearchNivelFase > div {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 10px;
 }
 #panelSearchNivelFase .contentTitle {
     display: flex;
@@ -1629,7 +1694,6 @@ tr:hover .btn-resultados3 img {
 
 .tooltip-class {
     padding: 1px;
-    font-size: 17px;
     color: #3168E4;
     display: flex;
     align-items: center;
@@ -1644,6 +1708,12 @@ tr:hover .btn-resultados3 img {
 .tooltip-class .shareLink {
     margin-left: 5px;
     cursor: pointer;
+}
+
+.tooltip-class .shareLink img {
+    width: 15px;
+    height: 15px;
+    margin-top: -4px;
 }
 
 .calcite-maps .tooltip-innerX {
@@ -1932,7 +2002,6 @@ tr:hover .btn-resultados3 img {
     display: flex;
     align-items: center;
     float: left;
-    font-family: 'Gill Sans Std bold';
     color: #333;
 }
 
@@ -1997,9 +2066,24 @@ select.input-sm {
     justify-content: space-between;
 }
 
+#searchHeader .d-flex[aria-expanded='true'] .fa {
+    transform: rotate(180deg);
+    transition: 0.2s transform ease;    
+}
+
+#searchHeader .d-flex[aria-expanded='false'] .fa {
+    transform: rotate(0deg);
+    transition: 0.2s transform ease;   
+}
+
 #searchHeader .fa-chevron-down {
     margin-left: 5px;
     font-size: 12px;
+}
+
+#searchHeader a:hover {
+    color: #fff;
+    opacity: 0.8;
 }
 
 #searchBody {
@@ -2407,22 +2491,20 @@ body.dragging * {
 }
 
 .panel-resultados-tags3 {
-    display: block;
+    display: flex;
     width: 100%;
     color: darkgray;
     font-size: 14px;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 }
 
 .panel-resultados-tags3 .label {
-    font-size: 12px;
-    font-weight: normal;
-    margin-top: 1px;
-    margin-bottom: 1px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 7px 10px 5px 10px;
     margin-right: 5px;
-    padding: 5px;
-    display: inline-block;
-    background-color: gray;
+    margin-bottom: 5px;
 }
 
 

@@ -1456,27 +1456,6 @@ p {
     padding-right: 18px;
 }
 
-.media-resultados2 {
-    background: white;
-    margin: 0 5px 0;
-    background-size: 50px 50px;
-    background-position: top right;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 7px 0px #00000026;
-}
-
-.media-resultados2 .btn-resultados {
-    display: none;
-}
-
-.media-resultados2:hover .btn-resultados {
-    display: block;
-}
-
-.media-resultados2 .title-card-resultados {
-    padding: 15px 15px 0;
-}
-
 #userPhoto {
     width: 35px;
     height: 35px;

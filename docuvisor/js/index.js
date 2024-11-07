@@ -795,7 +795,7 @@ function gotoDetalleDocumento(id) {
             strHTML = strHTML + "<tr>";
             if (cacheDocumentos[i].FORMATO == ".pdf") {
                 strHTML = strHTML + "<td style='width: 100%;'>";
-                strHTML = strHTML + "<button class='btn btn-default' style='width: 100%;margin-right: 10px;' onclick='verDocumento(" + cacheDocumentos[i].ID_DOCUMENTO + "); return false;'>Ver</button>";
+                strHTML = strHTML + "<button class='btn btn-default' onclick='verDocumento(" + cacheDocumentos[i].ID_DOCUMENTO + "); return false;'>Ver</button>";
                 strHTML = strHTML + "</td>";
             } else {
                 strHTML = strHTML + "<td style='width: 100%;'>";
